@@ -1,4 +1,4 @@
-```markdown
+
 # Azure Data Factory Analysis Toolkit
 
 ![ADF Analyzer](https://img.shields.io/badge/ADF%20Analyzer-v8.0-blue.svg) ![ADF Dashboard](https://img.shields.io/badge/ADF%20Dashboard-v9.0-green.svg) ![Python](https://img.shields.io/badge/Python-3.8+-brightgreen.svg)
@@ -100,4 +100,3 @@ This is a developer-focused tool designed to help build new parsers. It is more 
 - **Primary Function:** Analyzes the structure, property paths, and expression patterns within an ARM template.
 - **Key Feature:** Its main output is not just a report, but also **auto-generated Python code** (`enhanced_parser_....py`) that can serve as a starting point for building a new, custom parser.
 - **When to Use:** Use this if you are a developer looking to build a new analysis tool and need to quickly understand the schema and patterns of an unfamiliar ARM template.
-```
