@@ -1,0 +1,141 @@
+﻿graph TD
+    TR_DEV_DAILY_0630AM[⏰ TR_DEV_DAILY_0630AM]
+    TR_DEV_DAILY_0630AM --> pl_TBCO_to_NHSC
+    TR_DEV_DAILY_0630AM --> pl_NHSC_V_KONP
+    TR_DEV_DAILY_0630AM --> PL_Salesforce_Master
+    TR_Dev_First_11Days_and_LastDay[⏰ TR_Dev_First_11Days_and_LastDay]
+    TR_PRD_DAILY_1205AM[⏰ TR_PRD_DAILY_1205AM]
+    TR_PRD_DAILY_1205AM --> PL_CALENDAR_FLAGS
+    TR_PRD_DAILY_1205AM --> PL_MATERIAL_MASTER_DATA
+    TR_PRD_DAILY_1205AM --> PL_CUSTOMER_MASTER_DATA
+    TR_PRD_DAILY_1205AM --> PL_TBCO_MASTER_DATA
+    TR_PRD_DAILY_1205AM --> PL_GET_Shipping_Days_Updates
+    TR_DEV_DAILY_1205AM[⏰ TR_DEV_DAILY_1205AM]
+    TR_DEV_DAILY_1205AM --> PL_CALENDAR_FLAGS
+    TR_DEV_DAILY_1205AM --> PL_MATERIAL_MASTER_DATA
+    TR_DEV_DAILY_1205AM --> PL_CUSTOMER_MASTER_DATA
+    TR_DEV_DAILY_1205AM --> pl_NHSC_NHSC_RPT_AMDR_V_MARA
+    TR_DEV_DAILY_1205AM --> PL_GET_Shipping_Days_Updates
+    TR_DEV_DAILY_1205AM --> PL_Circana_Consumption
+    TR_PRD_DAILY_Every_3_Hours[⏰ TR_PRD_DAILY_Every 3 Hours]
+    TR_PRD_DAILY_Every_3_Hours --> SHP_Master
+    TR_PRD_DAILY_Every_3_Hours --> PL_ColleagueDataMedicalMedia_TemplateFile
+    TR_DEV_MON_TO_FRI_0500AM[⏰ TR_DEV_MON_TO_FRI_0500AM]
+    TR_DEV_MON_TO_FRI_0500AM --> pl_IntegratedOrders
+    TR_PRD_First_11Days_and_LastDay[⏰ TR_PRD_First_11Days_and_LastDay]
+    TR_PRD_First_11Days_and_LastDay --> PL_Monthly_IncomeStatement
+    TR_PRD_DAILY_1600[⏰ TR_PRD_DAILY_1600]
+    TR_PRD_DAILY_1600 --> SNOWFLAKE_TO_DW_PIPELINE
+    TR_PRD_DAILY_1600 --> PL_PURITAN_ORDER_HOURLY
+    TR_DEV_DAILY_1600[⏰ TR_DEV_DAILY_1600]
+    TR_DEV_DAILY_1600 --> SNOWFLAKE_TO_DW_PIPELINE
+    TR_PRD_DAILY_0630AM[⏰ TR_PRD_DAILY_0630AM]
+    TR_PRD_DAILY_0630AM --> PL_DEMAND_PLANNING_REPORTS
+    TR_PRD_DAILY_0630AM --> PL_OSPREY_TO_AZURE_SYNAPSE
+    TR_PRD_DAILY_0630AM --> pl_TBCO_to_NHSC
+    TR_PRD_DAILY_0630AM --> PL_BasePrice
+    TR_PRD_DAILY_0630AM --> PL_Salesforce_Master
+    TR_PRD_DAILY_0700AM[⏰ TR_PRD_DAILY_0700AM]
+    TR_PRD_DAILY_0700AM --> PL_PCard_ColleagueData
+    TR_PRD_DAILY_0700AM --> PL_CostCenter_Reporting
+    TR_PRD_DAILY_0700AM --> PL_OrderManagement
+    TR_PRD_DAILY_0700AM --> pl_NHSC_Planned_Process_SnapShot_Master
+    TR_PRD_DAILY_0700AM --> pl_AgeingStockReport
+    TR_PRD_DAILY_0700AM --> pl_RRP4
+    TR_PRD_DAILY_0700AM --> PL_ColleagueDataMedicalMedia_TemplateFile
+    TR_PRD_DAILY_3AM[⏰ TR_PRD_DAILY_3AM]
+    TR_PRD_DAILY_3AM --> pl_NHSC_GlobalSC_Master
+    TR_PRD_DAILY_3AM --> pl_NHSC_Product_Hierarchy
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_BR_BillOfMaterial
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_GeneralMaterialData
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_MaterialDescriptions
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_MaterialGroupDescriptions
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_OOS_DATA
+    TR_PRD_DAILY_3AM --> pl_NHSC_V_OOS_DATA_1
+    TR_PRD_DAILY_3AM --> pl_GetVendorMaster
+    TR_PRD_DAILY_3AM --> PL_AS400_BulkPlan
+    TR_PRD_DAILY_3AM --> BOM_Master_FullLoad
+    TR_PRD_MON_TO_FRI_0500AM[⏰ TR_PRD_MON_TO_FRI_0500AM]
+    TR_PRD_MON_TO_FRI_0500AM --> pl_IntegratedOrders
+    TR_PRD_MONTHLY_0600AM[⏰ TR_PRD_MONTHLY_0600AM]
+    TR_PRD_MONTHLY_0600AM --> PL_OSPREY_TO_AZURE_SYNAPSE_SNAPSHOT
+    TR_PRD_MONTHLY_0600AM --> PL_PURITAN_CUSTOMER_SEGMENTATION
+    TR_PRD_DAILY_0300[⏰ TR_PRD_DAILY_0300]
+    TR_PRD_DAILY_0300 --> PL_OrderStatusTracking
+    TR_PRD_DAILY_0300 --> PL_OrderChangeLogIntegrated
+    TR_PRD_DAILY_0300 --> PL_DWH_TO_OSD
+    TR_PRD_DAILY_0300 --> PL_PURITAN_DATA_TO_AZURE
+    TR_PRD_DAILY_0300 --> PL_PURITAN_SHIPEDGE_ORDERS_RECON
+    TR_PRD_DAILY_0300 --> pl_NHSC_Planned_Process_SnapShot_Master
+    TR_PRD_DAILY_0300 --> pl_PhysicalStock
+    TR_PRD_DAILY_0300 --> pl_Get_AS400_Tables
+    TR_PRD_DAILY_0400AM[⏰ TR_PRD_DAILY_0400AM]
+    TR_PRD_DAILY_0400AM --> PL_GSC_ORDERHD_STATUS
+    TR_PRD_DAILY_0400AM --> PL_PURITAN_SHPEDGE_INVENTORY
+    TR_PRD_DAILY_0400AM --> PL_Master_Amazon_SFR
+    TR_PRD_DAILY_0400AM --> PL_Master_Amazon_MarketShare
+    TR_PRD_DAILY_0400AM --> PL_TBCO_PURITAN_AFRAME_DATA
+    TR_PRD_DAILY_0400AM --> PL_GET_Customer_Master_Grouping
+    TR_PRD_DAILY_0400AM --> PL_PURITAN_SETTLMT_PYMT_ADJ_TO_AZURE
+    TR_PRD_DAILY_0400AM --> pl_NHSC_V_A004
+    TR_PRD_DAILY_0400AM --> pl_NHSC_V_KONP
+    TR_PRD_DAILY_0400AM --> PL_GET_ProductGroups
+    TR_PRD_DAILY_0400AM --> PL_GET_Orgain_YTD_Actuals
+    TR_PRD_DAILY_0400AM --> PL_AGILE_PQM_DATA_TO_AZURE
+    TR_PRD_DAILY_2PM[⏰ TR_PRD_DAILY_2PM]
+    TR_PRD_DAILY_2PM --> pl_AgeingStockReport
+    TR_PRD_DAILY_2PM --> pl_GetDemandPlan_Hist
+    TR_PRD_DAILY_2PM --> pl_RRP4
+    TR_PRD_DAILY_9AM[⏰ TR_PRD_DAILY_9AM]
+    TR_PRD_DAILY_9AM --> pl_AgeingStockReport
+    TR_PRD_DAILY_9AM --> PL_PURITAN_DATA_TO_AZURE
+    TR_PRD_DAILY_9AM --> pl_GetVendorMaster
+    TR_PRD_DAILY_9AM --> pl_RRP4
+    TR_DEV_DAILY_2PM[⏰ TR_DEV_DAILY_2PM]
+    TR_DEV_DAILY_2PM --> pl_AgeingStockReport
+    TR_DEV_DAILY_2PM --> pl_GetDemandPlan_Hist
+    TR_DEV_DAILY_9AM[⏰ TR_DEV_DAILY_9AM]
+    TR_DEV_DAILY_9AM --> PL_OrderManagement
+    TR_DEV_DAILY_9AM --> pl_AgeingStockReport
+    TR_DEV_DAILY_9AM --> PL_AmazonFactDetailSalesDaily
+    TR_DEV_DAILY_9AM --> PL_Amazon_ESG_ERP
+    DS_C2C_SAPHANA_B9E_Generic[(💾 DS_C2C_SAPHANA_B9E_Generic)] --> CD_CV_SALES_SUMMARY_PBI{🔄 CD_CV_SALES_SUMMARY_PBI}
+    CD_CV_SALES_SUMMARY_PBI --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_EDW_SNOWFLAKE_PROD[(💾 DS_EDW_SNOWFLAKE_PROD)] --> Copy_data1{🔄 Copy data1}
+    Copy_data1 --> DS_ADLS_BLOB_Generic_COPY[(💾 DS_ADLS_BLOB_Generic_COPY)]
+    DS_C2C_SAPHANA_B9E_Generic[(💾 DS_C2C_SAPHANA_B9E_Generic)] --> Copy_data1{🔄 Copy data1}
+    Copy_data1 --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_SQL_GSCDB[(💾 DS_SQL_GSCDB)] --> CD_V_MaterialGroupDescriptions{🔄 CD_V_MaterialGroupDescriptions}
+    CD_V_MaterialGroupDescriptions --> DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_MaterialGroupDescriptions_Synapse{🔄 CD_V_MaterialGroupDescriptions_Synapse}
+    CD_V_MaterialGroupDescriptions_Synapse --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_MaterialGroupDescriptions_Archive{🔄 CD_V_MaterialGroupDescriptions_Archive}
+    CD_V_MaterialGroupDescriptions_Archive --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_SQL_GSCDB[(💾 DS_SQL_GSCDB)] --> CD_V_MaterialDescriptions{🔄 CD_V_MaterialDescriptions}
+    CD_V_MaterialDescriptions --> DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_MaterialDescriptions_Synapse{🔄 CD_V_MaterialDescriptions_Synapse}
+    CD_V_MaterialDescriptions_Synapse --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_MaterialDescriptions_Archive{🔄 CD_V_MaterialDescriptions_Archive}
+    CD_V_MaterialDescriptions_Archive --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_ADLS_Generic[(💾 DS_ADLS_Generic)] --> Copy_data1{🔄 Copy data1}
+    Copy_data1 --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_SQL_GSCDB[(💾 DS_SQL_GSCDB)] --> CD_V_KONP{🔄 CD_V_KONP}
+    CD_V_KONP --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_ADLS_Generic[(💾 DS_ADLS_Generic)] --> CD_V_KONP_Synapse{🔄 CD_V_KONP_Synapse}
+    CD_V_KONP_Synapse --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_ASA_Generic[(💾 DS_ASA_Generic)] --> acty_sql_to_adls_extract_parquet{🔄 acty_sql_to_adls_extract_parquet}
+    acty_sql_to_adls_extract_parquet --> ds_adls2_Parquet[(💾 ds_adls2_Parquet)]
+    DS_EDW_SNOWFLAKE_PROD[(💾 DS_EDW_SNOWFLAKE_PROD)] --> Copy_From_SF_to_Public_Blob{🔄 Copy From SF to Public Blob}
+    Copy_From_SF_to_Public_Blob --> DS_ADLS_BLOB_Generic_COPY[(💾 DS_ADLS_BLOB_Generic_COPY)]
+    DS_ADLS_BLOB_Generic_COPY[(💾 DS_ADLS_BLOB_Generic_COPY)] --> Copy_From_Public_Blob_to_ADLS{🔄 Copy From Public Blob to ADLS}
+    Copy_From_Public_Blob_to_ADLS --> DS_ADLS_Generic_COPY[(💾 DS_ADLS_Generic_COPY)]
+    DS_ADLS_Generic_COPY[(💾 DS_ADLS_Generic_COPY)] --> Copy_from_ADLS_to_Synapse{🔄 Copy from ADLS to Synapse}
+    Copy_from_ADLS_to_Synapse --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_SQL_GSCDB[(💾 DS_SQL_GSCDB)] --> CD_V_PlantDataForMaterial{🔄 CD_V_PlantDataForMaterial}
+    CD_V_PlantDataForMaterial --> DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_PlantDataForMaterial_Synapse{🔄 CD_V_PlantDataForMaterial_Synapse}
+    CD_V_PlantDataForMaterial_Synapse --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
+    DS_ADLS_Generic_DynamicDelimiter[(💾 DS_ADLS_Generic_DynamicDelimiter)] --> CD_V_PlantDataForMaterial_Archive{🔄 CD_V_PlantDataForMaterial_Archive}
+    CD_V_PlantDataForMaterial_Archive --> DS_ADLS_Generic[(💾 DS_ADLS_Generic)]
+    DS_ADLS_Generic[(💾 DS_ADLS_Generic)] --> Copy_data1{🔄 Copy data1}
+    Copy_data1 --> DS_ASA_Generic[(💾 DS_ASA_Generic)]
