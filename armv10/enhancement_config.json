@@ -1,0 +1,62 @@
+{
+  "excel_enhancements": {
+    "enabled": true,
+    
+    "core_formatting": {
+      "enabled": true,
+      "column_sizing": true,
+      "number_format": true,
+      "alignment": true,
+      "borders": true,
+      "row_shading": true,
+      "header_style": true
+    },
+    
+    "conditional_formatting": {
+      "enabled": true,
+      "data_bars": true,
+      "icon_sets": true,
+      "color_scales": true,
+      "status_highlighting": true
+    },
+    
+    "hyperlinks": {
+      "enabled": true,
+      "summary_navigation": true,
+      "auto_convert_references": true
+    },
+    
+    "protection": {
+      "enabled": false,
+      "password": null
+    },
+    
+    "enhanced_summary": {
+      "enabled": true,
+      "project_banner": true,
+      "executive_summary": true,
+      "critical_alerts": true,
+      "metrics_dashboard": true,
+      "resource_overview": true,
+      "recommendations": true
+    },
+    
+    "advanced_dashboard": {
+      "enabled": true,
+      "health_score": true,
+  "cost_analysis": false,
+      "complexity_heat_map": true,
+      "performance_insights": true,
+      "top_pipelines": true,
+      "security_checklist": true,
+      "activity_distribution": true,
+      "network_stats": true,
+      "change_risk": true
+    },
+    
+    "page_setup": {
+      "enabled": true,
+      "orientation": "landscape"
+    }
+  }
+}
