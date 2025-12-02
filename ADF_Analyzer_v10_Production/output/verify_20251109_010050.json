@@ -1,0 +1,30 @@
+{
+  "Pipelines": {
+    "value": 475,
+    "source": "Computed"
+  },
+  "DataFlows": {
+    "value": 172,
+    "source": "Computed"
+  },
+  "Datasets": {
+    "value": 78,
+    "source": "Computed"
+  },
+  "Triggers": {
+    "value": 101,
+    "source": "Computed"
+  },
+  "Dependencies": {
+    "value": 10313,
+    "source": "Computed"
+  },
+  "Orphaned": {
+    "value": 141,
+    "source": "Computed"
+  },
+  "Health": {
+    "value": 70,
+    "source": "Computed"
+  }
+}

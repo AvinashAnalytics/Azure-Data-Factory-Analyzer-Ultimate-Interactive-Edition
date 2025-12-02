@@ -1,0 +1,26 @@
+{
+  "excel_enhancements": {
+    "enabled": true,
+    "core_formatting": {
+      "enabled": false
+    },
+    "conditional_formatting": {
+      "enabled": false
+    },
+    "hyperlinks": {
+      "enabled": false
+    },
+    "enhanced_summary": {
+      "enabled": true
+    },
+    "advanced_dashboard": {
+      "enabled": false,
+      "health_score": true,
+      "complexity_heat_map": true,
+      "performance_insights": true,
+      "top_pipelines": true,
+      "security_checklist": true,
+      "cost_analysis": false
+    }
+  }
+}
