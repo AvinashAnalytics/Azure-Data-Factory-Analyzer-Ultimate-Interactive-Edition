@@ -7,6 +7,15 @@
   />
 </p>
 
+<!-- ================== APP DEMO GIF ================== -->
+<p align="center">
+  <img 
+    src="https://raw.githubusercontent.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/main/docs/assets/appdemo.gif"
+    alt="ADF Analyzer v10.1 — Application Demo"
+    width="92%"
+  />
+</p>
+
 <!-- ================== ANIMATED SHOWCASE HEADER ================== -->
 <p align="center">
   <img 
@@ -26,6 +35,9 @@
 </p>
 
 <br>
+
+<!-- ================== MAIN TITLE ================== -->
+<div align="center">
 
 
 
@@ -2229,5 +2241,6 @@ cat PYTHON_FILES_REFERENCE.md
 **⭐ Star this repository if you find it helpful!**
 
 </div>
+
 
 
