@@ -1,73 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 80" width="900" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" width="1000" height="100">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    <!-- Azure gradient -->
+    <linearGradient id="azureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0078d4">
+        <animate attributeName="stop-color" values="#0078d4;#00bcf2;#0078d4" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="33%" stop-color="#00bcf2">
+        <animate attributeName="stop-color" values="#00bcf2;#50e6ff;#00bcf2" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="66%" stop-color="#50e6ff">
+        <animate attributeName="stop-color" values="#50e6ff;#0078d4;#50e6ff" dur="5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0078d4">
+        <animate attributeName="stop-color" values="#0078d4;#00bcf2;#0078d4" dur="5s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00B4D8">
-        <animate attributeName="stop-color" values="#00B4D8;#48CAE4;#90E0EF;#48CAE4;#00B4D8" dur="3s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="50%" style="stop-color:#48CAE4">
-        <animate attributeName="stop-color" values="#48CAE4;#90E0EF;#00B4D8;#90E0EF;#48CAE4" dur="3s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" style="stop-color:#90E0EF">
-        <animate attributeName="stop-color" values="#90E0EF;#00B4D8;#48CAE4;#00B4D8;#90E0EF" dur="3s" repeatCount="indefinite"/>
-      </stop>
+    
+    <!-- Dark tech background -->
+    <linearGradient id="techBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#112240"/>
     </linearGradient>
+    
+    <!-- Grid pattern -->
+    <pattern id="gridPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,188,242,0.1)" stroke-width="0.5"/>
+    </pattern>
+    
+    <!-- Glow filter -->
+    <filter id="azureGlow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
   <!-- Background -->
-  <rect width="900" height="80" rx="12" fill="url(#bgGrad)"/>
+  <rect width="1000" height="100" rx="14" fill="url(#techBg)"/>
   
-  <!-- Border glow -->
-  <rect width="898" height="78" x="1" y="1" rx="11" fill="none" stroke="#00B4D8" stroke-width="1" opacity="0.5">
-    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+  <!-- Grid overlay -->
+  <rect width="1000" height="100" rx="14" fill="url(#gridPattern)"/>
+  
+  <!-- Animated gradient border -->
+  <rect x="2" y="2" width="996" height="96" rx="12" fill="none" stroke="url(#azureGrad)" stroke-width="2">
+    <animate attributeName="stroke-dasharray" values="0,2000;2000,0;0,2000" dur="6s" repeatCount="indefinite"/>
   </rect>
   
-  <!-- Rocket icon -->
-  <text x="80" y="48" font-size="28" text-anchor="middle">
-    🚀
-    <animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
-  </text>
+  <!-- Data flow lines -->
+  <g opacity="0.4">
+    <line x1="0" y1="50" x2="150" y2="50" stroke="url(#azureGrad)" stroke-width="2" stroke-dasharray="10,5">
+      <animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="850" y1="50" x2="1000" y2="50" stroke="url(#azureGrad)" stroke-width="2" stroke-dasharray="10,5">
+      <animate attributeName="stroke-dashoffset" values="0;30" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
   
-  <!-- Main text -->
-  <text x="450" y="35" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="20" fill="url(#textGrad)">
-    ENTERPRISE DOCUMENTATION SHOWCASE
-    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
-  </text>
+  <!-- Circuit nodes -->
+  <circle cx="50" cy="50" r="8" fill="none" stroke="#00bcf2" stroke-width="2">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="50" cy="50" r="3" fill="#50e6ff">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="950" cy="50" r="8" fill="none" stroke="#00bcf2" stroke-width="2">
+    <animate attributeName="r" values="6;10;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="50" r="3" fill="#50e6ff">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="1s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Rocket with tech circle -->
+  <g transform="translate(120, 50)">
+    <circle r="25" fill="none" stroke="rgba(0,188,242,0.3)" stroke-width="1" stroke-dasharray="5,3">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <text y="8" text-anchor="middle" font-size="28" filter="url(#azureGlow)">🚀</text>
+  </g>
+  
+  <!-- Main title -->
+  <g filter="url(#azureGlow)">
+    <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', 'SF Pro Display', sans-serif" font-weight="700" font-size="22" fill="url(#azureGrad)" letter-spacing="2">
+      ENTERPRISE DOCUMENTATION SHOWCASE
+    </text>
+  </g>
   
   <!-- Subtitle -->
-  <text x="450" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="600" font-size="14" fill="#DC143C">
-    SOURCE CODE PRIVATE &amp; PROPRIETARY
-    <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
+  <text x="500" y="65" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="12" fill="#64ffda" letter-spacing="3">
+    ▸ SOURCE CODE PRIVATE &amp; PROPRIETARY ◂
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
   </text>
   
-  <!-- Lock icon -->
-  <text x="820" y="48" font-size="28" text-anchor="middle">
-    🔒
-    <animate attributeName="opacity" values="1;0.6;1" dur="1.5s" repeatCount="indefinite"/>
-  </text>
+  <!-- Lock with tech circle -->
+  <g transform="translate(880, 50)">
+    <circle r="25" fill="none" stroke="rgba(0,188,242,0.3)" stroke-width="1" stroke-dasharray="5,3">
+      <animateTransform attributeName="transform" type="rotate" values="360;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <text y="8" text-anchor="middle" font-size="28" filter="url(#azureGlow)">🔒</text>
+  </g>
   
-  <!-- Decorative dots -->
-  <circle cx="150" cy="40" r="3" fill="#00B4D8">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  <!-- Floating particles -->
+  <circle cx="300" cy="25" r="2" fill="#50e6ff">
+    <animate attributeName="cy" values="25;20;30;25" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="170" cy="40" r="3" fill="#48CAE4">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  <circle cx="700" cy="75" r="2" fill="#50e6ff">
+    <animate attributeName="cy" values="75;80;70;75" dur="4s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="190" cy="40" r="3" fill="#90E0EF">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"/>
-  </circle>
-  
-  <circle cx="710" cy="40" r="3" fill="#90E0EF">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="730" cy="40" r="3" fill="#48CAE4">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="750" cy="40" r="3" fill="#00B4D8">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+  <circle cx="550" cy="85" r="1.5" fill="#00bcf2">
+    <animate attributeName="cy" values="85;80;90;85" dur="3s" begin="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
   </circle>
 </svg>
