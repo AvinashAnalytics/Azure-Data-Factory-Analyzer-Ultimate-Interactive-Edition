@@ -7,28 +7,33 @@
   />
 </p>
 
-<!-- ================== ANIMATED HEADER SVG ================== -->
+<!-- ================== ANIMATED SHOWCASE HEADER ================== -->
 <p align="center">
   <img 
     src="https://raw.githubusercontent.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/main/docs/assets/animated_showcase_header.svg"
-    alt="Enterprise Documentation Showcase"
-    width="85%"
+    alt="Enterprise Documentation Showcase - Source Code Private"
+    width="100%"
   />
 </p>
 
-<!-- ================== SHOWCASE BADGES ================== -->
+<!-- ================== STATUS BADGES ================== -->
 <p align="center">
-  <img src="https://img.shields.io/badge/🔒_SOURCE_CODE-PRIVATE_&_PROPRIETARY-DC143C?style=for-the-badge&labelColor=1a1a2e" alt="Source Code Private"/>
-  &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/📚_DOCUMENTATION-SHOWCASE_ONLY-00B4D8?style=for-the-badge&labelColor=1a1a2e" alt="Documentation Showcase"/>
-  &nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/🚀_ENTERPRISE-GRADE_TOOLKIT-00C853?style=for-the-badge&labelColor=1a1a2e" alt="Enterprise Grade"/>
+  <img src="https://img.shields.io/badge/🔒_SOURCE_CODE-PRIVATE_&_PROPRIETARY-DC143C?style=for-the-badge&labelColor=1a1a2e" alt="Private"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/📚_DOCUMENTATION-SHOWCASE_ONLY-00B4D8?style=for-the-badge&labelColor=1a1a2e" alt="Showcase"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/🏢_ENTERPRISE-GRADE_TOOLKIT-00C853?style=for-the-badge&labelColor=1a1a2e" alt="Enterprise"/>
 </p>
 
 <br>
 
 <!-- ================== MAIN TITLE ================== -->
 <div align="center">
+
+# 🚀 ADF Analyzer v10.1
+### Ultimate Interactive Edition
+
+<!-- Your existing badges and content continues here... -->
 
 # 🚀 ADF Analyzer v10.1
 ### Ultimate Interactive Edition
@@ -2230,3 +2235,4 @@ cat PYTHON_FILES_REFERENCE.md
 **⭐ Star this repository if you find it helpful!**
 
 </div>
+
