@@ -1,0 +1,78 @@
+graph TD
+    MASTER_DATALOAD_TRIGGER_SRE[⏰ MASTER_DATALOAD_TRIGGER_SRE]
+    MASTER_DATALOAD_TRIGGER_SRE --> pl_sqldw_sqldw_master_data_load_trigger_sre
+    US16_KROGER_TRIGGER_SRE[⏰ US16_KROGER_TRIGGER_SRE]
+    US16_KROGER_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    US16_MEIJER_TRIGGER_SRE[⏰ US16_MEIJER_TRIGGER_SRE]
+    US16_MEIJER_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    US16_WALMART_TRIGGER_SRE[⏰ US16_WALMART_TRIGGER_SRE]
+    US16_WALMART_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    POS_Weekly_PL_Scheduled_Trigger[⏰ POS_Weekly_PL_Scheduled_Trigger]
+    master_data_flow[⏰ master_data_flow]
+    TR_PRT_Tables_EH[⏰ TR_PRT_Tables_EH]
+    TR_PRT_Tables_EH --> pl_onpremsqldb_sqldw_enablehubextract_eh
+    US39_WALMART_US_TRIGGER_SRE[⏰ US39_WALMART_US_TRIGGER_SRE]
+    US39_WALMART_US_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    US39_MEIJER_TRIGGER_SRE[⏰ US39_MEIJER_TRIGGER_SRE]
+    US39_MEIJER_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    TR_Sales_CCS_EH[⏰ TR_Sales_CCS_EH]
+    US16_TARGET_TRIGGER_SRE[⏰ US16_TARGET_TRIGGER_SRE]
+    US16_TARGET_TRIGGER_SRE --> pl_saphana_adls2_retailer_trigger
+    TR_REFRESH_ISW_RUN_RATE_OSPREY[⏰ TR_REFRESH_ISW_RUN_RATE_OSPREY]
+    TR_REFRESH_ISW_RUN_RATE_OSPREY --> pl_fs_sqldw_isw_runrate_osprey
+    TR_REFRESH_XTEL_DAILY_SALES_OSPREY[⏰ TR_REFRESH_XTEL_DAILY_SALES_OSPREY]
+    TR_REFRESH_XTEL_DAILY_SALES_OSPREY --> pl_refresh_xtel_dailysales_osprey
+    US16_ALBERTSON_SRE[⏰ US16_ALBERTSON_SRE]
+    US16_ALBERTSON_SRE --> pl_saphana_adls2_retailer_trigger
+    TR_MONTHEND_FCST_LOAD[⏰ TR_MONTHEND_FCST_LOAD]
+    TR_MONTHEND_FCST_LOAD --> pl_sqldb_sqldw_xtel_fcstextract_monthend_osprey
+    TR_REFRESH_XTEL_RUNRATE_OSPREY[⏰ TR_REFRESH_XTEL_RUNRATE_OSPREY]
+    TR_REFRESH_XTEL_RUNRATE_OSPREY --> pl_refresh_xtel_runrate_osprey
+    TR_EXTRACT_WEEKLY_PROMO_OSPREY[⏰ TR_EXTRACT_WEEKLY_PROMO_OSPREY]
+    TR_EXTRACT_WEEKLY_PROMO_OSPREY --> pl_sqlddb_fs_promoextract_weekly_osprey
+    TR_REFRESH_XTEL_OMNICHANNEL_OSPREY[⏰ TR_REFRESH_XTEL_OMNICHANNEL_OSPREY]
+    TR_REFRESH_XTEL_OMNICHANNEL_OSPREY --> pl_sqldb_sqldw_xtel_omnichannel_osprey
+    TR_REFRESH_XTEL_WSR_OSPREY[⏰ TR_REFRESH_XTEL_WSR_OSPREY]
+    TR_REFRESH_XTEL_WSR_OSPREY --> pl_sqldb_sqldw_xtel_wsr_osprey
+    TR_CUSTOMER_MASTER_LOAD_OSPREY[⏰ TR_CUSTOMER_MASTER_LOAD_OSPREY]
+    TR_CUSTOMER_MASTER_LOAD_OSPREY --> pl_saphana_sqldw_customer_mstr_load_osprey
+    ds_blob_metadata[(💾 ds_blob_metadata)] --> pl_blob_sqldw_metadata_copy_sre{🔄 pl_blob_sqldw_metadata_copy_sre}
+    pl_blob_sqldw_metadata_copy_sre --> ds_sqldw_metadata[(💾 ds_sqldw_metadata)]
+    ds_blob_cal_new[(💾 ds_blob_cal_new)] --> pl_blob_sqldw_calendar{🔄 pl_blob_sqldw_calendar}
+    pl_blob_sqldw_calendar --> ds_sqldw_calendar[(💾 ds_sqldw_calendar)]
+    ds_sqldw_influx_store_sre[(💾 ds_sqldw_influx_store_sre)] --> Delta_Solution_Extract_Store{🔄 Delta_Solution_Extract_Store}
+    Delta_Solution_Extract_Store --> ds_adls2_f_store_sre[(💾 ds_adls2_f_store_sre)]
+    ds_sqldw_influx_store_sre[(💾 ds_sqldw_influx_store_sre)] --> InfluxSolutionExtractStore{🔄 InfluxSolutionExtractStore}
+    InfluxSolutionExtractStore --> ds_adls2_influx_gen_sre[(💾 ds_adls2_influx_gen_sre)]
+    ds_ftp_station_id_sre[(💾 ds_ftp_station_id_sre)] --> pl_ftp_adls2_station_id{🔄 pl_ftp_adls2_station_id}
+    pl_ftp_adls2_station_id --> ds_adls2_station_id_sre[(💾 ds_adls2_station_id_sre)]
+    ds_ftp_weather_data_sre[(💾 ds_ftp_weather_data_sre)] --> pl_ftp_adls2_weather_history_data{🔄 pl_ftp_adls2_weather_history_data}
+    pl_ftp_adls2_weather_history_data --> ds_adls2_weather_data_sre[(💾 ds_adls2_weather_data_sre)]
+    ds_sqldw_f_weather_data_sre[(💾 ds_sqldw_f_weather_data_sre)] --> WeatherDataExtract{🔄 WeatherDataExtract}
+    WeatherDataExtract --> ds_adls2_weather_data_extract_sre[(💾 ds_adls2_weather_data_extract_sre)]
+    ds_adls2_inbound_sre[(💾 ds_adls2_inbound_sre)] --> Copy_from_hot_to_cold_storage{🔄 Copy from hot to cold storage}
+    Copy_from_hot_to_cold_storage --> ds_adls2temp_sre[(💾 ds_adls2temp_sre)]
+    ds_file_registry_eh[(💾 ds_file_registry_eh)] --> pl_file_adls2_registry{🔄 pl_file_adls2_registry}
+    pl_file_adls2_registry --> ds_adls2_salesregistryload_eh[(💾 ds_adls2_salesregistryload_eh)]
+    ds_file_salesdashboardgeneric_eh[(💾 ds_file_salesdashboardgeneric_eh)] --> acty_pl_file_adls2_salesdashboard{🔄 acty_pl_file_adls2_salesdashboard}
+    acty_pl_file_adls2_salesdashboard --> ds_adls2_salesgeneric_onpremcopy_eh[(💾 ds_adls2_salesgeneric_onpremcopy_eh)]
+    ds_sqldw_salesstagegeneric_eh[(💾 ds_sqldw_salesstagegeneric_eh)] --> pl_sqldw_adls2_solutionextract_exception_parquet{🔄 pl_sqldw_adls2_solutionextract_exception_parquet}
+    pl_sqldw_adls2_solutionextract_exception_parquet --> ds_parquet_eh[(💾 ds_parquet_eh)]
+    ds_saphana_b9e_abc[(💾 ds_saphana_b9e_abc)] --> copy_saphana_adls2_custsales_cv{🔄 copy_saphana_adls2_custsales_cv}
+    copy_saphana_adls2_custsales_cv --> ds_adls2_osprey[(💾 ds_adls2_osprey)]
+    ds_adls2_osprey[(💾 ds_adls2_osprey)] --> copy_adls2_sqldw_custsales_cv_load{🔄 copy_adls2_sqldw_custsales_cv_load}
+    copy_adls2_sqldw_custsales_cv_load --> ds_sqldw_osprey[(💾 ds_sqldw_osprey)]
+    ds_saphana_b9e_abc[(💾 ds_saphana_b9e_abc)] --> copy_saphana_adls2_custcv_load{🔄 copy_saphana_adls2_custcv_load}
+    copy_saphana_adls2_custcv_load --> ds_adls2_osprey[(💾 ds_adls2_osprey)]
+    ds_adls2_osprey[(💾 ds_adls2_osprey)] --> copy_adls2_sqldw_custcv_load{🔄 copy_adls2_sqldw_custcv_load}
+    copy_adls2_sqldw_custcv_load --> ds_sqldw_osprey[(💾 ds_sqldw_osprey)]
+    ds_saphana_nbh_osprey[(💾 ds_saphana_nbh_osprey)] --> acty_saphana_sqldw_material_upc_mapping{🔄 acty_saphana_sqldw_material_upc_mapping}
+    acty_saphana_sqldw_material_upc_mapping --> ds_sqldw_osprey[(💾 ds_sqldw_osprey)]
+    ds_saphana_b9e_abc[(💾 ds_saphana_b9e_abc)] --> acty_copy_saphana_adls2_matsales{🔄 acty_copy_saphana_adls2_matsales}
+    acty_copy_saphana_adls2_matsales --> ds_adls2_osprey[(💾 ds_adls2_osprey)]
+    ds_saphana_b9e_abc[(💾 ds_saphana_b9e_abc)] --> acty_copy_saphana_adls2_mat{🔄 acty_copy_saphana_adls2_mat}
+    acty_copy_saphana_adls2_mat --> ds_adls2_osprey[(💾 ds_adls2_osprey)]
+    ds_saphana_nbh_osprey[(💾 ds_saphana_nbh_osprey)] --> acty_copy_saphana_adls2_PZMATREDI{🔄 acty_copy_saphana_adls2_PZMATREDI}
+    acty_copy_saphana_adls2_PZMATREDI --> ds_adls2_osprey[(💾 ds_adls2_osprey)]
+    ds_adls2_osprey[(💾 ds_adls2_osprey)] --> acty_copy_adls2_sqldw_matsales{🔄 acty_copy_adls2_sqldw_matsales}
+    acty_copy_adls2_sqldw_matsales --> ds_sqldw_osprey[(💾 ds_sqldw_osprey)]
