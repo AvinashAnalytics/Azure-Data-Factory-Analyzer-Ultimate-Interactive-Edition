@@ -1,0 +1,244 @@
+<!-- SECTION 5: ARCHITECTURE -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f6feb"/>
+      <stop offset="100%" style="stop-color:#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="orchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#da3b01"/>
+      <stop offset="100%" style="stop-color:#f0883e"/>
+    </linearGradient>
+    <linearGradient id="extGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#238636"/>
+      <stop offset="100%" style="stop-color:#3fb950"/>
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a371f7"/>
+    </linearGradient>
+    <linearGradient id="outGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#f778ba"/>
+    </linearGradient>
+    
+    <!-- Arrow Marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowheadGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3fb950"/>
+    </marker>
+    <marker id="arrowheadPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a371f7"/>
+    </marker>
+    <marker id="arrowheadOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0883e"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="700" fill="url(#archBg)"/>
+  
+  <!-- Section Header -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+      System Architecture
+    </text>
+    <rect x="-80" y="15" width="160" height="3" rx="1.5" fill="#a371f7" opacity="0.6"/>
+  </g>
+  
+  <!-- Architecture Flow Diagram -->
+  
+  <!-- Input Layer -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#21262d" stroke="#1f6feb" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="10" fill="url(#inputGrad)"/>
+    <rect x="0" y="25" width="200" height="10" fill="url(#inputGrad)"/>
+    <text x="100" y="24" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">INPUT LAYER</text>
+    
+    <!-- ARM Template Icon -->
+    <rect x="20" y="50" width="70" height="55" rx="4" fill="#30363d"/>
+    <text x="55" y="75" text-anchor="middle" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="10">ARM</text>
+    <text x="55" y="90" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="9">Template</text>
+    
+    <!-- Config Icon -->
+    <rect x="110" y="50" width="70" height="55" rx="4" fill="#30363d"/>
+    <text x="145" y="75" text-anchor="middle" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="10">Config</text>
+    <text x="145" y="90" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="9">JSON</text>
+  </g>
+  
+  <!-- Arrow from Input to Orchestration -->
+  <path d="M260 180 L320 180" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrowhead)" fill="none"/>
+  
+  <!-- Orchestration Layer -->
+  <g transform="translate(330, 120)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#21262d" stroke="#f0883e" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="10" fill="url(#orchGrad)"/>
+    <rect x="0" y="25" width="200" height="10" fill="url(#orchGrad)"/>
+    <text x="100" y="24" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">ORCHESTRATION</text>
+    
+    <rect x="20" y="50" width="160" height="25" rx="4" fill="#30363d"/>
+    <text x="100" y="67" text-anchor="middle" fill="#f0883e" font-family="system-ui, sans-serif" font-size="11">CLI Runner</text>
+    
+    <rect x="20" y="80" width="160" height="25" rx="4" fill="#30363d"/>
+    <text x="100" y="97" text-anchor="middle" fill="#f0883e" font-family="system-ui, sans-serif" font-size="11">UTF-8 Wrapper</text>
+  </g>
+  
+  <!-- Arrow from Orchestration to Extension -->
+  <path d="M540 180 L600 180" stroke="#f0883e" stroke-width="2" marker-end="url(#arrowheadOrange)" fill="none"/>
+  
+  <!-- Extension Layer -->
+  <g transform="translate(610, 120)">
+    <rect x="0" y="0" width="200" height="120" rx="10" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="35" rx="10" fill="url(#extGrad)"/>
+    <rect x="0" y="25" width="200" height="10" fill="url(#extGrad)"/>
+    <text x="100" y="24" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">EXTENSION</text>
+    
+    <rect x="20" y="50" width="160" height="25" rx="4" fill="#30363d"/>
+    <text x="100" y="67" text-anchor="middle" fill="#3fb950" font-family="system-ui, sans-serif" font-size="11">Functional Patches</text>
+    
+    <rect x="20" y="80" width="160" height="25" rx="4" fill="#30363d"/>
+    <text x="100" y="97" text-anchor="middle" fill="#3fb950" font-family="system-ui, sans-serif" font-size="11">Excel Enhancements</text>
+  </g>
+  
+  <!-- Arrow from Extension to Core -->
+  <path d="M820 180 L880 180" stroke="#3fb950" stroke-width="2" marker-end="url(#arrowheadGreen)" fill="none"/>
+  
+  <!-- Core Engine Layer -->
+  <g transform="translate(890, 100)">
+    <rect x="0" y="0" width="260" height="160" rx="10" fill="#21262d" stroke="#a371f7" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="35" rx="10" fill="url(#coreGrad)"/>
+    <rect x="0" y="25" width="260" height="10" fill="url(#coreGrad)"/>
+    <text x="130" y="24" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">CORE ENGINE</text>
+    
+    <!-- Core Phases -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="50" y="15" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Load</text>
+      
+      <rect x="110" y="0" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="160" y="15" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Register</text>
+      
+      <rect x="0" y="28" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="50" y="43" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Parse</text>
+      
+      <rect x="110" y="28" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="160" y="43" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Graph</text>
+      
+      <rect x="0" y="56" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="50" y="71" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Analyze</text>
+      
+      <rect x="110" y="56" width="100" height="22" rx="4" fill="#30363d"/>
+      <text x="160" y="71" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="10">Export</text>
+    </g>
+  </g>
+  
+  <!-- Arrow from Core to Output -->
+  <path d="M1020 270 L1020 310" stroke="#a371f7" stroke-width="2" marker-end="url(#arrowheadPurple)" fill="none"/>
+  
+  <!-- Output Layer -->
+  <g transform="translate(890, 320)">
+    <rect x="0" y="0" width="260" height="100" rx="10" fill="#21262d" stroke="#f778ba" stroke-width="2"/>
+    <rect x="0" y="0" width="260" height="35" rx="10" fill="url(#outGrad)"/>
+    <rect x="0" y="25" width="260" height="10" fill="url(#outGrad)"/>
+    <text x="130" y="24" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">OUTPUT</text>
+    
+    <rect x="20" y="50" width="100" height="35" rx="4" fill="#30363d"/>
+    <text x="70" y="72" text-anchor="middle" fill="#f778ba" font-family="system-ui, sans-serif" font-size="11">Excel Report</text>
+    
+    <rect x="140" y="50" width="100" height="35" rx="4" fill="#30363d"/>
+    <text x="190" y="72" text-anchor="middle" fill="#f778ba" font-family="system-ui, sans-serif" font-size="11">Archive</text>
+  </g>
+  
+  <!-- Dashboard Section -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="500" height="150" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="250" y="30" text-anchor="middle" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="16" font-weight="600">DASHBOARD LAYER</text>
+    
+    <g transform="translate(30, 50)">
+      <rect x="0" y="0" width="130" height="80" rx="6" fill="#30363d"/>
+      <text x="65" y="35" text-anchor="middle" fill="#79c0ff" font-family="system-ui, sans-serif" font-size="12">Streamlit UI</text>
+      <text x="65" y="55" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">adf_dashboard.py</text>
+      
+      <rect x="150" y="0" width="130" height="80" rx="6" fill="#30363d"/>
+      <text x="215" y="35" text-anchor="middle" fill="#79c0ff" font-family="system-ui, sans-serif" font-size="12">Interactive</text>
+      <text x="215" y="55" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Analytics</text>
+      
+      <rect x="300" y="0" width="130" height="80" rx="6" fill="#30363d"/>
+      <text x="365" y="35" text-anchor="middle" fill="#79c0ff" font-family="system-ui, sans-serif" font-size="12">Config</text>
+      <text x="365" y="55" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Management</text>
+    </g>
+  </g>
+  
+  <!-- Component Relationships -->
+  <g transform="translate(50, 510)">
+    <text x="0" y="0" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Component Relationships</text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Wrapper Layer -->
+      <rect x="0" y="0" width="220" height="55" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="0" y="0" width="5" height="55" rx="2" fill="#f0883e"/>
+      <text x="20" y="22" fill="#f0883e" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Wrapper Layer</text>
+      <text x="20" y="42" fill="#8b949e" font-family="system-ui, sans-serif" font-size="11">Safe execution, Unicode handling</text>
+      
+      <!-- Orchestrator -->
+      <rect x="240" y="0" width="220" height="55" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="240" y="0" width="5" height="55" rx="2" fill="#3fb950"/>
+      <text x="260" y="22" fill="#3fb950" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Orchestrator</text>
+      <text x="260" y="42" fill="#8b949e" font-family="system-ui, sans-serif" font-size="11">Business logic coordination</text>
+      
+      <!-- Core Engine -->
+      <rect x="480" y="0" width="220" height="55" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="480" y="0" width="5" height="55" rx="2" fill="#a371f7"/>
+      <text x="500" y="22" fill="#a371f7" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Core Engine</text>
+      <text x="500" y="42" fill="#8b949e" font-family="system-ui, sans-serif" font-size="11">ARM parsing, dependency analysis</text>
+      
+      <!-- Enhancement -->
+      <rect x="720" y="0" width="220" height="55" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="720" y="0" width="5" height="55" rx="2" fill="#f778ba"/>
+      <text x="740" y="22" fill="#f778ba" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Enhancement</text>
+      <text x="740" y="42" fill="#8b949e" font-family="system-ui, sans-serif" font-size="11">Professional Excel output</text>
+      
+      <!-- Dashboard -->
+      <rect x="960" y="0" width="180" height="55" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="960" y="0" width="5" height="55" rx="2" fill="#58a6ff"/>
+      <text x="980" y="22" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Dashboard</text>
+      <text x="980" y="42" fill="#8b949e" font-family="system-ui, sans-serif" font-size="11">Interactive Streamlit UI</text>
+    </g>
+  </g>
+  
+  <!-- Processing Pipeline -->
+  <g transform="translate(50, 620)">
+    <text x="0" y="0" fill="#a371f7" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Eight-Phase Processing Pipeline</text>
+    
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="120" height="35" rx="6" fill="#1f6feb"/>
+      <text x="60" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">1. LOAD</text>
+      
+      <rect x="135" y="0" width="120" height="35" rx="6" fill="#0d419d"/>
+      <text x="195" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">2. REGISTER</text>
+      
+      <rect x="270" y="0" width="120" height="35" rx="6" fill="#238636"/>
+      <text x="330" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">3. PARSE</text>
+      
+      <rect x="405" y="0" width="120" height="35" rx="6" fill="#1a7f37"/>
+      <text x="465" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">4. DEPEND</text>
+      
+      <rect x="540" y="0" width="120" height="35" rx="6" fill="#8b5cf6"/>
+      <text x="600" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">5. GRAPH</text>
+      
+      <rect x="675" y="0" width="120" height="35" rx="6" fill="#6e40c9"/>
+      <text x="735" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">6. TOPO</text>
+      
+      <rect x="810" y="0" width="120" height="35" rx="6" fill="#f0883e"/>
+      <text x="870" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">7. STATS</text>
+      
+      <rect x="945" y="0" width="120" height="35" rx="6" fill="#da3b01"/>
+      <text x="1005" y="22" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11">8. EXPORT</text>
+    </g>
+  </g>
+</svg>
