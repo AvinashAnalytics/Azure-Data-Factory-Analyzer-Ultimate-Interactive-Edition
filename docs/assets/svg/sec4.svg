@@ -1,0 +1,99 @@
+<!-- SECTION 4: QUICK START -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%">
+  <defs>
+    <linearGradient id="quickBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="terminalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c2128"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="480" fill="url(#quickBg)"/>
+  
+  <!-- Section Header -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" fill="#3fb950" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+      Quick Start
+    </text>
+    <text x="0" y="30" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="16">
+      5-Minute Setup
+    </text>
+    <rect x="-50" y="45" width="100" height="3" rx="1.5" fill="#3fb950" opacity="0.6"/>
+  </g>
+  
+  <!-- Terminal Window -->
+  <g transform="translate(100, 100)">
+    <!-- Terminal Frame -->
+    <rect x="0" y="0" width="600" height="260" rx="8" fill="url(#terminalGrad)" stroke="#30363d" stroke-width="1"/>
+    
+    <!-- Terminal Header -->
+    <rect x="0" y="0" width="600" height="32" rx="8" fill="#21262d"/>
+    <rect x="0" y="24" width="600" height="8" fill="#21262d"/>
+    
+    <!-- Terminal Buttons -->
+    <circle cx="20" cy="16" r="6" fill="#f85149"/>
+    <circle cx="40" cy="16" r="6" fill="#f0883e"/>
+    <circle cx="60" cy="16" r="6" fill="#3fb950"/>
+    
+    <text x="300" y="20" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Terminal</text>
+    
+    <!-- Command Lines -->
+    <g transform="translate(20, 50)">
+      <text x="0" y="0" fill="#8b949e" font-family="monospace" font-size="13"># 1. Clone or download the repository</text>
+      <text x="0" y="22" fill="#79c0ff" font-family="monospace" font-size="13">git clone https://github.com/AvinashAnalytics/...</text>
+      <text x="0" y="44" fill="#79c0ff" font-family="monospace" font-size="13">cd ADF_Analyzer_v10_Production</text>
+      
+      <text x="0" y="75" fill="#8b949e" font-family="monospace" font-size="13"># 2. Install dependencies</text>
+      <text x="0" y="97" fill="#79c0ff" font-family="monospace" font-size="13">pip install streamlit pandas openpyxl plotly networkx</text>
+      
+      <text x="0" y="128" fill="#8b949e" font-family="monospace" font-size="13"># 3. Quick analysis (recommended entry point)</text>
+      <text x="0" y="150" fill="#79c0ff" font-family="monospace" font-size="13">python adf_runner_wrapper.py your_template.json</text>
+      
+      <text x="0" y="181" fill="#8b949e" font-family="monospace" font-size="13"># 4. Launch interactive dashboard</text>
+      <text x="0" y="203" fill="#79c0ff" font-family="monospace" font-size="13">streamlit run adf_dashboard.py</text>
+    </g>
+  </g>
+  
+  <!-- Entry Points Section -->
+  <g transform="translate(750, 100)">
+    <text x="0" y="0" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Entry Points</text>
+    
+    <!-- Entry Point Cards -->
+    <g transform="translate(0, 25)">
+      <!-- Wrapper -->
+      <rect x="0" y="0" width="350" height="50" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="1"/>
+      <rect x="0" y="0" width="6" height="50" rx="3" fill="#3fb950"/>
+      <text x="20" y="22" fill="#3fb950" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Wrapper (Recommended)</text>
+      <text x="20" y="40" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Production analysis</text>
+      
+      <!-- Dashboard -->
+      <rect x="0" y="60" width="350" height="50" rx="6" fill="#21262d" stroke="#58a6ff" stroke-width="1"/>
+      <rect x="0" y="60" width="6" height="50" rx="3" fill="#58a6ff"/>
+      <text x="20" y="82" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Dashboard</text>
+      <text x="20" y="100" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Interactive analysis</text>
+      
+      <!-- Patched Runner -->
+      <rect x="0" y="120" width="350" height="50" rx="6" fill="#21262d" stroke="#a371f7" stroke-width="1"/>
+      <rect x="0" y="120" width="6" height="50" rx="3" fill="#a371f7"/>
+      <text x="20" y="142" fill="#a371f7" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Patched Runner</text>
+      <text x="20" y="160" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Enhanced analysis</text>
+      
+      <!-- Direct Engine -->
+      <rect x="0" y="180" width="350" height="50" rx="6" fill="#21262d" stroke="#f0883e" stroke-width="1"/>
+      <rect x="0" y="180" width="6" height="50" rx="3" fill="#f0883e"/>
+      <text x="20" y="202" fill="#f0883e" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Direct Engine</text>
+      <text x="20" y="220" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Core analysis only</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Navigation Hint -->
+  <g transform="translate(600, 420)">
+    <rect x="-250" y="0" width="500" height="40" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <text x="0" y="26" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="14">
+      Navigate: Overview | Quick Start | Architecture | Features | Documentation
+    </text>
+  </g>
+</svg>
