@@ -1,3 +1,14 @@
+# **SHOWCASE NOTICE — Documentation-Only Repository**
+
+This repository is provided as a professional documentation and demonstration showcase for the ADF Analyzer project. The full implementation source code is private and proprietary and is not published here. The public repository intentionally contains documentation, architecture diagrams, output artifacts, and usage demonstrations only.
+
+If you would like to discuss the source code or arrange a walkthrough, please use the contact placeholders below.
+
+- Email: [your-email@example.com]
+- LinkedIn: [Your LinkedIn Profile]
+
+# 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
+# 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
 # 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
 
 [![Version](https://img.shields.io/badge/version-10.1-blue.svg)](https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition)
@@ -10,7 +21,7 @@
 
 ---
 
-## 📑 **TABLE OF CONTENTS**
+## 📄 **TABLE OF CONTENTS**
 
 - [🎯 Overview](#-overview)
 - [⚡ Quick Start](#-quick-start)  
@@ -707,3 +718,34 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 *Last Updated: November 11, 2025 - v10.1*
+
+---
+
+## Showcase Project
+
+### ADF Analyzer Showcase
+
+The ADF Analyzer Showcase is a demonstration of the advanced capabilities of the ADF Analyzer v10.1. It highlights the following features:
+
+- **Interactive Dashboard**: Explore and analyze Azure Data Factory ARM templates with an intuitive interface.
+- **Comprehensive Reporting**: Generate detailed Excel reports for activities, datasets, linked services, and more.
+- **Flow Architecture Visualization**: View system flow diagrams and architecture overviews.
+- **Dependency Tracking**: Analyze lineage and dependencies within your data pipelines.
+
+This project serves as a reference implementation for enterprise-grade Azure Data Factory analysis.
+
+---
+
+## Source Code Access
+
+The full implementation source code for ADF Analyzer is private and proprietary and is not published in this repository. The public repository is intentionally a documentation and demonstration showcase.
+
+Access to the private source code can be arranged in the following ways (no links to private code are provided here):
+
+- Live demo: arrange a hosted demonstration to review product behavior and outputs.
+- Code walkthrough: schedule a private walkthrough where core components and architecture are explained.
+- Interview discussion: review specific implementation details during an interview or technical discussion.
+
+To request any of the above, please contact us via the placeholders at the top of this README (Email and LinkedIn).
+
+---
