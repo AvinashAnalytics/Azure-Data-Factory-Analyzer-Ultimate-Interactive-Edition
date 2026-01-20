@@ -1,0 +1,147 @@
+<!-- SECTION 3: OVERVIEW / WHAT IS ADF ANALYZER -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%">
+  <defs>
+    <linearGradient id="overviewBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="100%" style="stop-color:#1f6feb"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3fb950"/>
+      <stop offset="100%" style="stop-color:#238636"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a371f7"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0883e"/>
+      <stop offset="100%" style="stop-color:#da3b01"/>
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f778ba"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#79c0ff"/>
+      <stop offset="100%" style="stop-color:#56d4dd"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#overviewBg)"/>
+  
+  <!-- Section Header -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" fill="url(#blueGrad)" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+      Overview
+    </text>
+    <rect x="-60" y="15" width="120" height="3" rx="1.5" fill="url(#blueGrad)" opacity="0.6"/>
+  </g>
+  
+  <!-- Description Box -->
+  <rect x="50" y="90" width="1100" height="100" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <text x="80" y="130" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="16">
+    ADF Analyzer v10.1 is an enterprise-grade toolkit designed to parse, analyze, and visualize
+  </text>
+  <text x="80" y="155" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="16">
+    Azure Data Factory (ADF) ARM templates with unprecedented speed and detail. This version introduces
+  </text>
+  <text x="80" y="180" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="16">
+    a modernized Streamlit dashboard with dual-mode operation and professional Excel reporting.
+  </text>
+  
+  <!-- What's New in v10.1 Grid -->
+  <text x="600" y="230" text-anchor="middle" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="20" font-weight="600">
+    What's New in v10.1
+  </text>
+  
+  <!-- Feature Cards Row 1 -->
+  <g transform="translate(50, 260)">
+    <!-- Card 1: Dual-Mode Dashboard -->
+    <rect x="0" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="0" y="0" width="350" height="6" rx="3" fill="url(#blueGrad)"/>
+    <circle cx="30" cy="40" r="16" fill="url(#blueGrad)" opacity="0.2"/>
+    <path d="M24 36 L36 36 M24 40 L36 40 M24 44 L36 44" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+    <text x="60" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Dual-Mode Dashboard</text>
+    <text x="20" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Generate Excel or Upload and Analyze</text>
+    <text x="20" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">with interactive workflows</text>
+    
+    <!-- Card 2: Wrapper System -->
+    <rect x="375" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="375" y="0" width="350" height="6" rx="3" fill="url(#greenGrad)"/>
+    <circle cx="405" cy="40" r="16" fill="url(#greenGrad)" opacity="0.2"/>
+    <path d="M399 36 L411 40 L399 44" fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="435" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Wrapper System</text>
+    <text x="395" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Production-ready runner with Unicode</text>
+    <text x="395" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">handling and auto-discovery</text>
+    
+    <!-- Card 3: Enhanced Documentation -->
+    <rect x="750" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="750" y="0" width="350" height="6" rx="3" fill="url(#purpleGrad)"/>
+    <circle cx="780" cy="40" r="16" fill="url(#purpleGrad)" opacity="0.2"/>
+    <rect x="772" y="32" width="16" height="16" rx="2" fill="none" stroke="#a371f7" stroke-width="2"/>
+    <text x="810" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Enhanced Documentation</text>
+    <text x="770" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Complete in-app documentation</text>
+    <text x="770" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">with 5 comprehensive sections</text>
+  </g>
+  
+  <!-- Feature Cards Row 2 -->
+  <g transform="translate(50, 380)">
+    <!-- Card 4: Modern UI -->
+    <rect x="0" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="0" y="0" width="350" height="6" rx="3" fill="url(#pinkGrad)"/>
+    <circle cx="30" cy="40" r="16" fill="url(#pinkGrad)" opacity="0.2"/>
+    <circle cx="30" cy="40" r="8" fill="none" stroke="#f778ba" stroke-width="2"/>
+    <text x="60" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Modern UI</text>
+    <text x="20" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Streamlined interface with enhancement</text>
+    <text x="20" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">configuration management</text>
+    
+    <!-- Card 5: Advanced Analytics -->
+    <rect x="375" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="375" y="0" width="350" height="6" rx="3" fill="url(#orangeGrad)"/>
+    <circle cx="405" cy="40" r="16" fill="url(#orangeGrad)" opacity="0.2"/>
+    <path d="M397 48 L405 32 L413 44" fill="none" stroke="#f0883e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="435" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Advanced Analytics</text>
+    <text x="395" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Dependency tracking, lineage analysis,</text>
+    <text x="395" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">and impact assessment</text>
+    
+    <!-- Card 6: Comprehensive Validation -->
+    <rect x="750" y="0" width="350" height="100" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <rect x="750" y="0" width="350" height="6" rx="3" fill="url(#cyanGrad)"/>
+    <circle cx="780" cy="40" r="16" fill="url(#cyanGrad)" opacity="0.2"/>
+    <path d="M772 40 L778 46 L792 32" fill="none" stroke="#79c0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="810" y="45" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="15" font-weight="600">Comprehensive Validation</text>
+    <text x="770" y="70" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Built-in verification system with</text>
+    <text x="770" y="88" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">detailed reports</text>
+  </g>
+  
+  <!-- Supported Resources Summary -->
+  <g transform="translate(50, 510)">
+    <text x="0" y="0" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Supported Resources:</text>
+    
+    <g transform="translate(180, -15)">
+      <rect x="0" y="0" width="140" height="30" rx="6" fill="#21262d" stroke="#f0883e" stroke-width="1"/>
+      <text x="15" y="20" fill="#f0883e" font-family="system-ui, sans-serif" font-size="12" font-weight="600">44+</text>
+      <text x="45" y="20" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Activities</text>
+      
+      <rect x="160" y="0" width="130" height="30" rx="6" fill="#21262d" stroke="#3fb950" stroke-width="1"/>
+      <text x="175" y="20" fill="#3fb950" font-family="system-ui, sans-serif" font-size="12" font-weight="600">25+</text>
+      <text x="205" y="20" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Datasets</text>
+      
+      <rect x="310" y="0" width="160" height="30" rx="6" fill="#21262d" stroke="#58a6ff" stroke-width="1"/>
+      <text x="325" y="20" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">15+</text>
+      <text x="355" y="20" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Linked Services</text>
+      
+      <rect x="490" y="0" width="120" height="30" rx="6" fill="#21262d" stroke="#a371f7" stroke-width="1"/>
+      <text x="505" y="20" fill="#a371f7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">7+</text>
+      <text x="530" y="20" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Triggers</text>
+      
+      <rect x="630" y="0" width="130" height="30" rx="6" fill="#21262d" stroke="#f778ba" stroke-width="1"/>
+      <text x="645" y="20" fill="#f778ba" font-family="system-ui, sans-serif" font-size="12" font-weight="600">20+</text>
+      <text x="675" y="20" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Others</text>
+    </g>
+  </g>
+</svg>
