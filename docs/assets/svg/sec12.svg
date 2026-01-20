@@ -1,0 +1,103 @@
+<!-- SECTION 12: DOCUMENTATION AND CONTACT -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%">
+  <defs>
+    <linearGradient id="docsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="500" fill="url(#docsBg)"/>
+  
+  <!-- Section Header -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+      Documentation
+    </text>
+    <rect x="-70" y="15" width="140" height="3" rx="1.5" fill="#a371f7" opacity="0.6"/>
+  </g>
+  
+  <!-- Documentation Access -->
+  <g transform="translate(50, 100)">
+    <text x="0" y="0" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="18" font-weight="600">In-Dashboard Access</text>
+    
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="500" height="180" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      
+      <g transform="translate(20, 20)">
+        <text x="0" y="0" fill="#79c0ff" font-family="monospace" font-size="13">Dashboard</text>
+        <text x="90" y="0" fill="#8b949e" font-family="monospace" font-size="13">-></text>
+        <text x="115" y="0" fill="#79c0ff" font-family="monospace" font-size="13">Documentation Tab</text>
+        <text x="265" y="0" fill="#8b949e" font-family="monospace" font-size="13">-></text>
+        <text x="290" y="0" fill="#79c0ff" font-family="monospace" font-size="13">Choose Section</text>
+        
+        <g transform="translate(0, 30)">
+          <rect x="0" y="0" width="200" height="30" rx="4" fill="#30363d"/>
+          <text x="15" y="20" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="12">Dashboard Tiles</text>
+          
+          <rect x="0" y="38" width="200" height="30" rx="4" fill="#30363d"/>
+          <text x="15" y="58" fill="#a371f7" font-family="system-ui, sans-serif" font-size="12">Technical Logic</text>
+          
+          <rect x="0" y="76" width="200" height="30" rx="4" fill="#30363d"/>
+          <text x="15" y="96" fill="#3fb950" font-family="system-ui, sans-serif" font-size="12">Python Files</text>
+          
+          <rect x="220" y="0" width="200" height="30" rx="4" fill="#30363d"/>
+          <text x="235" y="20" fill="#f0883e" font-family="system-ui, sans-serif" font-size="12">Complete Guide</text>
+          
+          <rect x="220" y="38" width="200" height="30" rx="4" fill="#30363d"/>
+          <text x="235" y="58" fill="#f778ba" font-family="system-ui, sans-serif" font-size="12">Configuration</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- File System Access -->
+  <g transform="translate(600, 100)">
+    <text x="0" y="0" fill="#3fb950" font-family="system-ui, sans-serif" font-size="18" font-weight="600">File System Access</text>
+    
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="550" height="180" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      
+      <!-- Terminal Header -->
+      <rect x="0" y="0" width="550" height="28" rx="10" fill="#21262d"/>
+      <rect x="0" y="20" width="550" height="8" fill="#21262d"/>
+      <circle cx="16" cy="14" r="5" fill="#f85149"/>
+      <circle cx="34" cy="14" r="5" fill="#f0883e"/>
+      <circle cx="52" cy="14" r="5" fill="#3fb950"/>
+      
+      <g transform="translate(15, 45)">
+        <text x="0" y="0" fill="#8b949e" font-family="monospace" font-size="12"># View documentation files</text>
+        <text x="0" y="25" fill="#79c0ff" font-family="monospace" font-size="12">ls docs/</text>
+        <text x="0" y="55" fill="#79c0ff" font-family="monospace" font-size="12">cat docs/TILES.md</text>
+        <text x="0" y="80" fill="#79c0ff" font-family="monospace" font-size="12">cat docs/LOGIC.md</text>
+        <text x="0" y="105" fill="#79c0ff" font-family="monospace" font-size="12">cat docs/PYTHON_FILES_REFERENCE.md</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Call to Action -->
+  <g transform="translate(50, 330)">
+    <rect x="0" y="0" width="1100" height="140" rx="12" fill="#21262d" stroke="url(#ctaGrad)" stroke-width="2"/>
+    
+    <text x="550" y="40" text-anchor="middle" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="24" font-weight="700">
+      Ready to Analyze Your Azure Data Factory!
+    </text>
+    <text x="550" y="70" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="14">
+      Analyze your Azure Data Factory with unprecedented detail and professional reporting
+    </text>
+    
+    <!-- Contact Buttons -->
+    <g transform="translate(300, 90)">
+      <rect x="0" y="0" width="250" height="40" rx="8" fill="#1f6feb"/>
+      <text x="125" y="26" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">masteravinashrai@gmail.com</text>
+      
+      <rect x="270" y="0" width="250" height="40" rx="8" fill="#0a66c2"/>
+      <text x="395" y="26" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">linkedin.com/in/avinashanalytics</text>
+    </g>
+  </g>
+</svg>
