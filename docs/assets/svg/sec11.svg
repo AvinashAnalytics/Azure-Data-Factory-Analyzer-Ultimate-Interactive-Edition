@@ -1,0 +1,152 @@
+<!-- SECTION 11: OUTPUT EXAMPLES AND HEALTH SCORING -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%">
+  <defs>
+    <linearGradient id="outputBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f85149"/>
+      <stop offset="40%" style="stop-color:#f0883e"/>
+      <stop offset="70%" style="stop-color:#3fb950"/>
+      <stop offset="100%" style="stop-color:#3fb950"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#outputBg)"/>
+  
+  <!-- Section Header -->
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" text-anchor="middle" fill="#f0883e" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+      Output Examples
+    </text>
+    <rect x="-80" y="15" width="160" height="3" rx="1.5" fill="#f0883e" opacity="0.6"/>
+  </g>
+  
+  <!-- Excel Report Structure -->
+  <g transform="translate(50, 100)">
+    <text x="0" y="0" fill="#3fb950" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Excel Report Structure</text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Sheet cards grid -->
+      <rect x="0" y="0" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="0" y="0" width="170" height="6" rx="3" fill="#58a6ff"/>
+      <text x="85" y="28" text-anchor="middle" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Summary</text>
+      <text x="85" y="48" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Executive dashboard</text>
+      
+      <rect x="185" y="0" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="185" y="0" width="170" height="6" rx="3" fill="#3fb950"/>
+      <text x="270" y="28" text-anchor="middle" fill="#3fb950" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Factory</text>
+      <text x="270" y="48" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Resource inventory</text>
+      
+      <rect x="370" y="0" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="370" y="0" width="170" height="6" rx="3" fill="#a371f7"/>
+      <text x="455" y="28" text-anchor="middle" fill="#a371f7" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Activities</text>
+      <text x="455" y="48" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Activity analysis</text>
+      
+      <!-- Row 2 -->
+      <rect x="0" y="80" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="0" y="80" width="170" height="6" rx="3" fill="#f0883e"/>
+      <text x="85" y="108" text-anchor="middle" fill="#f0883e" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Datasets</text>
+      <text x="85" y="128" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Data sources</text>
+      
+      <rect x="185" y="80" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="185" y="80" width="170" height="6" rx="3" fill="#79c0ff"/>
+      <text x="270" y="108" text-anchor="middle" fill="#79c0ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">LinkedServices</text>
+      <text x="270" y="128" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Connections</text>
+      
+      <rect x="370" y="80" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="370" y="80" width="170" height="6" rx="3" fill="#f778ba"/>
+      <text x="455" y="108" text-anchor="middle" fill="#f778ba" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Dependencies</text>
+      <text x="455" y="128" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Impact analysis</text>
+      
+      <!-- Row 3 -->
+      <rect x="0" y="160" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="0" y="160" width="170" height="6" rx="3" fill="#f85149"/>
+      <text x="85" y="188" text-anchor="middle" fill="#f85149" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Triggers</text>
+      <text x="85" y="208" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Automation</text>
+      
+      <rect x="185" y="160" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="185" y="160" width="170" height="6" rx="3" fill="#56d4dd"/>
+      <text x="270" y="188" text-anchor="middle" fill="#56d4dd" font-family="system-ui, sans-serif" font-size="12" font-weight="600">DataLineage</text>
+      <text x="270" y="208" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Flow tracking</text>
+      
+      <rect x="370" y="160" width="170" height="65" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      <rect x="370" y="160" width="170" height="6" rx="3" fill="#da3b01"/>
+      <text x="455" y="188" text-anchor="middle" fill="#da3b01" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Issues</text>
+      <text x="455" y="208" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="10">Recommendations</text>
+    </g>
+  </g>
+  
+  <!-- Health Score Section -->
+  <g transform="translate(620, 100)">
+    <text x="0" y="0" fill="#3fb950" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Health Score Calculation</text>
+    
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="530" height="200" rx="10" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+      
+      <!-- Health Gauge Visualization -->
+      <g transform="translate(100, 50)">
+        <path d="M0 80 A80 80 0 0 1 160 80" fill="none" stroke="#30363d" stroke-width="12" stroke-linecap="round"/>
+        <path d="M0 80 A80 80 0 0 1 140 40" fill="none" stroke="url(#gaugeGrad)" stroke-width="12" stroke-linecap="round"/>
+        <text x="80" y="70" text-anchor="middle" fill="#3fb950" font-family="system-ui, sans-serif" font-size="32" font-weight="700">92</text>
+        <text x="80" y="95" text-anchor="middle" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Health Score</text>
+      </g>
+      
+      <!-- Status Thresholds -->
+      <g transform="translate(280, 30)">
+        <text x="0" y="0" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Status Thresholds:</text>
+        
+        <rect x="0" y="15" width="200" height="30" rx="4" fill="#238636" opacity="0.2"/>
+        <circle cx="15" cy="30" r="6" fill="#3fb950"/>
+        <text x="30" y="34" fill="#3fb950" font-family="system-ui, sans-serif" font-size="12">90-100: Excellent</text>
+        
+        <rect x="0" y="50" width="200" height="30" rx="4" fill="#1f6feb" opacity="0.2"/>
+        <circle cx="15" cy="65" r="6" fill="#58a6ff"/>
+        <text x="30" y="69" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="12">75-89: Good</text>
+        
+        <rect x="0" y="85" width="200" height="30" rx="4" fill="#9e6a03" opacity="0.2"/>
+        <circle cx="15" cy="100" r="6" fill="#f0883e"/>
+        <text x="30" y="104" fill="#f0883e" font-family="system-ui, sans-serif" font-size="12">60-74: Fair</text>
+        
+        <rect x="0" y="120" width="200" height="30" rx="4" fill="#da3633" opacity="0.2"/>
+        <circle cx="15" cy="135" r="6" fill="#f85149"/>
+        <text x="30" y="139" fill="#f85149" font-family="system-ui, sans-serif" font-size="12">Below 60: Needs Attention</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Quality Score Deductions -->
+  <g transform="translate(50, 380)">
+    <text x="0" y="0" fill="#f0883e" font-family="system-ui, sans-serif" font-size="18" font-weight="600">Quality Score Deductions</text>
+    <text x="240" y="0" fill="#8b949e" font-family="system-ui, sans-serif" font-size="14">Starting from 100 points</text>
+    
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="350" height="80" rx="8" fill="#21262d" stroke="#f85149" stroke-width="1"/>
+      <rect x="0" y="0" width="8" height="80" rx="4" fill="#f85149"/>
+      <text x="25" y="25" fill="#f85149" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Circular Dependencies</text>
+      <text x="25" y="45" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">-10 points per cycle</text>
+      <text x="25" y="65" fill="#6e7681" font-family="system-ui, sans-serif" font-size="11">Maximum: -30 points</text>
+      
+      <rect x="370" y="0" width="350" height="80" rx="8" fill="#21262d" stroke="#f0883e" stroke-width="1"/>
+      <rect x="370" y="0" width="8" height="80" rx="4" fill="#f0883e"/>
+      <text x="395" y="25" fill="#f0883e" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Orphaned Resources</text>
+      <text x="395" y="45" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Based on percentage</text>
+      <text x="395" y="65" fill="#6e7681" font-family="system-ui, sans-serif" font-size="11">Maximum: -20 points</text>
+      
+      <rect x="740" y="0" width="350" height="80" rx="8" fill="#21262d" stroke="#a371f7" stroke-width="1"/>
+      <rect x="740" y="0" width="8" height="80" rx="4" fill="#a371f7"/>
+      <text x="765" y="25" fill="#a371f7" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Broken Triggers</text>
+      <text x="765" y="45" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">-5 points per trigger</text>
+      <text x="765" y="65" fill="#6e7681" font-family="system-ui, sans-serif" font-size="11">Maximum: -15 points</text>
+    </g>
+  </g>
+  
+  <!-- Formula Box -->
+  <g transform="translate(50, 510)">
+    <rect x="0" y="0" width="1100" height="60" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+    <text x="30" y="25" fill="#8b949e" font-family="system-ui, sans-serif" font-size="12">Health Score Formula:</text>
+    <text x="180" y="25" fill="#79c0ff" font-family="monospace" font-size="13">health_score = int((1 - orphaned / pipelines) * 100) if pipelines > 0 else 100</text>
+    <text x="30" y="48" fill="#6e7681" font-family="system-ui, sans-serif" font-size="11">The score reflects the ratio of connected vs orphaned resources in your Data Factory</text>
+  </g>
+</svg>
