@@ -1,0 +1,85 @@
+<!-- SECTION 2: SHOWCASE NOTICE -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%">
+  <defs>
+    <linearGradient id="noticeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="warningGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0883e"/>
+      <stop offset="100%" style="stop-color:#da3b01"/>
+    </linearGradient>
+    <linearGradient id="infoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="100%" style="stop-color:#1f6feb"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="320" fill="url(#noticeBg)"/>
+  
+  <!-- Notice Card -->
+  <rect x="50" y="30" width="1100" height="260" rx="12" fill="#21262d" stroke="#f0883e" stroke-width="2"/>
+  
+  <!-- Header Bar -->
+  <rect x="50" y="30" width="1100" height="50" rx="12" fill="url(#warningGrad)"/>
+  <rect x="50" y="68" width="1100" height="12" fill="url(#warningGrad)"/>
+  
+  <!-- Lock Icon -->
+  <g transform="translate(100, 42)">
+    <rect x="5" y="12" width="16" height="14" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M8 12 V8 A5 5 0 0 1 18 8 V12" fill="none" stroke="#ffffff" stroke-width="2"/>
+  </g>
+  
+  <!-- Header Text -->
+  <text x="140" y="65" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="700">
+    SHOWCASE NOTICE — Documentation-Only Repository
+  </text>
+  
+  <!-- Notice Content -->
+  <text x="80" y="115" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="16">
+    This repository is provided as a professional documentation and demonstration showcase
+  </text>
+  <text x="80" y="140" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="16">
+    for the ADF Analyzer project. The full implementation source code is
+  </text>
+  <text x="555" y="140" fill="#f85149" font-family="system-ui, sans-serif" font-size="16" font-weight="600">
+    private and proprietary.
+  </text>
+  
+  <!-- What's Included -->
+  <g transform="translate(80, 170)">
+    <text x="0" y="0" fill="#58a6ff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">This Repository Contains:</text>
+    
+    <!-- Items Grid -->
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="240" height="36" rx="6" fill="#30363d"/>
+      <circle cx="20" cy="18" r="4" fill="#3fb950"/>
+      <text x="35" y="23" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Documentation</text>
+      
+      <rect x="260" y="0" width="240" height="36" rx="6" fill="#30363d"/>
+      <circle cx="280" cy="18" r="4" fill="#3fb950"/>
+      <text x="295" y="23" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Architecture Diagrams</text>
+      
+      <rect x="520" y="0" width="240" height="36" rx="6" fill="#30363d"/>
+      <circle cx="540" cy="18" r="4" fill="#3fb950"/>
+      <text x="555" y="23" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Output Artifacts</text>
+      
+      <rect x="780" y="0" width="240" height="36" rx="6" fill="#30363d"/>
+      <circle cx="800" cy="18" r="4" fill="#3fb950"/>
+      <text x="815" y="23" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Usage Demonstrations</text>
+    </g>
+  </g>
+  
+  <!-- Contact Section -->
+  <g transform="translate(80, 250)">
+    <text x="0" y="0" fill="#8b949e" font-family="system-ui, sans-serif" font-size="14">Contact for Source Code Access:</text>
+    
+    <!-- Email -->
+    <rect x="230" y="-18" width="280" height="28" rx="6" fill="url(#infoGrad)"/>
+    <text x="250" y="4" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12">masteravinashrai@gmail.com</text>
+    
+    <!-- LinkedIn -->
+    <rect x="530" y="-18" width="280" height="28" rx="6" fill="#0a66c2"/>
+    <text x="550" y="4" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12">linkedin.com/in/avinashanalytics</text>
+  </g>
+</svg>
