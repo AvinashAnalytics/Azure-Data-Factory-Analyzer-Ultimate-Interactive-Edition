@@ -27,13 +27,7 @@
 
 <br>
 
-<!-- ================== MAIN TITLE ================== -->
-<div align="center">
 
-# 🚀 ADF Analyzer v10.1
-### Ultimate Interactive Edition
-
-<!-- Your existing badges and content continues here... -->
 
 # 🚀 ADF Analyzer v10.1
 ### Ultimate Interactive Edition
@@ -2235,4 +2229,5 @@ cat PYTHON_FILES_REFERENCE.md
 **⭐ Star this repository if you find it helpful!**
 
 </div>
+
 
