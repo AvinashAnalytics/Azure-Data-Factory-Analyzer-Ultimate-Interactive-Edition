@@ -1,9 +1,0 @@
-ADF_Analyzer_v10_Production/venv/
-ADF_Analyzer_v10_Production/output/
-**/__pycache__/
-*.pyc
-*.pyo
-.env
-.venv
-*.csv
-*.xlsx
