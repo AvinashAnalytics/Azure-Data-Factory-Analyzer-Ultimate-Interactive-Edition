@@ -1,0 +1,11 @@
+{
+  "functional_patches": true,
+  "excel_enhancements": {
+    "enabled": true
+  },
+  "discovery_mode": true,
+  "excel": {
+    "output_filename": "adf_analysis_latest.xlsx",
+    "output_dir": "output"
+  }
+}
