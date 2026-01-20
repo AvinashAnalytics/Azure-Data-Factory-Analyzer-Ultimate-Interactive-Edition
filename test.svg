@@ -1,6 +1,4 @@
-# PART 1 / 3
 
-```svg
 <!-- ==================== ADF ANALYZER v10.1 - SVG VISUAL README ==================== -->
 <!-- SECTION 1: HERO / PROJECT TITLE -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%">
@@ -134,9 +132,6 @@
     <text x="210" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">MIT</text>
   </g>
 </svg>
-```
-
-```svg
 <!-- SECTION 2: SHOWCASE NOTICE -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%">
   <defs>
@@ -224,7 +219,6 @@
 </svg>
 ```
 
-```svg
 <!-- SECTION 3: OVERVIEW / WHAT IS ADF ANALYZER -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%">
   <defs>
@@ -374,7 +368,6 @@
 </svg>
 ```
 
-```svg
 <!-- SECTION 4: QUICK START -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%">
   <defs>
@@ -474,9 +467,6 @@
     </text>
   </g>
 </svg>
-```
-
-```svg
 <!-- SECTION 5: ARCHITECTURE -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%">
   <defs>
@@ -721,6 +711,4 @@
     </g>
   </g>
 </svg>
-```
 
-Say **NEXT** to generate the next part.
