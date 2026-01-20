@@ -1,31 +1,194 @@
-﻿# **SHOWCASE NOTICE ΓÇö Documentation-Only Repository**
+<!-- ================== PROJECT THUMBNAIL ================== -->
+<p align="center">
+  <img 
+    src="https://raw.githubusercontent.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/main/docs/assets/adf_analyzer_v10_thumbnail.png"
+    alt="ADF Analyzer v10.1 — Enterprise Dependency & Execution Analysis"
+    width="100%"
+  />
+</p>
 
-This repository is provided as a professional documentation and demonstration showcase for the ADF Analyzer project. The full implementation source code is private and proprietary and is not published here. The public repository intentionally contains documentation, architecture diagrams, output artifacts, and usage demonstrations only.
+<!-- ================== ANIMATED HEADER SVG ================== -->
+<p align="center">
+  <img 
+    src="https://raw.githubusercontent.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/main/docs/assets/animated_showcase_header.svg"
+    alt="Enterprise Documentation Showcase"
+    width="85%"
+  />
+</p>
 
-If you would like to discuss the source code or arrange a walkthrough, please use the contact placeholders below.
+<!-- ================== SHOWCASE BADGES ================== -->
+<p align="center">
+  <img src="https://img.shields.io/badge/🔒_SOURCE_CODE-PRIVATE_&_PROPRIETARY-DC143C?style=for-the-badge&labelColor=1a1a2e" alt="Source Code Private"/>
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/📚_DOCUMENTATION-SHOWCASE_ONLY-00B4D8?style=for-the-badge&labelColor=1a1a2e" alt="Documentation Showcase"/>
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/🚀_ENTERPRISE-GRADE_TOOLKIT-00C853?style=for-the-badge&labelColor=1a1a2e" alt="Enterprise Grade"/>
+</p>
 
-- Email: [masteravinashrai@gmail.com]
-- LinkedIn: [https://www.linkedin.com/in/avinashanalytics/]
+<br>
 
-# 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
+<!-- ================== MAIN TITLE ================== -->
+<div align="center">
 
-[![Version](https://img.shields.io/badge/version-10.1-blue.svg)](https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition)
-[![Python](https://img.shields.io/badge/python-3.8+-brightgreen.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red.svg)](https://streamlit.io/)
-[![Azure](https://img.shields.io/badge/Azure-Data_Factory-0078D4.svg)](https://azure.microsoft.com/en-us/services/data-factory/)
+# 🚀 ADF Analyzer v10.1
+### Ultimate Interactive Edition
 
-**Enterprise-grade toolkit for Azure Data Factory ARM template analysis with interactive dashboard and comprehensive Excel reporting.**
+<br>
+
+[![Version](https://img.shields.io/badge/version-10.1-blue.svg?style=for-the-badge&logo=github)](https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition)
+[![Python](https://img.shields.io/badge/python-3.8+-brightgreen.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=opensource)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Azure](https://img.shields.io/badge/Azure-Data_Factory-0078D4.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/en-us/services/data-factory/)
+
+<br>
+
+**Enterprise-grade toolkit for Azure Data Factory ARM template analysis**  
+**Interactive Dashboard • Comprehensive Excel Reporting • Advanced Analytics**
+
+<br>
+
+[🎯 Overview](#-overview) • [⚡ Quick Start](#-quick-start) • [🏗️ Architecture](#️-architecture) • [📊 Features](#-key-features) • [📚 Documentation](#-documentation)
+
+</div>
+
+<br>
 
 ---
 
-## 📑 **TABLE OF CONTENTS**
+<!-- ================== SHOWCASE NOTICE BOX ================== -->
 
+<table align="center" width="90%">
+<tr>
+<td>
+
+<div align="center">
+
+## 📋 SHOWCASE NOTICE — Documentation-Only Repository
+
+</div>
+
+<br>
+
+<blockquote>
+
+🔐 **This repository is provided as a professional documentation and demonstration showcase** for the ADF Analyzer project.
+
+The **full implementation source code is private and proprietary** and is not published here.
+
+</blockquote>
+
+<br>
+
+### ✅ This Repository Contains:
+
+<table align="center">
+<tr>
+<td align="center">📖</td>
+<td><strong>Documentation</strong></td>
+<td align="center">📊</td>
+<td><strong>Architecture Diagrams</strong></td>
+</tr>
+<tr>
+<td align="center">📁</td>
+<td><strong>Output Artifacts</strong></td>
+<td align="center">🎬</td>
+<td><strong>Usage Demonstrations</strong></td>
+</tr>
+</table>
+
+<br>
+
+### 📬 Contact for Source Code Access or Walkthrough
+
+<div align="center">
+
+| | Channel | Contact |
+|:-:|:-------:|:--------|
+| 📧 | **Email** | [masteravinashrai@gmail.com](mailto:masteravinashrai@gmail.com) |
+| 💼 | **LinkedIn** | [linkedin.com/in/avinashanalytics](https://www.linkedin.com/in/avinashanalytics/) |
+
+</div>
+
+<br>
+
+</td>
+</tr>
+</table>
+
+<br>
+
+---
+
+<br>
+
+
+# ADF Analyzer v10.1 - Ultimate Interactive Edition
+
+---
+
+<div align="center">
+
+# 🚀 ADF Analyzer v10.1
+### Ultimate Interactive Edition
+
+<br>
+
+[![Version](https://img.shields.io/badge/version-10.1-blue.svg?style=for-the-badge&logo=github)](https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition)
+[![Python](https://img.shields.io/badge/python-3.8+-brightgreen.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=opensource)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Azure](https://img.shields.io/badge/Azure-Data_Factory-0078D4.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/en-us/services/data-factory/)
+
+<br>
+
+**Enterprise-grade toolkit for Azure Data Factory ARM template analysis**  
+**Interactive Dashboard • Comprehensive Excel Reporting • Advanced Analytics**
+
+<br>
+
+[🎯 Overview](#-overview) • [⚡ Quick Start](#-quick-start) • [🏗️ Architecture](#️-architecture) • [📊 Features](#-key-features) • [📚 Documentation](#-documentation)
+
+---
+
+</div>
+
+<br>
+
+> ## 📋 SHOWCASE NOTICE — Documentation-Only Repository
+> 
+> This repository is provided as a **professional documentation and demonstration showcase** for the ADF Analyzer project. The full implementation source code is **private and proprietary** and is not published here.
+> 
+> The public repository intentionally contains documentation, architecture diagrams, output artifacts, and usage demonstrations only.
+> 
+> ### 📬 Contact
+> 
+> | Channel | Link |
+> |---------|------|
+> | 📧 **Email** | [masteravinashrai@gmail.com](mailto:masteravinashrai@gmail.com) |
+> | 💼 **LinkedIn** | [linkedin.com/in/avinashanalytics](https://www.linkedin.com/in/avinashanalytics/) |
+
+---
+
+<br>
+
+## 📑 TABLE OF CONTENTS
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🎯 Getting Started
 - [🎯 Overview](#-overview)
-- [⚡ Quick Start](#-quick-start)  
+- [⚡ Quick Start](#-quick-start)
 - [🏗️ Architecture](#️-architecture)
 - [💡 Key Features](#-key-features)
 - [📊 Dashboard Features](#-dashboard-features)
+
+</td>
+<td width="50%" valign="top">
+
+### 🛠️ Advanced Topics
 - [📋 File Structure](#-file-structure)
 - [🔧 Installation & Setup](#-installation--setup)
 - [🎮 Usage Guide](#-usage-guide)
@@ -33,239 +196,556 @@ If you would like to discuss the source code or arrange a walkthrough, please us
 - [🛠️ Development](#️-development)
 - [📚 Documentation](#-documentation)
 
----
-
-## 🎯 **OVERVIEW**
-
-ADF Analyzer v10.1 is an **enterprise-grade toolkit** designed to parse, analyze, and visualize Azure Data Factory (ADF) ARM templates with unprecedented speed and detail. This version introduces a modernized Streamlit dashboard with dual-mode operation, comprehensive documentation system, and professional Excel reporting capabilities.
-
-### **What's New in v10.1**
-
-- 🎛️ **Dual-Mode Dashboard**: Choose between "Generate Excel" and "Upload & Analyze" workflows
-- 🔧 **Wrapper System**: Production-ready `adf_runner_wrapper.py` with Unicode handling and auto-discovery
-- 📊 **Enhanced Documentation**: Complete in-app documentation with 5 comprehensive sections
-- 🎨 **Modern UI**: Streamlined interface with enhancement configuration management
-- 📈 **Advanced Analytics**: Dependency tracking, lineage analysis, and impact assessment
-- 🔍 **Comprehensive Validation**: Built-in verification system with detailed reports
-
-### **Supported Resources**
-
-| Category | Count | Examples |
-|----------|-------|----------|
-| **Activities** | 44+ | Copy, DataFlow, Lookup, Execute Pipeline, Databricks, Azure Function |
-| **Datasets** | 25+ | SQL Server, Blob Storage, CosmosDB, BigQuery, Office365 |
-| **Linked Services** | 15+ | Azure SQL, Storage Account, Key Vault, Databricks |
-| **Triggers** | 7+ | Schedule, Tumbling Window, Event-based, Manual |
-| **Others** | 20+ | Integration Runtimes, Managed VNets, Private Endpoints |
+</td>
+</tr>
+</table>
 
 ---
 
-## ⚡ **QUICK START**
+<br>
 
-### **5-Minute Setup**
+## 🎯 OVERVIEW
 
-```bash
-# 1. Clone or download the repository
-git clone https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition.git
-cd Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/armv10
+<div align="center">
 
-# 2. Install dependencies
-pip install streamlit pandas openpyxl plotly networkx
+### What is ADF Analyzer?
 
-# 3. Quick analysis (recommended entry point)
-python adf_runner_wrapper.py your_template.json
+</div>
 
-# 4. Launch interactive dashboard
-streamlit run adf_dashboard.py
-```
+**ADF Analyzer v10.1** is an **enterprise-grade toolkit** designed to parse, analyze, and visualize Azure Data Factory (ADF) ARM templates with unprecedented speed and detail.
 
-### **Entry Points**
+This version introduces a **modernized Streamlit dashboard** with dual-mode operation, comprehensive documentation system, and professional Excel reporting capabilities.
 
-| Method | Use Case | Command |
-|--------|----------|---------|
-| **🚀 Wrapper (Recommended)** | Production analysis | `python adf_runner_wrapper.py template.json` |
-| **🎛️ Dashboard** | Interactive analysis | `streamlit run adf_dashboard.py` |
-| **🔧 Patched Runner** | Enhanced analysis | `python adf_analyzer_v10_patched_runner.py template.json` |
-| **⚙️ Direct Engine** | Core analysis only | `python adf_analyzer_v10_complete.py template.json` |
+<br>
 
----
-
-## 🏗️ **ARCHITECTURE**
-
-```mermaid
-graph TB
-    A[ADF ARM Template] --> B[adf_runner_wrapper.py]
-    B --> C[adf_analyzer_v10_patched_runner.py]
-    C --> D[adf_analyzer_v10_complete.py]
-    C --> E[adf_analyzer_v10_patch.py]
-    D --> F[Analysis Results]
-    E --> F
-    F --> G[adf_analyzer_v10_excel_enhancements.py]
-    G --> H[Enhanced Excel Report]
-    
-    I[Dashboard] --> J[adf_dashboard.py]
-    J --> K[Streamlit UI]
-    K --> L[Interactive Analytics]
-    K --> M[Configuration Management]
-    K --> N[Documentation System]
-    
-    style B fill:#e3f2fd
-    style C fill:#f3e5f5
-    style D fill:#e8f5e9
-    style G fill:#fff3e0
-    style J fill:#fce4ec
-```
-
-### **Component Relationships**
-
-- **🔧 Wrapper Layer**: `adf_runner_wrapper.py` - Safe execution with Unicode handling
-- **🚀 Orchestrator**: `adf_analyzer_v10_patched_runner.py` - Business logic coordination
-- **🎯 Core Engine**: `adf_analyzer_v10_complete.py` - ARM template parsing
-- **🎨 Enhancement**: `adf_analyzer_v10_excel_enhancements.py` - Professional Excel output
-- **📊 Dashboard**: `adf_dashboard.py` - Interactive Streamlit interface
-
----
-
-## 💡 **KEY FEATURES**
-
-### **🔍 Analysis Capabilities**
+### ✨ What's New in v10.1
 
 <table>
 <tr>
-<td width="50%">
+<td align="center" width="33%">
 
-**📊 Comprehensive Parsing**
-- All ADF resource types supported
-- Activity detection and classification
-- Dataset and linked service analysis
-- Trigger processing and validation
-- Integration runtime assessment
-
-**🔗 Dependency Analysis**
-- Complete dependency graph construction
-- Circular dependency detection (DFS algorithm)
-- Orphaned resource identification
-- Impact analysis (BFS traversal)
-- Lineage tracking and visualization
+### 🎛️ Dual-Mode Dashboard
+Choose between **"Generate Excel"** and **"Upload & Analyze"** workflows
 
 </td>
-<td width="50%">
+<td align="center" width="33%">
 
-**🏥 Health Assessment**
-- Factory health score (0-100 scale)
-- Quality score with deduction system
-- Resource utilization metrics
-- Performance bottleneck identification
-- Security checklist validation
+### 🔧 Wrapper System
+Production-ready `adf_runner_wrapper.py` with **Unicode handling** and auto-discovery
 
-**📈 Advanced Metrics**
-- Resource distribution analysis
-- Complexity heat mapping
-- Performance insights
-- Cost optimization recommendations
-- Best practices compliance
+</td>
+<td align="center" width="33%">
+
+### 📊 Enhanced Documentation
+Complete **in-app documentation** with 5 comprehensive sections
+
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+
+### 🎨 Modern UI
+Streamlined interface with **enhancement configuration** management
+
+</td>
+<td align="center" width="33%">
+
+### 📈 Advanced Analytics
+**Dependency tracking**, lineage analysis, and impact assessment
+
+</td>
+<td align="center" width="33%">
+
+### 🔍 Comprehensive Validation
+Built-in **verification system** with detailed reports
 
 </td>
 </tr>
 </table>
 
-### **📊 Excel Reporting Features**
+<br>
 
-- ✅ **Core Formatting** - Professional styling, borders, colors
-- ✅ **Conditional Formatting** - Data bars, color scales, icon sets
-- ✅ **Hyperlinks** - Navigation between sheets
-- ✅ **Enhanced Summary** - Executive dashboard with project banner
-- ✅ **Advanced Dashboard** - Health score, complexity maps, insights
-- ✅ **Performance Analysis** - Bottleneck identification and recommendations
-- ✅ **Security Assessment** - Comprehensive security checklist
-- ✅ **Cost Analysis** - Resource utilization and optimization
+### 📦 Supported Resources
+
+<table>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td>
+
+**⚡ Activities**
+
+</td>
+<td align="center">
+
+`44+`
+
+</td>
+<td>
+
+Copy, DataFlow, Lookup, Execute Pipeline, Databricks, Azure Function
+
+</td>
+</tr>
+<tr>
+<td>
+
+**📊 Datasets**
+
+</td>
+<td align="center">
+
+`25+`
+
+</td>
+<td>
+
+SQL Server, Blob Storage, CosmosDB, BigQuery, Office365
+
+</td>
+</tr>
+<tr>
+<td>
+
+**🔗 Linked Services**
+
+</td>
+<td align="center">
+
+`15+`
+
+</td>
+<td>
+
+Azure SQL, Storage Account, Key Vault, Databricks
+
+</td>
+</tr>
+<tr>
+<td>
+
+**⏰ Triggers**
+
+</td>
+<td align="center">
+
+`7+`
+
+</td>
+<td>
+
+Schedule, Tumbling Window, Event-based, Manual
+
+</td>
+</tr>
+<tr>
+<td>
+
+**🔧 Others**
+
+</td>
+<td align="center">
+
+`20+`
+
+</td>
+<td>
+
+Integration Runtimes, Managed VNets, Private Endpoints
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📊 **DASHBOARD FEATURES**
+<br>
 
-### **🎛️ Dual-Mode Operation**
+## ⚡ QUICK START
 
-#### **Mode 1: Generate Excel**
-- Upload ARM template
-- Configure enhancement options
-- Generate professional Excel report
-- Download enhanced results
+<div align="center">
 
-#### **Mode 2: Upload & Analyze**  
-- Upload existing Excel analysis
-- Interactive data exploration
-- Real-time analytics and visualizations
-- Export filtered results
+### 🚀 5-Minute Setup
 
-### **📚 Documentation System**
+</div>
 
-The dashboard includes a comprehensive documentation system with 5 main sections:
+```bash
+# 1️⃣ Clone or download the repository
+git clone https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition.git
+cd Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/ADF_Analyzer_v10_Production
 
-| Tab | Content | Purpose |
-|-----|---------|---------|
-| **📋 Dashboard Tiles** | Metric definitions and data sources | Understanding dashboard metrics |
-| **🧠 Technical Logic** | Algorithms and scoring methods | Technical reference |
-| **🐍 Python Files** | Complete file structure overview | Developer guide |
-| **📖 Complete Guide** | Project documentation and setup | User manual |
-| **⚙️ Configuration** | Settings and customization | Configuration guide |
+# 2️⃣ Install dependencies
+pip install streamlit pandas openpyxl plotly networkx
 
-### **🎨 Interactive Analytics**
+# 3️⃣ Quick analysis (recommended entry point)
+python adf_runner_wrapper.py your_template.json
 
-- **📊 Health Gauge** - Visual factory health indicator
-- **🕸️ Network Graphs** - Interactive dependency visualization
-- **📈 Metric Tiles** - Real-time analytics with verification badges
-- **🔍 Filtering** - Advanced filtering and search capabilities
-- **📥 Export Options** - CSV, JSON, Excel export functionality
+# 4️⃣ Launch interactive dashboard
+streamlit run adf_dashboard.py
+```
+
+<br>
+
+### 🎯 Entry Points
+
+| Method | Use Case | Command |
+|:------:|:---------|:--------|
+| 🚀 | **Wrapper (Recommended)** — Production analysis | `python adf_runner_wrapper.py template.json` |
+| 🎛️ | **Dashboard** — Interactive analysis | `streamlit run adf_dashboard.py` |
+| 🔧 | **Patched Runner** — Enhanced analysis | `python adf_analyzer_v10_patched_runner.py template.json` |
+| ⚙️ | **Direct Engine** — Core analysis only | `python adf_analyzer_v10_complete.py template.json` |
 
 ---
 
-## 📋 **FILE STRUCTURE**
+<br>
+
+## 🏗️ ARCHITECTURE
+
+<div align="center">
+
+### System Architecture
+
+</div>
+
+```mermaid
+graph TB
+    A[🔷 ADF ARM Template] --> B[adf_runner_wrapper.py]
+    B --> C[adf_analyzer_v10_patched_runner.py]
+    C --> D[adf_analyzer_v10_complete.py]
+    C --> E[adf_analyzer_v10_patch.py]
+    D --> F[📊 Analysis Results]
+    E --> F
+    F --> G[adf_analyzer_v10_excel_enhancements.py]
+    G --> H[📗 Enhanced Excel Report]
+    
+    I[🖥️ Dashboard] --> J[adf_dashboard.py]
+    J --> K[Streamlit UI]
+    K --> L[📈 Interactive Analytics]
+    K --> M[⚙️ Configuration Management]
+    K --> N[📚 Documentation System]
+    
+    style A fill:#E3F2FD,stroke:#1976D2,stroke-width:2px
+    style B fill:#e3f2fd,stroke:#1976D2
+    style C fill:#f3e5f5,stroke:#9C27B0
+    style D fill:#e8f5e9,stroke:#4CAF50
+    style G fill:#fff3e0,stroke:#FF9800
+    style H fill:#C8E6C9,stroke:#388E3C,stroke-width:2px
+    style J fill:#fce4ec,stroke:#E91E63
+    style L fill:#E1F5FE,stroke:#03A9F4
+```
+
+<br>
+
+### 🧩 Component Relationships
+
+<table>
+<tr>
+<td width="20%" align="center">
+
+**🔧**
+### Wrapper Layer
+
+</td>
+<td width="80%">
+
+`adf_runner_wrapper.py` — Safe execution with Unicode handling and auto-discovery
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**🚀**
+### Orchestrator
+
+</td>
+<td>
+
+`adf_analyzer_v10_patched_runner.py` — Business logic coordination and patch management
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**🎯**
+### Core Engine
+
+</td>
+<td>
+
+`adf_analyzer_v10_complete.py` — ARM template parsing and dependency analysis
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**🎨**
+### Enhancement
+
+</td>
+<td>
+
+`adf_analyzer_v10_excel_enhancements.py` — Professional Excel output with styling
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+**📊**
+### Dashboard
+
+</td>
+<td>
+
+`adf_dashboard.py` — Interactive Streamlit interface with real-time analytics
+
+</td>
+</tr>
+</table>
+
+---
+
+<br>
+
+## 💡 KEY FEATURES
+
+<div align="center">
+
+### 🔍 Analysis Capabilities
+
+</div>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 📊 Comprehensive Parsing
+
+- ✅ All ADF resource types supported
+- ✅ Activity detection and classification
+- ✅ Dataset and linked service analysis
+- ✅ Trigger processing and validation
+- ✅ Integration runtime assessment
+
+---
+
+### 🔗 Dependency Analysis
+
+- ✅ Complete dependency graph construction
+- ✅ Circular dependency detection (DFS algorithm)
+- ✅ Orphaned resource identification
+- ✅ Impact analysis (BFS traversal)
+- ✅ Lineage tracking and visualization
+
+</td>
+<td width="50%" valign="top">
+
+### 🏥 Health Assessment
+
+- ✅ Factory health score (0-100 scale)
+- ✅ Quality score with deduction system
+- ✅ Resource utilization metrics
+- ✅ Performance bottleneck identification
+- ✅ Security checklist validation
+
+---
+
+### 📈 Advanced Metrics
+
+- ✅ Resource distribution analysis
+- ✅ Complexity heat mapping
+- ✅ Performance insights
+- ✅ Cost optimization recommendations
+- ✅ Best practices compliance
+
+</td>
+</tr>
+</table>
+
+<br>
+
+### 📊 Excel Reporting Features
+
+<div align="center">
+
+| Feature | Description | Status |
+|:-------:|:------------|:------:|
+| 🎨 | **Core Formatting** — Professional styling, borders, colors | ✅ |
+| 📊 | **Conditional Formatting** — Data bars, color scales, icon sets | ✅ |
+| 🔗 | **Hyperlinks** — Navigation between sheets | ✅ |
+| 📋 | **Enhanced Summary** — Executive dashboard with project banner | ✅ |
+| 📈 | **Advanced Dashboard** — Health score, complexity maps, insights | ✅ |
+| ⚡ | **Performance Analysis** — Bottleneck identification and recommendations | ✅ |
+| 🔒 | **Security Assessment** — Comprehensive security checklist | ✅ |
+| 💰 | **Cost Analysis** — Resource utilization and optimization | ✅ |
+
+</div>
+
+---
+
+<br>
+
+## 📊 DASHBOARD FEATURES
+
+### 🎛️ Dual-Mode Operation
+
+<table>
+<tr>
+<th width="50%">Mode 1: Generate Excel</th>
+<th width="50%">Mode 2: Upload & Analyze</th>
+</tr>
+<tr>
+<td valign="top">
 
 ```
-armv10/
+📤 Upload ARM template
+    ↓
+⚙️ Configure enhancement options
+    ↓
+🔄 Generate professional Excel report
+    ↓
+📥 Download enhanced results
+```
+
+</td>
+<td valign="top">
+
+```
+📤 Upload existing Excel analysis
+    ↓
+🔍 Interactive data exploration
+    ↓
+📊 Real-time analytics & visualizations
+    ↓
+📥 Export filtered results
+```
+
+</td>
+</tr>
+</table>
+
+<br>
+
+### 📚 Documentation System
+
+The dashboard includes a comprehensive documentation system with **5 main sections**:
+
+| Tab | Content | Purpose |
+|:---:|:--------|:--------|
+| 📋 | **Dashboard Tiles** | Metric definitions and data sources |
+| 🧠 | **Technical Logic** | Algorithms and scoring methods |
+| 🐍 | **Python Files** | Complete file structure overview |
+| 📖 | **Complete Guide** | Project documentation and setup |
+| ⚙️ | **Configuration** | Settings and customization |
+
+<br>
+
+### 🎨 Interactive Analytics
+
+<div align="center">
+
+| Feature | Description |
+|:-------:|:------------|
+| 📊 **Health Gauge** | Visual factory health indicator with real-time updates |
+| 🕸️ **Network Graphs** | Interactive dependency visualization with zoom & pan |
+| 📈 **Metric Tiles** | Real-time analytics with verification badges |
+| 🔍 **Filtering** | Advanced filtering and search capabilities |
+| 📥 **Export Options** | CSV, JSON, Excel export functionality |
+
+</div>
+
+---
+
+<br>
+
+## 📋 FILE STRUCTURE
+
+```
+ADF_Analyzer_v10_Production/
+│
 ├── 🚀 Core Analysis Engine
 │   ├── adf_analyzer_v10_complete.py           # Main analysis engine
 │   ├── adf_analyzer_v10_patched_runner.py     # Orchestrator with patches
-│   └── adf_runner_wrapper.py                  # Safe execution wrapper (RECOMMENDED)
+│   └── adf_runner_wrapper.py                  # Safe execution wrapper ⭐ RECOMMENDED
+│
 ├── 🎨 Enhancements & Processing  
 │   ├── adf_analyzer_v10_excel_enhancements.py # Excel beautification
 │   └── adf_analyzer_v10_patch.py              # Functional patches
+│
 ├── 📊 Dashboard & UI
 │   ├── adf_dashboard.py                       # Main Streamlit dashboard
 │   └── streamlit_app/                         # Application structure
+│       └── data/                              # Application data
+│
 ├── 🔧 Configuration & Settings
-│   ├── enhancement_config.json                # Excel enhancement settings
-│   ├── streamlit_config.json                  # Dashboard configuration
-│   └── settings.json                          # General settings
+│   ├── config/
+│   │   ├── enhancement_config.json            # Excel enhancement settings
+│   │   ├── streamlit_config.json              # Dashboard configuration
+│   │   └── settings.json                      # General settings
+│   └── core/                                  # Core configuration
+│
 ├── 🔧 Utilities & Scripts
-│   ├── scripts/setup_environment.py           # Environment setup
-│   ├── scripts/run_analysis.py               # Direct execution
-│   └── scripts/verify_installation.py        # Validation
+│   └── scripts/
+│       ├── setup_environment.py               # Environment setup
+│       ├── run_analysis.py                    # Direct execution
+│       └── verify_installation.py             # Validation
+│
 ├── ✅ Testing & Validation
-│   ├── test_metrics.py                       # Metrics testing
-│   ├── test_metrics_enhanced.py              # Enhanced testing
-│   ├── verify_real_world.py                  # Real-world testing
-│   └── TEST_RESULTS.py                       # Test results summary
-└── 📚 Documentation
-    ├── TILES.md                              # Dashboard tiles reference
-    ├── LOGIC.md                              # Technical algorithms
-    ├── PYTHON_FILES_REFERENCE.md             # Complete file guide
-    ├── DOCUMENTATION_INDEX.md                # Master documentation index
-    └── README_v10.md                         # This file
+│   └── tests/
+│       ├── test_metrics.py                    # Metrics testing
+│       ├── test_metrics_enhanced.py           # Enhanced testing
+│       ├── verify_real_world.py               # Real-world testing
+│       └── TEST_RESULTS.py                    # Test results summary
+│
+├── 📤 Output
+│   └── output/                                # Generated reports
+│
+├── 📚 Documentation
+│   └── docs/
+│       ├── TILES.md                           # Dashboard tiles reference
+│       ├── LOGIC.md                           # Technical algorithms
+│       ├── PYTHON_FILES_REFERENCE.md          # Complete file guide
+│       ├── DOCUMENTATION_INDEX.md             # Master documentation index
+│       └── FLOW.md                            # Architecture flow documentation
+│
+└── 📄 Root Files
+    ├── README.md                              # This file
+    ├── requirements.txt                       # Python dependencies
+    ├── setup.py                               # Package setup
+    ├── app.py                                 # Application entry
+    └── adf.py                                 # Core ADF module
 ```
 
 ---
+ Installation, Usage & Configuration
 
-## 🔧 **INSTALLATION & SETUP**
+---
 
-### **Prerequisites**
+<br>
 
-- **Python 3.8+** (Recommended: 3.9 or 3.10)
-- **Windows/Linux/macOS** (Cross-platform support)
-- **4GB RAM minimum** (8GB recommended for large templates)
+## 🔧 INSTALLATION & SETUP
 
-### **Method 1: Direct Installation**
+<div align="center">
+
+### Prerequisites
+
+</div>
+
+| Requirement | Specification | Notes |
+|:-----------:|:--------------|:------|
+| 🐍 | **Python 3.8+** | Recommended: 3.9 or 3.10 |
+| 💻 | **OS** | Windows / Linux / macOS (Cross-platform) |
+| 🧠 | **RAM** | 4GB minimum (8GB recommended for large templates) |
+
+<br>
+
+### 📦 Method 1: Direct Installation
 
 ```bash
 # Install core dependencies
@@ -278,41 +758,73 @@ pip install matplotlib seaborn xlsxwriter
 python scripts/verify_installation.py
 ```
 
-### **Method 2: Virtual Environment (Recommended)**
+<br>
+
+### 🔒 Method 2: Virtual Environment (Recommended)
+
+<table>
+<tr>
+<th>Windows</th>
+<th>Linux / macOS</th>
+</tr>
+<tr>
+<td>
+
+```powershell
+# Create virtual environment
+python -m venv adf_analyzer_env
+
+# Activate environment
+adf_analyzer_env\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+</td>
+<td>
 
 ```bash
 # Create virtual environment
 python -m venv adf_analyzer_env
 
 # Activate environment
-# Windows:
-adf_analyzer_env\Scripts\activate
-# Linux/macOS:
 source adf_analyzer_env/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
-### **Method 3: Using Setup Script**
+</td>
+</tr>
+</table>
+
+<br>
+
+### 🤖 Method 3: Using Setup Script
 
 ```bash
 # Run automated setup
 python scripts/setup_environment.py
 
 # Follow interactive prompts for:
-# - Dependency installation
-# - Configuration setup
-# - Environment validation
+# ✅ Dependency installation
+# ✅ Configuration setup
+# ✅ Environment validation
 ```
 
 ---
 
-## 🎮 **USAGE GUIDE**
+<br>
 
-### **Command Line Usage**
+## 🎮 USAGE GUIDE
 
-#### **🚀 Production Analysis (Recommended)**
+### 💻 Command Line Usage
+
+<br>
+
+#### 🚀 Production Analysis (Recommended)
+
 ```bash
 # Basic analysis
 python adf_runner_wrapper.py your_template.json
@@ -324,7 +836,10 @@ python adf_runner_wrapper.py your_template.json --output ./reports
 python adf_analyzer_v10_patched_runner.py your_template.json --enhanced
 ```
 
-#### **📊 Dashboard Mode**
+<br>
+
+#### 📊 Dashboard Mode
+
 ```bash
 # Launch interactive dashboard
 streamlit run adf_dashboard.py
@@ -333,64 +848,98 @@ streamlit run adf_dashboard.py
 streamlit run adf_dashboard.py --server.port 8502 --server.headless true
 ```
 
-### **Dashboard Workflows**
+---
 
-#### **Workflow 1: Generate Excel Report**
+<br>
 
-1. **📤 Upload Template**
-   - Select ARM template file (.json)
-   - Validate template structure
-   - Preview template summary
+### 📋 Dashboard Workflows
 
-2. **⚙️ Configure Enhancements**
-   - Toggle Excel enhancement features
-   - Customize dashboard options
-   - Set performance parameters
+<table>
+<tr>
+<th width="50%">
 
-3. **🔄 Generate Analysis**
-   - Click "Generate Enhanced Excel"
-   - Monitor real-time progress
-   - Review analysis summary
+### Workflow 1: Generate Excel Report
 
-4. **📥 Download Results**
-   - Download enhanced Excel report
-   - Export additional formats (CSV, JSON)
-   - Save configuration for reuse
+</th>
+<th width="50%">
 
-#### **Workflow 2: Upload & Analyze**
+### Workflow 2: Upload & Analyze
 
-1. **📤 Upload Analysis**
-   - Select existing Excel analysis
-   - Validate data structure
-   - Load into dashboard
+</th>
+</tr>
+<tr>
+<td valign="top">
 
-2. **🔍 Explore Data**
-   - Use interactive analytics
-   - Filter and search resources
-   - Generate custom visualizations
+#### 1️⃣ Upload Template
+- Select ARM template file (.json)
+- Validate template structure
+- Preview template summary
 
-3. **📊 Generate Insights**
-   - View health assessments
-   - Analyze dependency graphs
-   - Identify optimization opportunities
+#### 2️⃣ Configure Enhancements
+- Toggle Excel enhancement features
+- Customize dashboard options
+- Set performance parameters
 
-4. **📥 Export Results**
-   - Download filtered data
-   - Export visualizations
-   - Generate summary reports
+#### 3️⃣ Generate Analysis
+- Click **"Generate Enhanced Excel"**
+- Monitor real-time progress
+- Review analysis summary
 
-### **Configuration Management**
+#### 4️⃣ Download Results
+- Download enhanced Excel report
+- Export additional formats (CSV, JSON)
+- Save configuration for reuse
 
-#### Excel Enhancements Settings (Dashboard)
+</td>
+<td valign="top">
 
-- Location in UI: Sidebar → "⚙️ Excel Enhancements settings"
-- Persistence: Saved to `core/enhancement_config.json` and applied immediately at runtime
-- Master toggle: If disabled, the app bypasses all beautification and calls the original export (no auto-linking)
-- Granular toggles: Each phase (core formatting, conditional formatting, hyperlinks, protection, page setup) can be enabled/disabled individually
-- Sheet protection: Optional password; leave blank for no password (Summary sheet remains unprotected by design)
-- Reset: Click "Reset to defaults" to restore the built-in default configuration
+#### 1️⃣ Upload Analysis
+- Select existing Excel analysis
+- Validate data structure
+- Load into dashboard
 
-#### Enhancement Configuration (on disk)
+#### 2️⃣ Explore Data
+- Use interactive analytics
+- Filter and search resources
+- Generate custom visualizations
+
+#### 3️⃣ Generate Insights
+- View health assessments
+- Analyze dependency graphs
+- Identify optimization opportunities
+
+#### 4️⃣ Export Results
+- Download filtered data
+- Export visualizations
+- Generate summary reports
+
+</td>
+</tr>
+</table>
+
+---
+
+<br>
+
+### ⚙️ Configuration Management
+
+<br>
+
+#### 🎛️ Excel Enhancements Settings (Dashboard)
+
+| Setting | Location | Description |
+|:--------|:---------|:------------|
+| **Location in UI** | Sidebar → "⚙️ Excel Enhancements settings" | Access configuration panel |
+| **Persistence** | `core/enhancement_config.json` | Applied immediately at runtime |
+| **Master toggle** | Enable/Disable | Bypasses all beautification when disabled |
+| **Granular toggles** | Per-phase control | Each phase can be enabled/disabled individually |
+| **Sheet protection** | Optional password | Leave blank for no password |
+| **Reset** | Click "Reset to defaults" | Restore built-in default configuration |
+
+<br>
+
+#### 📄 Enhancement Configuration (on disk)
+
 ```json
 {
   "excel_enhancements": {
@@ -449,7 +998,10 @@ streamlit run adf_dashboard.py --server.port 8502 --server.headless true
 }
 ```
 
-#### **Dashboard Configuration**
+<br>
+
+#### 🖥️ Dashboard Configuration
+
 ```json
 {
   "ui": {
@@ -469,23 +1021,27 @@ streamlit run adf_dashboard.py --server.port 8502 --server.headless true
 
 ---
 
-## 📈 **OUTPUT EXAMPLES**
+<br>
 
-### **Excel Report Structure**
+## 📈 OUTPUT EXAMPLES
 
-| Sheet | Content | Purpose |
-|-------|---------|---------|
-| **📊 Summary** | Executive dashboard with key metrics | High-level overview |
-| **🏭 Factory** | Complete factory resource inventory | Detailed resource listing |
-| **📈 Activities** | Activity analysis with types and usage | Activity insights |
-| **📦 Datasets** | Dataset categorization and lineage | Data source analysis |
-| **🔗 LinkedServices** | Connection analysis and validation | Infrastructure review |
-| **⏰ Triggers** | Trigger configuration and scheduling | Automation analysis |
-| **🕸️ Dependencies** | Complete dependency mapping | Impact analysis |
-| **🔄 DataLineage** | End-to-end data flow tracking | Lineage visualization |
-| **⚠️ Issues** | Problems and recommendations | Quality assessment |
+### 📗 Excel Report Structure
 
-### **Health Score Calculation**
+| Sheet | Icon | Content | Purpose |
+|:------|:----:|:--------|:--------|
+| **Summary** | 📊 | Executive dashboard with key metrics | High-level overview |
+| **Factory** | 🏭 | Complete factory resource inventory | Detailed resource listing |
+| **Activities** | 📈 | Activity analysis with types and usage | Activity insights |
+| **Datasets** | 📦 | Dataset categorization and lineage | Data source analysis |
+| **LinkedServices** | 🔗 | Connection analysis and validation | Infrastructure review |
+| **Triggers** | ⏰ | Trigger configuration and scheduling | Automation analysis |
+| **Dependencies** | 🕸️ | Complete dependency mapping | Impact analysis |
+| **DataLineage** | 🔄 | End-to-end data flow tracking | Lineage visualization |
+| **Issues** | ⚠️ | Problems and recommendations | Quality assessment |
+
+<br>
+
+### 🏥 Health Score Calculation
 
 ```python
 # Health Score Formula
@@ -495,28 +1051,40 @@ else:
     health_score = 100
 
 # Status Thresholds
-# 90-100: Excellent (🟢)
-# 75-89:  Good (🔵)  
-# 60-74:  Fair (🟡)
-# <60:    Needs Attention (🔴)
+┌─────────────┬─────────────────────────┐
+│   Range     │        Status           │
+├─────────────┼─────────────────────────┤
+│  90 - 100   │  🟢 Excellent           │
+│  75 - 89    │  🔵 Good                │
+│  60 - 74    │  🟡 Fair                │
+│   < 60      │  🔴 Needs Attention     │
+└─────────────┴─────────────────────────┘
 ```
 
-### **Quality Score Deductions**
+<br>
 
-Starting from 100, deductions applied for:
-- **Circular Dependencies**: -10 points per cycle (max -30)
-- **Orphaned Resources**: Based on percentage (max -20)
-- **Broken Triggers**: -5 points per broken trigger (max -15)
+### 📉 Quality Score Deductions
+
+Starting from **100 points**, deductions are applied for:
+
+| Issue | Deduction | Maximum |
+|:------|:---------:|:-------:|
+| 🔄 **Circular Dependencies** | -10 points per cycle | -30 |
+| 👻 **Orphaned Resources** | Based on percentage | -20 |
+| ⚠️ **Broken Triggers** | -5 points per trigger | -15 |
 
 ---
 
-## 🛠️ **DEVELOPMENT**
+<br>
 
-### **Extending the Analyzer**
+## 🛠️ DEVELOPMENT
 
-#### **Adding New Activity Types**
+### 🔌 Extending the Analyzer
 
-1. **Update Core Parser** (`adf_analyzer_v10_complete.py`)
+<br>
+
+#### 1️⃣ Update Core Parser (`adf_analyzer_v10_complete.py`)
+
 ```python
 def handle_new_activity_type(self, activity):
     """Handle new custom activity type"""
@@ -527,7 +1095,10 @@ def handle_new_activity_type(self, activity):
     }
 ```
 
-2. **Add Patch Support** (`adf_analyzer_v10_patch.py`)
+<br>
+
+#### 2️⃣ Add Patch Support (`adf_analyzer_v10_patch.py`)
+
 ```python
 def patch_new_activity_handling(self, analyzer):
     """Patch for new activity type support"""
@@ -541,7 +1112,10 @@ def patch_new_activity_handling(self, analyzer):
     analyzer.parse_activity = enhanced_parse_activity
 ```
 
-3. **Update Enhancement Layer** (`adf_analyzer_v10_excel_enhancements.py`)
+<br>
+
+#### 3️⃣ Update Enhancement Layer (`adf_analyzer_v10_excel_enhancements.py`)
+
 ```python
 def format_custom_activity_sheet(self, workbook, worksheet):
     """Format custom activity analysis"""
@@ -549,15 +1123,27 @@ def format_custom_activity_sheet(self, workbook, worksheet):
     pass
 ```
 
-### **Contributing Guidelines**
+---
 
-1. **Fork the repository** and create a feature branch
-2. **Follow code style** conventions (PEP 8 for Python)
-3. **Add comprehensive tests** for new functionality
-4. **Update documentation** for any new features
-5. **Submit a pull request** with detailed description
+<br>
 
-### **Testing Framework**
+### 📝 Contributing Guidelines
+
+<div align="center">
+
+| Step | Action |
+|:----:|:-------|
+| 1️⃣ | **Fork the repository** and create a feature branch |
+| 2️⃣ | **Follow code style** conventions (PEP 8 for Python) |
+| 3️⃣ | **Add comprehensive tests** for new functionality |
+| 4️⃣ | **Update documentation** for any new features |
+| 5️⃣ | **Submit a pull request** with detailed description |
+
+</div>
+
+<br>
+
+### 🧪 Testing Framework
 
 ```bash
 # Run comprehensive tests
@@ -575,66 +1161,21 @@ python test_new_metrics.py
 
 ---
 
-## 📚 **DOCUMENTATION**
+<br>
 
-### **Complete Documentation Suite**
+## 🔧 TROUBLESHOOTING
 
-The project includes comprehensive documentation accessible both as files and within the dashboard:
+### 🚨 Common Issues & Solutions
 
-#### **📋 Dashboard Tiles Reference (`TILES.md`)**
-- Complete metric definitions
-- Data source explanations
-- Calculation methodologies
-- Troubleshooting guides
+<br>
 
-#### **🧠 Technical Logic (`LOGIC.md`)**
-- Algorithm descriptions
-- Scoring methodologies
-- Detection logic explanations
-- Mathematical formulas
+<details>
+<summary><b>❌ Template Parsing Errors</b></summary>
 
-#### **🐍 Python Files Reference (`PYTHON_FILES_REFERENCE.md`)**
-- Complete file structure
-- Purpose and functionality
-- Usage examples
-- Integration points
+<br>
 
-#### **📚 Documentation Index (`DOCUMENTATION_INDEX.md`)**
-- Master navigation guide
-- Quick reference links
-- Getting started guides
-- Best practices
+**Problem:** "Failed to parse ARM template"
 
-### **Accessing Documentation**
-
-#### **In-Dashboard Access**
-```
-Dashboard → 📚 Documentation Tab → Choose Section
-├── 📋 Dashboard Tiles
-├── 🧠 Technical Logic  
-├── 🐍 Python Files
-├── 📖 Complete Guide
-└── ⚙️ Configuration
-```
-
-#### **File System Access**
-```bash
-# View documentation files
-ls docs/
-cat TILES.md
-cat LOGIC.md
-cat PYTHON_FILES_REFERENCE.md
-```
-
----
-
-## 🔧 **TROUBLESHOOTING**
-
-### **Common Issues & Solutions**
-
-#### **🚨 Template Parsing Errors**
-
-**Problem**: "Failed to parse ARM template"
 ```bash
 # Solution 1: Validate JSON structure
 python -m json.tool your_template.json
@@ -646,23 +1187,39 @@ file your_template.json
 python adf_runner_wrapper.py your_template.json
 ```
 
-#### **🚨 Memory Issues with Large Templates**
+</details>
 
-**Problem**: "MemoryError" or slow processing
-```python
-# Solution: Use chunked processing
-# In enhancement_config.json:
+<br>
+
+<details>
+<summary><b>❌ Memory Issues with Large Templates</b></summary>
+
+<br>
+
+**Problem:** "MemoryError" or slow processing
+
+```json
+// Solution: Use chunked processing
+// In enhancement_config.json:
 {
   "advanced_dashboard": {
-    "cost_analysis": false,  // Disable memory-intensive features
+    "cost_analysis": false,
     "complexity_heat_map": false
   }
 }
 ```
 
-#### **🚨 Dashboard Connection Issues**
+</details>
 
-**Problem**: Dashboard won't start
+<br>
+
+<details>
+<summary><b>❌ Dashboard Connection Issues</b></summary>
+
+<br>
+
+**Problem:** Dashboard won't start
+
 ```bash
 # Solution 1: Check port availability
 netstat -an | find "8501"
@@ -674,9 +1231,17 @@ streamlit run adf_dashboard.py --server.port 8502
 streamlit cache clear
 ```
 
-#### **🚨 Excel Generation Failures**
+</details>
 
-**Problem**: "Excel file corrupted" or generation fails
+<br>
+
+<details>
+<summary><b>❌ Excel Generation Failures</b></summary>
+
+<br>
+
+**Problem:** "Excel file corrupted" or generation fails
+
 ```bash
 # Solution 1: Use patched runner
 python adf_analyzer_v10_patched_runner.py template.json
@@ -688,25 +1253,29 @@ python adf_analyzer_v10_patched_runner.py template.json
 ls -la output/
 ```
 
+</details>
 
-**🚀 Ready to analyze your Azure Data Factory with unprecedented detail and professional reporting!**
 
 ---
 
-*Last Updated: jan 20, 2024 - v10.1*
+#  Advanced Architecture & Flow Documentation
 
-## Flow Documentation (full)
+---
 
-The complete flow documentation is included below (original file: `FLOW.md`).
+<div align="center">
 
-
-# ADF Analyzer v10 — Advanced Visual Architecture Documentation
+# 🔄 ADF Analyzer v10
+## Advanced Visual Architecture Documentation
 
 **Enterprise Azure Data Factory Analysis System**  
 **Version:** 10.0 Complete Edition  
-**Document Date:** January 19, 2026
+**Document Date:** January 20, 2025
+
+</div>
 
 ---
+
+<br>
 
 ## 📊 SECTION 1: SYSTEM OVERVIEW DIAGRAMS
 
@@ -740,6 +1309,8 @@ block-beta
     B --> C
     C --> D
 ```
+
+<br>
 
 ### 1.2 Complete System Flow Architecture
 
@@ -803,6 +1374,8 @@ flowchart TB
 
 ---
 
+<br>
+
 ## 📊 SECTION 2: CORE ENGINE INTERNAL ARCHITECTURE
 
 ### 2.1 Eight-Phase Processing Pipeline
@@ -853,6 +1426,8 @@ flowchart LR
     style P8 fill:#FFCCBC,stroke:#E64A19,stroke-width:3px
 ```
 
+<br>
+
 ### 2.2 Resource Parsing Order Hierarchy
 
 ```mermaid
@@ -900,6 +1475,8 @@ flowchart TD
     style LAYER5 fill:#F3E5F5,stroke:#7B1FA2,stroke-width:3px
 ```
 
+<br>
+
 ### 2.3 Data Structure State Machine
 
 ```mermaid
@@ -936,6 +1513,8 @@ stateDiagram-v2
 ```
 
 ---
+
+<br>
 
 ## 📊 SECTION 3: DEPENDENCY GRAPH ARCHITECTURE
 
@@ -978,6 +1557,8 @@ flowchart TB
     style DATAFLOW fill:#FCE4EC,stroke:#E91E63,stroke-width:2px
     style RESOURCE fill:#F3E5F5,stroke:#9C27B0,stroke-width:2px
 ```
+
+<br>
 
 ### 3.2 Full Resource Dependency Network
 
@@ -1057,6 +1638,8 @@ flowchart LR
 
 ---
 
+<br>
+
 ## 📊 SECTION 4: TOPOLOGICAL EXECUTION ORDERING
 
 ### 4.1 BFS Algorithm Flow
@@ -1086,6 +1669,8 @@ flowchart TD
     style CHECK fill:#FFC107,stroke:#FF8F00,stroke-width:2px
     style ZERO fill:#FFC107,stroke:#FF8F00,stroke-width:2px
 ```
+
+<br>
 
 ### 4.2 Execution Stage Levels Visualization
 
@@ -1149,6 +1734,8 @@ flowchart TB
 
 ---
 
+<br>
+
 ## 📊 SECTION 5: RECURSIVE ACTIVITY PARSING
 
 ### 5.1 Nested Container Structure
@@ -1193,6 +1780,8 @@ flowchart TD
     style FALSE fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px
 ```
 
+<br>
+
 ### 5.2 Container Type Dispatch
 
 ```mermaid
@@ -1218,6 +1807,8 @@ flowchart TD
 ```
 
 ---
+
+<br>
 
 ## 📊 SECTION 6: MONKEY PATCHING ARCHITECTURE
 
@@ -1266,6 +1857,8 @@ sequenceDiagram
     end
 ```
 
+<br>
+
 ### 6.2 Before vs After Patching
 
 ```mermaid
@@ -1302,6 +1895,8 @@ flowchart LR
     style AFTER fill:#E1BEE7,stroke:#7B1FA2,stroke-width:3px
 ```
 
+<br>
+
 ### 6.3 Enhanced Dispatcher Logic
 
 ```mermaid
@@ -1330,6 +1925,8 @@ flowchart TD
 ```
 
 ---
+
+<br>
 
 ## 📊 SECTION 7: EXCEL EXPORT PIPELINE
 
@@ -1373,29 +1970,9 @@ flowchart TD
     style OUTPUT fill:#F3E5F5,stroke:#7B1FA2,stroke-width:3px
 ```
 
-### 7.2 Auto-Split Logic for Large Sheets
+<br>
 
-```mermaid
-flowchart TD
-    START["Sheet data"] --> CHECK{"Rows ><br/>1,000,000?"}
-    
-    CHECK -->|No| SINGLE["Write single sheet"]
-    CHECK -->|Yes| SPLIT["Calculate parts"]
-    
-    SPLIT --> LOOP["For each chunk"]
-    LOOP --> WRITE["Write Sheet_P{n}"]
-    WRITE --> MORE{"More<br/>chunks?"}
-    
-    MORE -->|Yes| LOOP
-    MORE -->|No| DONE["✅ Complete"]
-    SINGLE --> DONE
-
-    style CHECK fill:#FFC107,stroke:#FF8F00,stroke-width:3px
-    style MORE fill:#FFC107,stroke:#FF8F00,stroke-width:3px
-    style DONE fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-```
-
-### 7.3 Excel Sheet Organization
+### 7.2 Excel Sheet Organization
 
 ```mermaid
 flowchart TB
@@ -1454,323 +2031,62 @@ flowchart TB
 
 ---
 
-## 📊 SECTION 8: ENHANCEMENT LAYER ARCHITECTURE
+<br>
 
-### 8.1 Enhancement Pipeline Flow
+## 📊 SECTION 8: CLI EXECUTION MODES
 
-```mermaid
-flowchart TD
-    subgraph INPUT["📥 INPUT"]
-        I1["Raw Excel<br/>from Analyzer"]
-        I2["enhancement_config.json"]
-    end
+### 8.1 Four Execution Mode Comparison
 
-    subgraph STEP1["Step 1: REWRITE"]
-        S1A["Read Activities"]
-        S1B["Sort by Pipeline + Stage"]
-        S1C["Write back"]
-    end
+<table>
+<tr>
+<th>🔵 BASIC MODE<br/><code>--basic</code></th>
+<th>🟢 FUNCTIONAL ONLY<br/><code>--skip-excel-enhancements</code></th>
+<th>🟡 EXCEL ONLY<br/><code>--skip-functional</code></th>
+<th>🟣 FULL PRODUCTION<br/>(default)</th>
+</tr>
+<tr>
+<td>
 
-    subgraph STEP2["Step 2: STYLE"]
-        S2A["Format headers"]
-        S2B["Apply borders"]
-        S2C["Freeze panes"]
-        S2D["Enable filters"]
-    end
+- Skip functional patches
+- Skip Excel enhancements
+- Base analyzer only
+- Plain Excel output
 
-    subgraph STEP3["Step 3: FORMAT"]
-        S3A["Data bars"]
-        S3B["Color scales"]
-        S3C["Icon sets"]
-    end
+</td>
+<td>
 
-    subgraph STEP4["Step 4: NAVIGATE"]
-        S4A["Insert hyperlinks"]
-        S4B["Build TOC"]
-    end
+- Apply functional patches
+- Skip Excel enhancements
+- Extended parsers active
+- Plain Excel output
 
-    subgraph STEP5["Step 5: DASHBOARD"]
-        S5A["Project banner"]
-        S5B["Metrics"]
-        S5C["Alerts"]
-    end
+</td>
+<td>
 
-    subgraph OUTPUT["📤 OUTPUT"]
-        O1["Enhanced Excel"]
-    end
+- Skip functional patches
+- Apply Excel enhancements
+- Base parsers only
+- Styled Excel output
 
-    I1 --> S1A
-    I2 --> S1A
-    S1A --> S1B --> S1C --> S2A
-    S2A --> S2B --> S2C --> S2D --> S3A
-    S3A --> S3B --> S3C --> S4A
-    S4A --> S4B --> S5A
-    S5A --> S5B --> S5C --> O1
+</td>
+<td>
 
-    style INPUT fill:#E3F2FD,stroke:#1565C0,stroke-width:2px
-    style STEP1 fill:#FFF3E0,stroke:#EF6C00,stroke-width:2px
-    style STEP2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
-    style STEP3 fill:#FCE4EC,stroke:#C2185B,stroke-width:2px
-    style STEP4 fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
-    style STEP5 fill:#E1F5FE,stroke:#0277BD,stroke-width:2px
-    style OUTPUT fill:#DCEDC8,stroke:#689F38,stroke-width:3px
-```
+- Apply functional patches
+- Apply Excel enhancements
+- All parsers active
+- Fully enhanced Excel
 
-### 8.2 Enhancement Configuration Decision Tree
-
-```mermaid
-flowchart TD
-    CONFIG["Load Config"] --> ENABLED{"enabled?"}
-    
-    ENABLED -->|No| SKIP["Skip all<br/>Return raw"]
-    ENABLED -->|Yes| CORE{"core_formatting?"}
-    
-    CORE -->|Yes| APPLYSTYLE["✅ Apply styling"]
-    CORE -->|No| SKIPSTYLE["⏭️ Skip styling"]
-    
-    APPLYSTYLE --> COND
-    SKIPSTYLE --> COND
-    
-    COND{"conditional<br/>formatting?"}
-    COND -->|Yes| APPLYFORMAT["✅ Apply formats"]
-    COND -->|No| SKIPFORMAT["⏭️ Skip formats"]
-    
-    APPLYFORMAT --> LINKS
-    SKIPFORMAT --> LINKS
-    
-    LINKS{"hyperlinks?"}
-    LINKS -->|Yes| APPLYLINKS["✅ Apply links"]
-    LINKS -->|No| SKIPLINKS["⏭️ Skip links"]
-    
-    APPLYLINKS --> SUMM
-    SKIPLINKS --> SUMM
-    
-    SUMM{"enhanced<br/>summary?"}
-    SUMM -->|Yes| APPLYSUMM["✅ Apply summary"]
-    SUMM -->|No| SKIPSUMM["⏭️ Skip summary"]
-    
-    APPLYSUMM --> DONE["Output enhanced Excel"]
-    SKIPSUMM --> DONE
-    SKIP --> DONE
-
-    style ENABLED fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style CORE fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style COND fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style LINKS fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style SUMM fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style DONE fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-```
+</td>
+</tr>
+</table>
 
 ---
 
-## 📊 SECTION 9: CLI EXECUTION MODES
+<br>
 
-### 9.1 Four Execution Mode Comparison
+## 📊 SECTION 9: COMPLETE SYSTEM SUMMARY
 
-```mermaid
-flowchart TB
-    subgraph MODE1["🔵 BASIC MODE<br/>--basic"]
-        direction TB
-        M1A["Skip functional patches"]
-        M1B["Skip Excel enhancements"]
-        M1C["Base analyzer only"]
-        M1D["Plain Excel output"]
-    end
-
-    subgraph MODE2["🟢 FUNCTIONAL ONLY<br/>--skip-excel-enhancements"]
-        direction TB
-        M2A["Apply functional patches"]
-        M2B["Skip Excel enhancements"]
-        M2C["Extended parsers active"]
-        M2D["Plain Excel output"]
-    end
-
-    subgraph MODE3["🟡 EXCEL ONLY<br/>--skip-functional"]
-        direction TB
-        M3A["Skip functional patches"]
-        M3B["Apply Excel enhancements"]
-        M3C["Base parsers only"]
-        M3D["Styled Excel output"]
-    end
-
-    subgraph MODE4["🟣 FULL PRODUCTION<br/>(default)"]
-        direction TB
-        M4A["Apply functional patches"]
-        M4B["Apply Excel enhancements"]
-        M4C["All parsers active"]
-        M4D["Fully enhanced Excel"]
-    end
-
-    style MODE1 fill:#BBDEFB,stroke:#1565C0,stroke-width:3px
-    style MODE2 fill:#C8E6C9,stroke:#2E7D32,stroke-width:3px
-    style MODE3 fill:#FFF9C4,stroke:#F9A825,stroke-width:3px
-    style MODE4 fill:#E1BEE7,stroke:#7B1FA2,stroke-width:3px
-```
-
-### 9.2 CLI Decision Flow
-
-```mermaid
-flowchart TD
-    START["User runs CLI"] --> PARSE["Parse arguments"]
-    PARSE --> BASIC{"--basic<br/>flag?"}
-    
-    BASIC -->|Yes| SKIPALL["Skip all patches<br/>Skip all enhancements"]
-    BASIC -->|No| CHECKF{"--skip-functional?"}
-    
-    CHECKF -->|Yes| SKIPFUNC["Skip functional patches"]
-    CHECKF -->|No| APPLYFUNC["Apply functional patches"]
-    
-    SKIPFUNC --> CHECKE{"--skip-excel?"}
-    APPLYFUNC --> CHECKE
-    
-    CHECKE -->|Yes| SKIPEXCEL["Skip Excel enhancements"]
-    CHECKE -->|No| APPLYEXCEL["Apply Excel enhancements"]
-    
-    SKIPALL --> RUN
-    SKIPEXCEL --> RUN
-    APPLYEXCEL --> RUN
-    
-    RUN["Run analyzer"] --> OUTPUT["Generate Excel"]
-
-    style BASIC fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style CHECKF fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style CHECKE fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style OUTPUT fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-```
-
----
-
-## 📊 SECTION 10: DATA LINEAGE TRACEABILITY
-
-### 10.1 End-to-End Data Lineage Chain
-
-```mermaid
-flowchart LR
-    subgraph TRIGGER["⏰ TRIGGER"]
-        T["Schedule<br/>Every 15 min"]
-    end
-
-    subgraph PIPELINE1["🔄 MASTER PIPELINE"]
-        P1["pl_Master"]
-    end
-
-    subgraph ACTIVITIES1["⚡ ACTIVITIES"]
-        A1["Lookup"]
-        A2["ExecutePipeline"]
-        A3["ExecuteDataFlow"]
-    end
-
-    subgraph PIPELINE2["🔄 CHILD PIPELINE"]
-        P2["pl_Child"]
-    end
-
-    subgraph ACTIVITIES2["⚡ CHILD ACTIVITIES"]
-        A4["Copy"]
-    end
-
-    subgraph DATAFLOW["💧 DATAFLOW"]
-        DF["df_Transform"]
-    end
-
-    subgraph DATASETS["📊 DATASETS"]
-        DS1["Source"]
-        DS2["Staging"]
-        DS3["Target"]
-    end
-
-    subgraph LINKEDSERVICES["🔗 LINKED SERVICES"]
-        LS1["ls_Source"]
-        LS2["ls_Target"]
-    end
-
-    subgraph RUNTIMES["🖥️ RUNTIMES"]
-        IR1["Azure IR"]
-        IR2["Self-hosted IR"]
-    end
-
-    T --> P1
-    P1 --> A1
-    P1 --> A2
-    P1 --> A3
-    A2 --> P2
-    P2 --> A4
-    A4 --> DS1
-    A4 --> DS2
-    A3 --> DF
-    DF --> DS2
-    DF --> DS3
-    DS1 --> LS1
-    DS2 --> LS2
-    DS3 --> LS2
-    LS1 --> IR1
-    LS2 --> IR2
-
-    style TRIGGER fill:#FFECB3,stroke:#FF8F00,stroke-width:3px
-    style PIPELINE1 fill:#FFCDD2,stroke:#D32F2F,stroke-width:3px
-    style PIPELINE2 fill:#FFCDD2,stroke:#D32F2F,stroke-width:2px
-    style DATAFLOW fill:#C8E6C9,stroke:#388E3C,stroke-width:3px
-    style DATASETS fill:#D1C4E9,stroke:#512DA8,stroke-width:3px
-    style LINKEDSERVICES fill:#B2EBF2,stroke:#0097A7,stroke-width:3px
-    style RUNTIMES fill:#F5F5F5,stroke:#616161,stroke-width:3px
-```
-
----
-
-## 📊 SECTION 11: CYCLE DETECTION ALGORITHM
-
-### 11.1 Tarjan's SCC Algorithm Flow
-
-```mermaid
-flowchart TD
-    START(("🚀 START")) --> INIT["Initialize<br/>index, lowlink, stack"]
-    INIT --> FORALL["For each node"]
-    FORALL --> VISITED{"Node<br/>visited?"}
-    
-    VISITED -->|No| STRONG["strongconnect(node)"]
-    VISITED -->|Yes| NEXT["Next node"]
-    NEXT --> DONE{"All nodes<br/>processed?"}
-    
-    DONE -->|No| FORALL
-    DONE -->|Yes| RESULT["Return SCC list"]
-    
-    STRONG --> SETINDEX["Set index, lowlink"]
-    SETINDEX --> PUSH["Push to stack"]
-    PUSH --> NEIGHBORS["For each neighbor"]
-    NEIGHBORS --> NVISITED{"Neighbor<br/>visited?"}
-    
-    NVISITED -->|No| RECURSE["Recurse neighbor"]
-    NVISITED -->|Yes, on stack| UPDATE["Update lowlink"]
-    
-    RECURSE --> UPDATEMIN["lowlink = min(...)"]
-    UPDATE --> UPDATEMIN
-    UPDATEMIN --> MOREN{"More<br/>neighbors?"}
-    
-    MOREN -->|Yes| NEIGHBORS
-    MOREN -->|No| ISROOT{"Is root?<br/>lowlink = index"}
-    
-    ISROOT -->|Yes| POP["Pop SCC<br/>from stack"]
-    ISROOT -->|No| RETURN["Return"]
-    
-    POP --> RECORD["Record cycle<br/>if size > 1"]
-    RECORD --> RETURN
-    RETURN --> FORALL
-
-    RESULT --> FINISH(("✅ END"))
-
-    style START fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-    style FINISH fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
-    style VISITED fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style NVISITED fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style DONE fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style MOREN fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-    style ISROOT fill:#FFC107,stroke:#FF8F00,stroke-width:2px
-```
-
----
-
-## 📊 SECTION 12: COMPLETE SYSTEM SUMMARY
-
-### 12.1 System Architecture Overview
+### 9.1 System Architecture Overview
 
 ```mermaid
 flowchart TB
@@ -1801,7 +2117,7 @@ flowchart TB
     subgraph CONSUMERS["👥 CONSUMERS"]
         MANUAL["Manual Review"]
         VALID["Validation Scripts"]
-        STREAM["Streamlit Dashboard<br/>(out of scope)"]
+        STREAM["Streamlit Dashboard"]
     end
 
     CLI --> RUNNER
@@ -1821,45 +2137,29 @@ flowchart TB
     style ORCHESTRATOR fill:#FFF3E0,stroke:#EF6C00,stroke-width:3px
     style EXTENSIONS fill:#E8F5E9,stroke:#2E7D32,stroke-width:3px
     style ENGINE fill:#FCE4EC,stroke:#C2185B,stroke-width:3px
-    style OUTPUTS fill:#F3E5F5,stroke:#7B1FA2,stroke-width:3px
+    style OUTPUTS fill:#F3E5F5,stroke:#9C27B0,stroke-width:3px
     style CONSUMERS fill:#E1F5FE,stroke:#0277BD,stroke-width:3px
 ```
 
-### 12.2 File Responsibility Summary
+<br>
 
-```mermaid
-flowchart LR
-    subgraph FILES["📁 CORE FILES"]
-        F1["adf_analyzer_v10_complete.py<br/>⚙️ Core Engine"]
-        F2["adf_analyzer_v10_patch.py<br/>🧩 Extensions"]
-        F3["adf_analyzer_v10_patched_runner.py<br/>🎛️ Orchestrator"]
-        F4["adf_analyzer_v10_excel_enhancements.py<br/>🎨 Beautification"]
-    end
+### 9.2 File Responsibility Summary
 
-    subgraph ROLES["🎯 ROLES"]
-        R1["ARM parsing<br/>Dependency graphs<br/>Topological sort<br/>Excel export"]
-        R2["Activity parsers<br/>Dataset parsers<br/>Dispatcher override"]
-        R3["CLI handling<br/>Patch control<br/>Execution flow"]
-        R4["Styling<br/>Formatting<br/>Dashboards"]
-    end
-
-    F1 --> R1
-    F2 --> R2
-    F3 --> R3
-    F4 --> R4
-
-    style F1 fill:#FCE4EC,stroke:#C2185B,stroke-width:3px
-    style F2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:3px
-    style F3 fill:#FFF3E0,stroke:#EF6C00,stroke-width:3px
-    style F4 fill:#E3F2FD,stroke:#1565C0,stroke-width:3px
-```
+| File | Role | Key Functions |
+|:-----|:----:|:--------------|
+| `adf_analyzer_v10_complete.py` | ⚙️ Core Engine | ARM parsing, Dependency graphs, Topological sort, Excel export |
+| `adf_analyzer_v10_patch.py` | 🧩 Extensions | Activity parsers, Dataset parsers, Dispatcher override |
+| `adf_analyzer_v10_patched_runner.py` | 🎛️ Orchestrator | CLI handling, Patch control, Execution flow |
+| `adf_analyzer_v10_excel_enhancements.py` | 🎨 Beautification | Styling, Formatting, Dashboards |
 
 ---
+
+<br>
 
 ## 📋 DIAGRAM TYPE REFERENCE
 
 | Section | Diagram Type | Purpose |
-|---------|--------------|---------|
+|:-------:|:-------------|:--------|
 | 1.1 | Block Diagram | High-level system view |
 | 1.2 | Layered Flowchart | Component architecture |
 | 2.1 | Horizontal Pipeline | Phase progression |
@@ -1871,20 +2171,62 @@ flowchart LR
 | 5.1-5.2 | Nested Flowchart | Recursive structure |
 | 6.1 | Sequence Diagram | Runtime interaction |
 | 6.2-6.3 | Transformation Flowchart | Patch mechanism |
-| 7.1-7.3 | Pipeline Flowchart | Export process |
-| 8.1-8.2 | Decision Tree | Configuration logic |
-| 9.1-9.2 | Comparison Flowchart | Mode differences |
-| 10.1 | Lineage Graph | Data traceability |
-| 11.1 | Algorithm Flowchart | Tarjan's SCC |
-| 12.1-12.2 | Summary Flowchart | System overview |
+| 7.1-7.2 | Pipeline Flowchart | Export process |
+| 8.1 | Comparison Table | Mode differences |
+| 9.1-9.2 | Summary Flowchart | System overview |
+
+---
+
+<br>
+
+## 📚 DOCUMENTATION ACCESS
+
+### 📁 In-Dashboard Access
+
+```
+Dashboard → 📚 Documentation Tab → Choose Section
+├── 📋 Dashboard Tiles
+├── 🧠 Technical Logic  
+├── 🐍 Python Files
+├── 📖 Complete Guide
+└── ⚙️ Configuration
+```
+
+### 📂 File System Access
+
+```bash
+# View documentation files
+ls docs/
+cat TILES.md
+cat LOGIC.md
+cat PYTHON_FILES_REFERENCE.md
+```
+
+---
+
+<div align="center">
+
+<br>
+
+## 🚀 Ready to Analyze!
+
+**Analyze your Azure Data Factory with unprecedented detail and professional reporting!**
+
+<br>
 
 ---
 
 **Document Version:** 3.0 Advanced Edition  
 **Diagram Syntax:** Validated Mermaid 10.x  
-**Last Updated:** January 19, 2026
+**Last Updated:** January 20, 2025
 
-**The generated Excel workbook is later consumed by a Streamlit-based visualization layer, which is under active development and intentionally out of scope for this document.**
+<br>
 
+[![Email](https://img.shields.io/badge/Email-masteravinashrai%40gmail.com-blue?style=for-the-badge&logo=gmail)](mailto:masteravinashrai@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-avinashanalytics-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/avinashanalytics/)
 
+<br>
 
+**⭐ Star this repository if you find it helpful!**
+
+</div>
