@@ -1,0 +1,133 @@
+<!-- ==================== ADF ANALYZER v10.1 - SVG VISUAL README ==================== -->
+<!-- SECTION 1: HERO / PROJECT TITLE -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#21262d"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    
+    <!-- Azure Blue Gradient -->
+    <linearGradient id="azureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0078d4"/>
+      <stop offset="100%" style="stop-color:#00bcf2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="500" fill="url(#heroBg)"/>
+  
+  <!-- Decorative Grid Pattern -->
+  <g opacity="0.05">
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="250" x2="1200" y2="250" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="450" x2="1200" y2="450" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="500" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="1100" y1="0" x2="1100" y2="500" stroke="#58a6ff" stroke-width="1"/>
+  </g>
+  
+  <!-- Decorative Circles -->
+  <circle cx="150" cy="100" r="80" fill="none" stroke="#58a6ff" stroke-width="1" opacity="0.1"/>
+  <circle cx="150" cy="100" r="120" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.08"/>
+  <circle cx="1050" cy="400" r="100" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.1"/>
+  <circle cx="1050" cy="400" r="150" fill="none" stroke="#58a6ff" stroke-width="1" opacity="0.06"/>
+  
+  <!-- Azure Logo Icon -->
+  <g transform="translate(540, 80)">
+    <path d="M60 0 L120 60 L60 120 L0 60 Z" fill="url(#azureGrad)" opacity="0.9"/>
+    <path d="M60 20 L100 60 L60 100 L20 60 Z" fill="#0d1117" opacity="0.3"/>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="600" y="240" text-anchor="middle" fill="url(#accentGrad)" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" filter="url(#glow)">
+    ADF Analyzer v10.1
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="290" text-anchor="middle" fill="#8b949e" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400">
+    Ultimate Interactive Edition
+  </text>
+  
+  <!-- Accent Line -->
+  <rect x="400" y="310" width="400" height="3" rx="1.5" fill="url(#accentGrad)" opacity="0.8"/>
+  
+  <!-- Tagline -->
+  <text x="600" y="360" text-anchor="middle" fill="#c9d1d9" font-family="system-ui, -apple-system, sans-serif" font-size="18">
+    Enterprise-grade toolkit for Azure Data Factory ARM template analysis
+  </text>
+  
+  <!-- Feature Pills -->
+  <g transform="translate(600, 400)">
+    <!-- Interactive Dashboard -->
+    <rect x="-350" y="0" width="180" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <circle cx="-330" cy="18" r="6" fill="#58a6ff"/>
+    <text x="-315" y="24" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Interactive Dashboard</text>
+    
+    <!-- Excel Reporting -->
+    <rect x="-140" y="0" width="160" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <circle cx="-120" cy="18" r="6" fill="#3fb950"/>
+    <text x="-105" y="24" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Excel Reporting</text>
+    
+    <!-- Advanced Analytics -->
+    <rect x="50" y="0" width="170" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <circle cx="70" cy="18" r="6" fill="#a371f7"/>
+    <text x="85" y="24" fill="#c9d1d9" font-family="system-ui, sans-serif" font-size="13">Advanced Analytics</text>
+  </g>
+  
+  <!-- Version Badges -->
+  <g transform="translate(600, 460)">
+    <rect x="-280" y="0" width="90" height="28" rx="4" fill="#1f6feb"/>
+    <text x="-235" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">v10.1</text>
+    
+    <rect x="-175" y="0" width="100" height="28" rx="4" fill="#238636"/>
+    <text x="-125" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Python 3.8+</text>
+    
+    <rect x="-60" y="0" width="90" height="28" rx="4" fill="#f85149"/>
+    <text x="-15" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Streamlit</text>
+    
+    <rect x="45" y="0" width="110" height="28" rx="4" fill="#0078d4"/>
+    <text x="100" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Azure Ready</text>
+    
+    <rect x="170" y="0" width="80" height="28" rx="4" fill="#da3b01"/>
+    <text x="210" y="19" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" font-weight="600">MIT</text>
+  </g>
+</svg>
