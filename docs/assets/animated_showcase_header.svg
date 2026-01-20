@@ -87,7 +87,7 @@
   <!-- Main title -->
   <g filter="url(#azureGlow)">
     <text x="500" y="38" text-anchor="middle" font-family="'Segoe UI', 'SF Pro Display', sans-serif" font-weight="700" font-size="22" fill="url(#azureGrad)" letter-spacing="2">
-      ENTERPRISE DOCUMENTATION SHOWCASE
+       DOCUMENTATION SHOWCASE
     </text>
   </g>
   
