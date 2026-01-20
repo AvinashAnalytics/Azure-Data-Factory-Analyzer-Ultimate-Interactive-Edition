@@ -206,12 +206,15 @@ class ParsedActivity:
     state: str = "Enabled"
     partition_option: str = ""
     partition_column: str = ""
+    execution_stage: Optional[int] = None
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for DataFrame export"""
         return {
             'Pipeline': self.pipeline,
+            'ExecutionStage': self.execution_stage if self.execution_stage is not None else '',
             'Sequence': self.sequence,
+            'ParseSequence': self.sequence,
             'Parent': self.parent,
             'Depth': self.depth,
             'Activity': self.name,
@@ -241,7 +244,10 @@ class ParsedActivity:
             'SecureInput': 'Yes' if self.secure_input else 'No',
             'SecureOutput': 'Yes' if self.secure_output else 'No',
             'UserProperties': ', '.join(self.user_properties[:10]),
-            'State': self.state
+            'State': self.state,
+            'HasDependsOn': 'Yes' if self.dependencies else 'No',
+            'DependsOnCount': len(self.dependencies),
+            'CycleFlag': 'Yes' if self.execution_stage == 'CYCLE' else 'No'
         }
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -400,6 +406,21 @@ class TextSanitizer:
         
         return name if name else 'Sheet1'
 
+    @staticmethod
+    def sanitize_column_name(name: str) -> str:
+        """
+        Create a safe column name from an arbitrary string
+        - Remove non-alphanumeric characters
+        - Ensure it doesn't start with a digit
+        """
+        if not name:
+            return 'Column'
+        # Remove non-alphanumeric
+        col = re.sub(r'[^0-9a-zA-Z]', '', name)
+        # Prefix underscore if it starts with a digit
+        if re.match(r'^[0-9]', col):
+            col = f'_{col}'
+        return col or 'Column'
 class PathValidator:
     """
      Security-focused path validation
@@ -2739,10 +2760,10 @@ class UltimateEnterpriseADFAnalyzer:
             script_lines = type_props.get('scriptLines', [])
             script_text = '\n'.join(str(line) for line in script_lines[:1000]) if isinstance(script_lines, list) else ''
             
-            transformation_types = self._extract_transformation_types_from_script(script_text)
+            transformation_types, transformation_counts = self._extract_transformation_types_from_script(script_text)
             
             # ═══════════════════════════════════════════════════════════════
-            # Create DataFlow Record
+            # Create DataFlow Record with individual transformation type columns
             # ═══════════════════════════════════════════════════════════════
             dataflow_rec = {
                 'DataFlow': name,
@@ -2768,6 +2789,44 @@ class UltimateEnterpriseADFAnalyzer:
                 'Folder': TextSanitizer.sanitize_value(self._get_nested(props, 'folder.name')),
                 'Annotations': TextSanitizer.sanitize_value(', '.join(str(a) for a in props.get('annotations', [])))
             }
+            
+            # Store transformation counts for later dynamic column creation
+            dataflow_rec['_transformation_counts'] = transformation_counts
+
+            # Compute transformation score and complexity based on weighted rules
+            # Weights defined per transformation type (see design image)
+            tf_weights = {
+                'Source': 1,
+                'Sink': 1,
+                'DerivedColumn': 2,
+                'Filter': 1,
+                'Join': 4,
+                'Lookup': 4,
+                'Aggregate': 5,
+                'ConditionalSplit': 4,
+                'Exists': 5,
+                'Assert': 5,
+                'Union': 3
+            }
+
+            score = 0
+            for ttype, count in transformation_counts.items():
+                weight = tf_weights.get(ttype, 0)
+                try:
+                    score += int(count) * int(weight)
+                except Exception:
+                    pass
+
+            # Complexity buckets: <=5 Low, 5-10 Medium, >10 High
+            if score <= 5:
+                complexity = 'Low'
+            elif score <= 10:
+                complexity = 'Medium'
+            else:
+                complexity = 'High'
+
+            dataflow_rec['TransformationScore'] = score
+            dataflow_rec['TransformationComplexity'] = complexity
             
             self.results['dataflows'].append(dataflow_rec)
             
@@ -2799,16 +2858,17 @@ class UltimateEnterpriseADFAnalyzer:
         except Exception as e:
             self.logger.warning(f"DataFlow parsing failed: {e}", name)
     
-    def _extract_transformation_types_from_script(self, script_text: str) -> List[str]:
+    def _extract_transformation_types_from_script(self, script_text: str) -> Tuple[List[str], Dict[str, int]]:
         """
         Extract transformation types from DataFlow script
         
-        Returns list of transformation types found
+        Returns tuple of (list of transformation types found, counts dictionary)
         """
         transformation_types = []
+        transformation_counts = {}
         
         if not script_text:
-            return transformation_types
+            return transformation_types, transformation_counts
         
         # Transformation type patterns
         trans_patterns = {
@@ -2837,13 +2897,78 @@ class UltimateEnterpriseADFAnalyzer:
         
         for pattern, trans_type in trans_patterns.items():
             try:
-                if re.search(pattern, script_text, re.IGNORECASE):
+                matches = re.findall(pattern, script_text, re.IGNORECASE)
+                count = len(matches)
+                if count > 0:
                     transformation_types.append(trans_type)
-                    self.metrics['transformation_types'][trans_type] += 1
+                    transformation_counts[trans_type] = count
+                    self.metrics['transformation_types'][trans_type] += count
             except:
                 pass
         
-        return transformation_types
+        return transformation_types, transformation_counts
+    
+    def _add_dynamic_transformation_columns(self):
+        """
+        After all dataflows are parsed, add dynamic columns for all discovered transformation types
+        """
+        # Collect all unique transformation types found across all dataflows
+        all_transformation_types = set()
+        for dataflow in self.results['dataflows']:
+            if '_transformation_counts' in dataflow:
+                all_transformation_types.update(dataflow['_transformation_counts'].keys())
+        
+        # Sort for consistent column ordering
+        sorted_transformation_types = sorted(all_transformation_types)
+        
+        # Add transformation count columns to each dataflow record
+        for dataflow in self.results['dataflows']:
+            transformation_counts = dataflow.pop('_transformation_counts', {})
+            
+            # Add count columns for each discovered transformation type
+            for transform_type in sorted_transformation_types:
+                dataflow[f'{transform_type}_Count'] = transformation_counts.get(transform_type, 0)
+        
+        # Update placeholder schema with discovered transformation types
+        if sorted_transformation_types:
+            transformation_columns = [f'{t}_Count' for t in sorted_transformation_types]
+            self._update_dataflows_placeholder_schema(transformation_columns)
+    
+    def _update_dataflows_placeholder_schema(self, transformation_columns):
+        """
+        Update the DataFlows placeholder schema with discovered transformation columns
+        """
+        base_columns = [
+            'DataFlow', 'Type', 'TransformationCount', 'SourceCount', 'SinkCount',
+            'SourceNames', 'SinkNames', 'TransformationNames', 'TransformationTypes',
+            'TransformationScore', 'TransformationComplexity'
+        ]
+        # Insert transformation count columns after basic info
+        full_columns = base_columns[:3] + transformation_columns + base_columns[3:]
+        
+        # Store the dynamic schema for use in placeholder creation
+        self._dynamic_dataflows_schema = full_columns
+
+    def _update_pipeline_placeholder_schema(self, activity_columns):
+        """
+        Update the PipelineAnalysis placeholder schema with discovered activity columns
+        """
+        base_columns = [
+            'Pipeline', 'TotalActivities', 'CopyActivities', 'DataFlowActivities', 'StoredProcActivities',
+            'ScriptActivities', 'LookupActivities', 'WebActivities', 'NotebookActivities', 'GetMetadataActivities',
+            'LoopActivities', 'ConditionalActivities', 'MaxNestingDepth', 'TriggerCount', 'Triggers',
+            'UpstreamPipelines', 'UpstreamPipelineNames', 'DownstreamPipelines', 'DownstreamPipelineNames',
+            'DataFlowCount', 'DataFlowNames', 'DatasetCount', 'SourceSystems', 'TargetSystems', 'IsMultiSource',
+            'IsMultiTarget', 'HasSQL', 'HasStoredProcedures', 'HasCopyActivity', 'HasDataFlow',
+            'ComplexityScore', 'Complexity', 'IsOrphaned', 'ImpactLevel', 'Parameters', 'Variables', 'Description'
+        ]
+        # Insert activity-specific columns after the standard activity count block
+        try:
+            insert_after = base_columns.index('MaxNestingDepth') + 1
+        except ValueError:
+            insert_after = 1
+        full_columns = base_columns[:insert_after] + activity_columns + base_columns[insert_after:]
+        self._dynamic_pipeline_schema = full_columns
     
     # ═══════════════════════════════════════════════════════════════════════
     # PIPELINE PARSING
@@ -4902,6 +5027,10 @@ class UltimateEnterpriseADFAnalyzer:
                 self.logger.warning(f"DataFlow parse failed: {e}", name)
         self.logger.info(f"  ✓ Parsed {count} dataflows")
         
+        # Add dynamic transformation columns after all dataflows are parsed
+        self.logger.info("Adding dynamic transformation columns...")
+        self._add_dynamic_transformation_columns()
+        
         # Pipelines (with progress bar for large datasets)
         self.logger.info("Parsing Pipelines...")
         pipeline_items = list(self.resources[ResourceType.PIPELINE.value].items())
@@ -5680,7 +5809,20 @@ class UltimateEnterpriseADFAnalyzer:
         """
         
         self.logger.info(f"Building pipeline analysis for {len(self.resources[ResourceType.PIPELINE.value])} pipelines...")
-        
+
+        # Discover all activity types across the workspace so we can create
+        # consistent dynamic columns (one column per activity type)
+        all_activity_types = sorted({a.get('ActivityType', '') for a in self.results['activities'] if a.get('ActivityType')})
+        # Map activity type -> sanitized column name (e.g., SetVariable -> SetVariableActivities)
+        activity_type_to_column = {
+            atype: f"{TextSanitizer.sanitize_column_name(atype)}Activities"
+            for atype in all_activity_types
+        }
+        # Persist dynamic schema for placeholder creation
+        dynamic_activity_columns = list(activity_type_to_column.values())
+        if dynamic_activity_columns:
+            self._update_pipeline_placeholder_schema(dynamic_activity_columns)
+
         for pipeline_name, pipeline_resource in self.resources[ResourceType.PIPELINE.value].items():
             # Get all activities for this pipeline
             activities = [
@@ -5784,7 +5926,7 @@ class UltimateEnterpriseADFAnalyzer:
             depths = [a['Depth'] for a in activities if isinstance(a.get('Depth'), int)]
             max_depth = max(depths) if depths else 0
             
-            self.results['pipeline_analysis'].append({
+            rec = {
                 'Pipeline': pipeline_name,
                 'Folder': self._get_nested(props, 'folder.name'),
                 
@@ -5811,7 +5953,8 @@ class UltimateEnterpriseADFAnalyzer:
                 'UpstreamPipelines': len(upstream_pipelines),
                 'UpstreamPipelineNames': ', '.join(sorted(upstream_pipelines[:3])) + (f' (+{len(upstream_pipelines)-3})' if len(upstream_pipelines) > 3 else ''),
                 'DownstreamPipelines': len(downstream_pipelines),
-                'DownstreamPipelineNames': ', '.join(sorted(downstream_pipelines[:3])) + (f' (+{len(downstream_pipelines)-3})' if len(downstream_pipelines) > 3 else ''),
+                # Emit full list of downstream pipeline names (no +N truncation)
+                'DownstreamPipelineNames': ', '.join(sorted(downstream_pipelines)),
                 'DataFlowCount': len(dataflows),
                 'DataFlowNames': ', '.join(sorted(dataflows[:3])) + (f' (+{len(dataflows)-3})' if len(dataflows) > 3 else ''),
                 'DatasetCount': len(datasets),
@@ -5839,7 +5982,31 @@ class UltimateEnterpriseADFAnalyzer:
                 'Parameters': len(props.get('parameters', {})),
                 'Variables': len(props.get('variables', {})),
                 'Description': TextSanitizer.sanitize_value(props.get('description', ''))[:200]
-            })
+            }
+
+            # Insert dynamic activity-type columns into the record immediately after MaxNestingDepth
+            ordered_rec = {}
+            for k, v in rec.items():
+                ordered_rec[k] = v
+                if k == 'MaxNestingDepth':
+                    for atype, col in activity_type_to_column.items():
+                        ordered_rec[col] = activity_counts.get(atype, 0)
+
+            self.results['pipeline_analysis'].append(ordered_rec)
+        
+        # ═══════════════════════════════════════════════════════════════
+        # FIX: Update ActivityCount in Pipelines sheet to include ALL activities
+        # The original parsing only counts top-level activities from JSON
+        # This update ensures it includes nested activities (ForEach, IfCondition, etc.)
+        # ═══════════════════════════════════════════════════════════════
+        for pipeline_rec in self.results['pipelines']:
+            pipeline_name = pipeline_rec.get('Pipeline', '')
+            # Count all activities for this pipeline (including nested)
+            total_activities = len([
+                a for a in self.results['activities']
+                if a.get('Pipeline') == pipeline_name
+            ])
+            pipeline_rec['ActivityCount'] = total_activities
         
         self.logger.info(f"Pipeline analysis complete: {len(self.results['pipeline_analysis'])} pipelines")
     
@@ -5902,21 +6069,109 @@ class UltimateEnterpriseADFAnalyzer:
             
             self.results['activity_execution_order'].append({
                 'Pipeline': pipeline,
+                'FromExecutionStage': 'UNKNOWN',
+                'ToExecutionStage': 'UNKNOWN',
                 'FromActivity': from_activity,
-                'FromSequence': from_seq if from_seq is not None else 'UNKNOWN',  #  FIXED: Handle 0
-                'FromParent': from_parent,
                 'ToActivity': to_activity,
+                'FromSequence': from_seq if from_seq is not None else 'UNKNOWN',  #  FIXED: Handle 0
                 'ToSequence': to_seq if to_seq is not None else 'UNKNOWN',  #  FIXED: Handle 0
+                'FromParent': from_parent,
                 'ToParent': to_parent,
                 'Conditions': condition_str,
-                'SequenceFlow': f"{from_seq}→{to_seq}" if from_seq is not None and to_seq is not None else 'UNKNOWN',  #  FIXED
                 'SameContainer': 'Yes' if from_parent == to_parent else 'No'
             })
             
             total_deps += 1
         
         self.logger.info(f"Activity execution order: {total_deps} dependencies")
+        # Compute topological execution stages so we can represent parallelizable stages
+        try:
+            self._compute_execution_stages()
+        except Exception as e:
+            self.logger.warning(f"Failed to compute execution stages: {e}")
     
+    def _compute_execution_stages(self):
+        """
+         Compute topological ExecutionStage per activity (per-pipeline).
+
+        Uses a Kahn-style topological layering algorithm:
+        - Nodes with indegree 0 get stage 0
+        - A node's stage = max(predecessor_stage) + 1
+        - Cycles (if any) are marked as 'CYCLE'
+        """
+        self.logger.info("Computing ExecutionStage (topological levels)...")
+
+        # Build per-pipeline activity sets from lookup
+        pipeline_activities = defaultdict(set)
+        for key in list(self.lookup.get('activities', {}).keys()):
+            p, a = key
+            pipeline_activities[p].add(a)
+
+        for pipeline, acts in pipeline_activities.items():
+            # Initialize adjacency and indegree
+            adj = {a: [] for a in acts}
+            indeg = {a: 0 for a in acts}
+
+            # Build edges: dependency recorded as (to_activity -> from_activity)
+            for dep in self.dependencies.get('activity_to_activity', []):
+                if dep.get('pipeline') != pipeline:
+                    continue
+                src = dep.get('to_activity')  # predecessor
+                dst = dep.get('from_activity')  # dependent
+                if src not in adj:
+                    adj.setdefault(src, [])
+                    indeg.setdefault(src, 0)
+                if dst not in adj:
+                    adj.setdefault(dst, [])
+                    indeg.setdefault(dst, 0)
+                adj[src].append(dst)
+                indeg[dst] = indeg.get(dst, 0) + 1
+
+            # Kahn's algorithm with stage tracking
+            q = deque([n for n, d in indeg.items() if d == 0])
+            pred_max = {n: -1 for n in indeg}
+            stage_map = {}
+
+            while q:
+                n = q.popleft()
+                st = pred_max[n] + 1 if pred_max[n] >= 0 else 0
+                stage_map[n] = st
+                for nb in adj.get(n, []):
+                    pred_max[nb] = max(pred_max.get(nb, -1), stage_map[n])
+                    indeg[nb] -= 1
+                    if indeg[nb] == 0:
+                        q.append(nb)
+
+            # Nodes in cycles (not in stage_map) -> mark as 'CYCLE'
+            for n in adj.keys():
+                if n not in stage_map:
+                    stage_map[n] = 'CYCLE'
+
+            # Write back into lookup and results
+            for act_name, st in stage_map.items():
+                key = (pipeline, act_name)
+                if key in self.lookup.get('activities', {}):
+                    self.lookup['activities'][key]['ExecutionStage'] = st
+
+            # Update results['activities'] for this pipeline
+            for i, row in enumerate(self.results.get('activities', [])):
+                if row.get('Pipeline') == pipeline:
+                    act_name = row.get('Activity')
+                    if act_name in stage_map:
+                        self.results['activities'][i]['ExecutionStage'] = stage_map[act_name]
+
+        # Update activity_execution_order entries with stages
+        for i, row in enumerate(self.results.get('activity_execution_order', [])):
+            p = row.get('Pipeline')
+            from_act = row.get('FromActivity')
+            to_act = row.get('ToActivity')
+            from_stage = self.lookup.get('activities', {}).get((p, from_act), {}).get('ExecutionStage', 'UNKNOWN')
+            to_stage = self.lookup.get('activities', {}).get((p, to_act), {}).get('ExecutionStage', 'UNKNOWN')
+            self.results['activity_execution_order'][i]['FromExecutionStage'] = from_stage
+            self.results['activity_execution_order'][i]['ToExecutionStage'] = to_stage
+
+        self.logger.info("ExecutionStage computation complete")
+
     # ═══════════════════════════════════════════════════════════════════════
     # ACTIVITY COUNT STATISTICS
     # ═══════════════════════════════════════════════════════════════════════
@@ -7239,6 +7494,22 @@ class UltimateEnterpriseADFAnalyzer:
                 {'Category': 'IMPACT ANALYSIS', 'Metric': 'LOW Impact Pipelines', 'Value': impact_counts.get('LOW', 0), 'Details': 'Standalone/orphaned'},
             ])
         
+        # Add DataFlow complexity distribution (heatmap data)
+        if self.results.get('dataflows'):
+            df_scores = [d.get('TransformationScore', 0) for d in self.results['dataflows'] if isinstance(d.get('TransformationScore', 0), (int, float))]
+            if df_scores:
+                df_critical = sum(1 for s in df_scores if s > Config.COMPLEXITY_CRITICAL_THRESHOLD)
+                df_high = sum(1 for s in df_scores if Config.COMPLEXITY_HIGH_THRESHOLD < s <= Config.COMPLEXITY_CRITICAL_THRESHOLD)
+                df_medium = sum(1 for s in df_scores if Config.COMPLEXITY_MEDIUM_THRESHOLD < s <= Config.COMPLEXITY_HIGH_THRESHOLD)
+                df_low = sum(1 for s in df_scores if s <= Config.COMPLEXITY_MEDIUM_THRESHOLD)
+                summary_data.extend([
+                    {'Category': '', 'Metric': '', 'Value': '', 'Details': ''},
+                    {'Category': 'DATAFLOW COMPLEXITY', 'Metric': 'CRITICAL DataFlows', 'Value': df_critical, 'Details': 'See sheet: DataFlows'},
+                    {'Category': 'DATAFLOW COMPLEXITY', 'Metric': 'HIGH DataFlows', 'Value': df_high, 'Details': 'See sheet: DataFlows'},
+                    {'Category': 'DATAFLOW COMPLEXITY', 'Metric': 'MEDIUM DataFlows', 'Value': df_medium, 'Details': 'See sheet: DataFlows'},
+                    {'Category': 'DATAFLOW COMPLEXITY', 'Metric': 'LOW DataFlows', 'Value': df_low, 'Details': 'See sheet: DataFlows'},
+                ])
+        
         df = pd.DataFrame(summary_data)
         safe_name = self._get_unique_sheet_name('Summary')
         df.to_excel(writer, sheet_name=safe_name, index=False)
@@ -7259,16 +7530,32 @@ class UltimateEnterpriseADFAnalyzer:
          Sheet ordering: Pipeline first (per meeting requirement)
         """
         
+        # Load hide_config for column removal
+        hide_cfg = {}
+        hidden_columns = {}
+        try:
+            for cfg_path in ['enhancement_config.json', 'config/enhancement_config.json']:
+                if Path(cfg_path).exists():
+                    with open(cfg_path, 'r') as f:
+                        cfg = json.load(f)
+                        hide_cfg = cfg.get('hide_config', {})
+                        if hide_cfg.get('enabled', False):
+                            hidden_columns = hide_cfg.get('hidden_columns', {})
+                        break
+        except Exception as e:
+            self.logger.warning(f"Could not load hide_config: {e}")
+        
         # Core sheets in priority order
         core_sheets = [
             # Pipelines FIRST (per meeting requirement)
             ('PipelineAnalysis', self.results['pipeline_analysis']),
             ('Pipelines', self.results['pipelines']),
             
-            # Activities
-            ('Activities', self.results['activities']),
+            # Activities - sorted by Pipeline A-Z, then ExecutionStage smallest to largest
+            ('Activities', sorted(self.results['activities'], key=lambda x: ((x.get('Pipeline', '') or '').lower(), x.get('ExecutionStage', 0) or 0)) if self.results['activities'] else []),
             ('ActivityCount', self.results['activity_count']),
-            ('ActivityExecutionOrder', self.results['activity_execution_order']),
+            # ActivityExecutionOrder - sorted by Pipeline A-Z, then FromExecutionStage smallest to largest
+            ('ActivityExecutionOrder', sorted(self.results['activity_execution_order'], key=lambda x: ((x.get('Pipeline', '') or '').lower(), x.get('FromExecutionStage', 0) or 0)) if self.results['activity_execution_order'] else []),
             
             # DataFlows
             ('DataFlows', self.results['dataflows']),
@@ -7285,7 +7572,18 @@ class UltimateEnterpriseADFAnalyzer:
         
         for sheet_name, data in core_sheets:
             if data:
-                self._write_sheet_with_auto_split(writer, sheet_name, data)
+                # Remove hidden columns from data before writing
+                cols_to_hide = hidden_columns.get(sheet_name, [])
+                if cols_to_hide:
+                    # Create a copy of data with hidden columns removed
+                    filtered_data = []
+                    for row in data:
+                        filtered_row = {k: v for k, v in row.items() if k not in cols_to_hide}
+                        filtered_data.append(filtered_row)
+                    self._write_sheet_with_auto_split(writer, sheet_name, filtered_data)
+                    self.logger.info(f"    {sheet_name}: Removed columns {cols_to_hide}")
+                else:
+                    self._write_sheet_with_auto_split(writer, sheet_name, data)
             else:
                 placeholder = self._placeholder_df(sheet_name)
                 safe_name = self._get_unique_sheet_name(sheet_name)
@@ -7295,12 +7593,12 @@ class UltimateEnterpriseADFAnalyzer:
 
     def _placeholder_df(self, sheet_name: str) -> pd.DataFrame:
         schema_map = {
-            'PipelineAnalysis': ['Pipeline', 'TotalActivities', 'ComplexityScore', 'ImpactLevel'],
+            'PipelineAnalysis': getattr(self, '_dynamic_pipeline_schema', ['Pipeline', 'TotalActivities', 'ComplexityScore', 'ImpactLevel']),
             'Pipelines': ['Pipeline', 'Description', 'Folder', 'HasTrigger'],
-            'Activities': ['Pipeline', 'Sequence', 'ActivityType', 'Name', 'Depth', 'IntegrationRuntime', 'SourceTable', 'SinkTable', 'SourceSQL', 'SinkSQL', 'SQL', 'Tables', 'Columns'],
+            'Activities': ['Pipeline', 'Sequence', 'ActivityType', 'Name', 'Depth', 'IntegrationRuntime', 'SourceTable', 'SinkTable', 'SourceSQL', 'SinkSQL', 'SQL', 'Tables', 'Columns', 'ExecutionStage'],
             'ActivityCount': ['ActivityType', 'Count'],
             'ActivityExecutionOrder': ['Pipeline', 'ExecutionOrder'],
-            'DataFlows': ['DataFlow', 'Location', 'Transformations'],
+            'DataFlows': getattr(self, '_dynamic_dataflows_schema', ['DataFlow', 'Type', 'TransformationCount', 'SourceCount', 'SinkCount']),
             'DataFlowLineage': ['Source', 'Sink', 'DataFlow'],
             'DataFlowTransformations': ['DataFlow', 'TransformationName', 'Type'],
             'Datasets': ['Dataset', 'Type', 'Location', 'LinkedService'],
@@ -7545,12 +7843,18 @@ class UltimateEnterpriseADFAnalyzer:
             {'Sheet': 'PipelineAnalysis', 'Column': 'IsOrphaned', 'Description': 'Whether pipeline has no trigger or caller (Yes/No)', 'DataType': 'Yes/No', 'Example': 'No'},
             {'Sheet': 'PipelineAnalysis', 'Column': 'SourceSystems', 'Description': 'Count of unique source systems (via linked services)', 'DataType': 'Integer', 'Example': '2'},
             {'Sheet': 'PipelineAnalysis', 'Column': 'TargetSystems', 'Description': 'Count of unique target systems (via linked services)', 'DataType': 'Integer', 'Example': '1'},
+            # ═══════════════════════════════════════════════════════════════════════
+            # DATA FLOWS
+            # ═══════════════════════════════════════════════════════════════════════
+            {'Sheet': 'DataFlows', 'Column': 'TransformationScore', 'Description': 'Weighted score = sum(transformation count × weight) where weights classify transformation complexity', 'DataType': 'Integer', 'Example': '7'},
+            {'Sheet': 'DataFlows', 'Column': 'TransformationComplexity', 'Description': 'Complexity bucket derived from TransformationScore: Low (≤5), Medium (6–10), High (>10)', 'DataType': 'Text', 'Example': 'Medium'},
             
             # ═══════════════════════════════════════════════════════════════
             # ACTIVITIES
             # ═══════════════════════════════════════════════════════════════
             {'Sheet': 'Activities', 'Column': 'Pipeline', 'Description': 'Parent pipeline name', 'DataType': 'Text', 'Example': 'LoadData'},
             {'Sheet': 'Activities', 'Column': 'Sequence', 'Description': 'Execution order number (1-based). Activities at same level may have different sequences', 'DataType': 'Integer', 'Example': '5'},
+            {'Sheet': 'Activities', 'Column': 'ExecutionStage', 'Description': 'Topological execution stage (0 = can run first; higher = depends on previous stages)', 'DataType': 'Integer', 'Example': '0'},
             {'Sheet': 'Activities', 'Column': 'Depth', 'Description': 'Nesting level: 0=root, 1=inside ForEach/If, 2=nested twice, etc.', 'DataType': 'Integer', 'Example': '1'},
             {'Sheet': 'Activities', 'Column': 'Parent', 'Description': 'Parent container activity name (ForEach, IfCondition, Switch, Until)', 'DataType': 'Text', 'Example': 'ForEachFile'},
             {'Sheet': 'Activities', 'Column': 'Activity', 'Description': 'Activity name', 'DataType': 'Text', 'Example': 'CopyToSQL'},
@@ -7709,6 +8013,40 @@ class UltimateEnterpriseADFAnalyzer:
         if len(data) <= Config.SHEET_SPLIT_THRESHOLD:
             # Single sheet
             df = pd.DataFrame(data)
+            # Ensure new execution-stage columns exist for Activities and ActivityExecutionOrder
+            # Note: Do NOT add columns that may be hidden via hide_config - let the data define what columns exist
+            if sheet_name == 'Activities':
+                for col in ('ExecutionStage','HasDependsOn','DependsOnCount','CycleFlag'):
+                    if col not in df.columns:
+                        df[col] = ''
+            if sheet_name == 'ActivityExecutionOrder':
+                if 'FromExecutionStage' not in df.columns:
+                    df['FromExecutionStage'] = ''
+                if 'ToExecutionStage' not in df.columns:
+                    df['ToExecutionStage'] = ''
+            # Ensure PipelineAnalysis columns follow a consistent order:
+            # Pipeline, Folder, standard activity counts, then any discovered activity-type columns, then the rest
+            if sheet_name == 'PipelineAnalysis':
+                standard_activity_cols = [
+                    'TotalActivities','CopyActivities','DataFlowActivities','StoredProcActivities','ScriptActivities',
+                    'LookupActivities','WebActivities','NotebookActivities','GetMetadataActivities','LoopActivities',
+                    'ConditionalActivities','MaxNestingDepth'
+                ]
+                cols = []
+                for c in ['Pipeline','Folder']:
+                    if c in df.columns:
+                        cols.append(c)
+                # add standard activity columns if present
+                for c in standard_activity_cols:
+                    if c in df.columns and c not in cols:
+                        cols.append(c)
+                # add any other activity-type columns (ending with 'Activities') except those already added
+                dyn = [c for c in df.columns if c.endswith('Activities') and c not in cols]
+                cols.extend(dyn)
+                # finally append any remaining columns in their existing order
+                remaining = [c for c in df.columns if c not in cols]
+                cols.extend(remaining)
+                df = df.reindex(columns=cols)
             safe_name = self._get_unique_sheet_name(sheet_name)
             df.to_excel(writer, sheet_name=safe_name, index=False)
             self._format_sheet(writer, safe_name, freeze_panes=True, auto_filter=True)
@@ -7726,6 +8064,35 @@ class UltimateEnterpriseADFAnalyzer:
                 part_sheet_name = self._get_unique_sheet_name(f"{sheet_name}_P{i+1}")
                 
                 df = pd.DataFrame(part_data)
+                # Ensure new execution-stage columns exist for Activities and ActivityExecutionOrder (split parts)
+                # Note: Do NOT add columns that may be hidden via hide_config
+                if sheet_name == 'Activities':
+                    for col in ('ExecutionStage','HasDependsOn','DependsOnCount','CycleFlag'):
+                        if col not in df.columns:
+                            df[col] = ''
+                if sheet_name == 'ActivityExecutionOrder':
+                    if 'FromExecutionStage' not in df.columns:
+                        df['FromExecutionStage'] = ''
+                    if 'ToExecutionStage' not in df.columns:
+                        df['ToExecutionStage'] = ''
+                if sheet_name == 'PipelineAnalysis':
+                    standard_activity_cols = [
+                        'TotalActivities','CopyActivities','DataFlowActivities','StoredProcActivities','ScriptActivities',
+                        'LookupActivities','WebActivities','NotebookActivities','GetMetadataActivities','LoopActivities',
+                        'ConditionalActivities','MaxNestingDepth'
+                    ]
+                    cols = []
+                    for c in ['Pipeline','Folder']:
+                        if c in df.columns:
+                            cols.append(c)
+                    for c in standard_activity_cols:
+                        if c in df.columns and c not in cols:
+                            cols.append(c)
+                    dyn = [c for c in df.columns if c.endswith('Activities') and c not in cols]
+                    cols.extend(dyn)
+                    remaining = [c for c in df.columns if c not in cols]
+                    cols.extend(remaining)
+                    df = df.reindex(columns=cols)
                 df.to_excel(writer, sheet_name=part_sheet_name, index=False)
                 self._format_sheet(writer, part_sheet_name, freeze_panes=True, auto_filter=True)
                 

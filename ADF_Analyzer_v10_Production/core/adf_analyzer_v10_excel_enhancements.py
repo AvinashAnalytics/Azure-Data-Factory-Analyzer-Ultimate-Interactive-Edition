@@ -1652,7 +1652,7 @@ class ExcelTableFormatter:
         if any(x in sheet_lower for x in ['usage', 'success']):
             return ExcelTableFormatter.STYLE_GREEN
 
-        return ExcelTableFormatter.STYLE_BLUE
+        return ExcelTableFormatter.STYLE_LIGHT
 
 class SheetProtectionManager:
     """
@@ -1970,7 +1970,55 @@ def create_enhanced_export_function(analyzer_class):
 
                 self._write_summary_sheet(writer, timestamp)
 
+                # Normalize activity result records: ensure new columns exist before writing sheets
+                try:
+                    for a in self.results.get('activities', []):
+                        # Preserve backwards-compatibility while adding clearer names
+                        a['ParseSequence'] = a.get('Sequence', '')
+                        a['HasDependsOn'] = 'Yes' if a.get('Dependencies') else 'No'
+                        a['DependsOnCount'] = len(a.get('Dependencies') or [])
+                        a['CycleFlag'] = 'Yes' if a.get('ExecutionStage') == 'CYCLE' else 'No'
+                except Exception:
+                    pass
+
+                # Dump small debug sample of results before writing core sheets
+                try:
+                    import json, os
+                    os.makedirs('output', exist_ok=True)
+                    sample = {
+                        'activities_sample': self.results.get('activities', [])[:5],
+                        'activity_execution_order_sample': self.results.get('activity_execution_order', [])[:5]
+                    }
+                    with open('output/debug_stage_samples.json', 'w', encoding='utf-8') as fh:
+                        json.dump(sample, fh, default=str, indent=2)
+                except Exception:
+                    pass
+
                 self._write_core_data_sheets(writer)
+
+                # Ensure ExecutionStage headers exist in the in-memory workbook
+                try:
+                    wb = writer.book
+                    if 'Activities' in wb.sheetnames:
+                        ws = wb['Activities']
+                        headers = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
+                        # Ensure activity-level new columns exist
+                        for col in ('ParseSequence','ExecutionStage','HasDependsOn','DependsOnCount','CycleFlag'):
+                            if col not in headers:
+                                ws.cell(row=1, column=len(headers) + 1, value=col)
+                                headers.append(col)
+                    if 'ActivityExecutionOrder' in wb.sheetnames:
+                        ws2 = wb['ActivityExecutionOrder']
+                        headers2 = [c.value for c in next(ws2.iter_rows(min_row=1, max_row=1))]
+                        if 'FromExecutionStage' not in headers2:
+                            ws2.cell(row=1, column=len(headers2) + 1, value='FromExecutionStage')
+                            headers2.append('FromExecutionStage')
+                        if 'ToExecutionStage' not in headers2:
+                            ws2.cell(row=1, column=len(headers2) + 1, value='ToExecutionStage')
+                            headers2.append('ToExecutionStage')
+                except Exception:
+                    # non-critical; continue with normal flow
+                    pass
 
                 self._write_analysis_sheets(writer)
 
@@ -1987,6 +2035,201 @@ def create_enhanced_export_function(analyzer_class):
 
             self.logger.info(f" Export complete with BEAUTIFICATION: {excel_file}")
 
+            # Post-process: rewrite Activities and ActivityExecutionOrder from in-memory results
+            try:
+                import pandas as pd
+                from openpyxl import load_workbook
+                from pathlib import Path
+
+                act_df = pd.DataFrame(self.results.get('activities', []))
+                order_df = pd.DataFrame(self.results.get('activity_execution_order', []))
+
+                # Load hide_config to remove hidden columns before writing
+                hidden_columns = {}
+                try:
+                    for cfg_path in ['enhancement_config.json', 'config/enhancement_config.json']:
+                        if Path(cfg_path).exists():
+                            with open(cfg_path, 'r') as f:
+                                hide_cfg = json.load(f).get('hide_config', {})
+                                if hide_cfg.get('enabled', False):
+                                    hidden_columns = hide_cfg.get('hidden_columns', {})
+                                break
+                except Exception:
+                    pass
+                
+                # Remove hidden columns from DataFrames
+                activities_hidden = hidden_columns.get('Activities', [])
+                if activities_hidden and not act_df.empty:
+                    act_df = act_df.drop(columns=[c for c in activities_hidden if c in act_df.columns], errors='ignore')
+                
+                aeo_hidden = hidden_columns.get('ActivityExecutionOrder', [])
+                if aeo_hidden and not order_df.empty:
+                    order_df = order_df.drop(columns=[c for c in aeo_hidden if c in order_df.columns], errors='ignore')
+
+                # Sort DataFrames for clean Excel output
+                # Activities: sort by Pipeline name A-Z, then ExecutionStage smallest to largest
+                if not act_df.empty and 'Pipeline' in act_df.columns:
+                    sort_cols_act = ['Pipeline']
+                    if 'ExecutionStage' in act_df.columns:
+                        sort_cols_act.append('ExecutionStage')
+                    act_df = act_df.sort_values(by=sort_cols_act, ascending=True, na_position='last').reset_index(drop=True)
+                
+                # ActivityExecutionOrder: sort by Pipeline A-Z, then by FromExecutionStage smallest to largest
+                if not order_df.empty:
+                    sort_cols = []
+                    if 'Pipeline' in order_df.columns:
+                        sort_cols.append('Pipeline')
+                    if 'FromExecutionStage' in order_df.columns:
+                        sort_cols.append('FromExecutionStage')
+                    if sort_cols:
+                        order_df = order_df.sort_values(by=sort_cols, ascending=True, na_position='last').reset_index(drop=True)
+
+                # Only replace if we have dataframes; this guarantees all keys become columns on-disk
+                if not act_df.empty or not order_df.empty:
+                    try:
+                        with pd.ExcelWriter(excel_file, engine='openpyxl', mode='a', if_sheet_exists='replace') as w2:
+                            if not act_df.empty:
+                                act_df.to_excel(w2, sheet_name='Activities', index=False)
+                            if not order_df.empty:
+                                order_df.to_excel(w2, sheet_name='ActivityExecutionOrder', index=False)
+                        
+                        # Apply formatting to match other sheets (header style, auto-filter, freeze panes)
+                        try:
+                            from openpyxl.utils import get_column_letter
+                            from openpyxl.styles import Font, PatternFill
+                            
+                            wb_tbl = load_workbook(excel_file)
+                            for sheet_name in ['Activities', 'ActivityExecutionOrder']:
+                                if sheet_name in wb_tbl.sheetnames:
+                                    ws_tbl = wb_tbl[sheet_name]
+                                    if ws_tbl.max_row > 1:
+                                        # Bold headers with gray fill (same as _format_sheet)
+                                        for cell in ws_tbl[1]:
+                                            cell.font = Font(bold=True)
+                                            cell.fill = PatternFill(start_color='D3D3D3', end_color='D3D3D3', fill_type='solid')
+                                        # Auto-filter
+                                        ws_tbl.auto_filter.ref = f"A1:{get_column_letter(ws_tbl.max_column)}{ws_tbl.max_row}"
+                                        # Freeze panes
+                                        ws_tbl.freeze_panes = 'A2'
+                            
+                            # Apply column hiding from config (after pandas rewrite)
+                            try:
+                                import json
+                                config_path = getattr(self, '_enhancement_config_path', 'enhancement_config.json')
+                                with open(config_path, 'r') as f:
+                                    hide_cfg = json.load(f).get('hide_config', {})
+                                if hide_cfg.get('enabled', False):
+                                    hidden_columns = hide_cfg.get('hidden_columns', {})
+                                    for sheet_name, cols_to_hide in hidden_columns.items():
+                                        if sheet_name in wb_tbl.sheetnames and cols_to_hide:
+                                            ws = wb_tbl[sheet_name]
+                                            headers = {cell.value: cell.column for cell in ws[1] if cell.value}
+                                            for col_name in cols_to_hide:
+                                                if col_name in headers:
+                                                    col_letter = get_column_letter(headers[col_name])
+                                                    ws.column_dimensions[col_letter].hidden = True
+                                                    ws.column_dimensions[col_letter].width = 0
+                            except Exception:
+                                pass
+                            
+                            wb_tbl.save(excel_file)
+                        except Exception:
+                            pass
+                    except Exception:
+                        # Fallback: append missing headers and populate values row-wise from self.lookup
+                        wb = load_workbook(excel_file)
+                        headers_changed = False
+                        if 'Activities' in wb.sheetnames:
+                            ws = wb['Activities']
+                            headers = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
+                            for col in ('ParseSequence','ExecutionStage','HasDependsOn','DependsOnCount','CycleFlag'):
+                                if col not in headers:
+                                    ws.cell(row=1, column=len(headers) + 1, value=col)
+                                    headers.append(col)
+                                    headers_changed = True
+                            # populate activity-level values using lookup mapping if available
+                            if hasattr(self, 'lookup') and isinstance(self.lookup.get('activities', None), dict):
+                                lookup = self.lookup.get('activities')
+                                header_index = {h: i+1 for i, h in enumerate(headers)}
+                                max_row = ws.max_row
+                                for r in range(2, max_row+1):
+                                    try:
+                                        p = ws.cell(row=r, column=1).value
+                                        a = ws.cell(row=r, column=5).value
+                                        key = (p, a)
+                                        info = lookup.get(key, {})
+                                        if 'ParseSequence' in header_index:
+                                            ws.cell(row=r, column=header_index['ParseSequence'], value=info.get('Sequence') if info else '')
+                                        if 'ExecutionStage' in header_index:
+                                            ws.cell(row=r, column=header_index['ExecutionStage'], value=info.get('ExecutionStage') if info else '')
+                                        if 'HasDependsOn' in header_index:
+                                            ws.cell(row=r, column=header_index['HasDependsOn'], value='Yes' if info and info.get('Dependencies') else 'No')
+                                        if 'DependsOnCount' in header_index:
+                                            deps = info.get('Dependencies') if info else []
+                                            ws.cell(row=r, column=header_index['DependsOnCount'], value=len(deps) if deps else 0)
+                                        if 'CycleFlag' in header_index:
+                                            ws.cell(row=r, column=header_index['CycleFlag'], value='Yes' if info and info.get('ExecutionStage') == 'CYCLE' else 'No')
+                                    except Exception:
+                                        continue
+                        if 'ActivityExecutionOrder' in wb.sheetnames:
+                            ws2 = wb['ActivityExecutionOrder']
+                            headers2 = [c.value for c in next(ws2.iter_rows(min_row=1, max_row=1))]
+                            if 'FromExecutionStage' not in headers2:
+                                ws2.cell(row=1, column=len(headers2) + 1, value='FromExecutionStage')
+                                headers2.append('FromExecutionStage')
+                            if 'ToExecutionStage' not in headers2:
+                                ws2.cell(row=1, column=len(headers2) + 1, value='ToExecutionStage')
+                                headers2.append('ToExecutionStage')
+                            if hasattr(self, 'lookup') and isinstance(self.lookup.get('activities', None), dict):
+                                lookup = self.lookup.get('activities')
+                                header_index2 = {h: i+1 for i, h in enumerate(headers2)}
+                                max_row2 = ws2.max_row
+                                for r in range(2, max_row2+1):
+                                    try:
+                                        p = ws2.cell(row=r, column=1).value
+                                        from_act = ws2.cell(row=r, column=2).value
+                                        to_act = ws2.cell(row=r, column=5).value
+                                        from_stage = lookup.get((p, from_act), {}).get('ExecutionStage', '')
+                                        to_stage = lookup.get((p, to_act), {}).get('ExecutionStage', '')
+                                        if 'FromExecutionStage' in header_index2:
+                                            ws2.cell(row=r, column=header_index2['FromExecutionStage'], value=from_stage)
+                                        if 'ToExecutionStage' in header_index2:
+                                            ws2.cell(row=r, column=header_index2['ToExecutionStage'], value=to_stage)
+                                    except Exception:
+                                        continue
+                        # Save workbook if we changed headers or populated values
+                        try:
+                            if headers_changed:
+                                wb.save(excel_file)
+                                self.logger.info("  ✓ Injected missing ExecutionStage headers/values into workbook")
+                        except Exception:
+                            pass
+                        
+                        # Apply formatting to match other sheets (header style, auto-filter, freeze panes)
+                        try:
+                            from openpyxl import load_workbook
+                            from openpyxl.utils import get_column_letter
+                            from openpyxl.styles import Font, PatternFill
+                            
+                            wb2 = load_workbook(excel_file)
+                            for sheet_name in ['Activities', 'ActivityExecutionOrder']:
+                                if sheet_name in wb2.sheetnames:
+                                    ws = wb2[sheet_name]
+                                    if ws.max_row > 1:
+                                        # Bold headers with gray fill
+                                        for cell in ws[1]:
+                                            cell.font = Font(bold=True)
+                                            cell.fill = PatternFill(start_color='D3D3D3', end_color='D3D3D3', fill_type='solid')
+                                        # Auto-filter
+                                        ws.auto_filter.ref = f"A1:{get_column_letter(ws.max_column)}{ws.max_row}"
+                                        # Freeze panes
+                                        ws.freeze_panes = 'A2'
+                            wb2.save(excel_file)
+                        except Exception:
+                            pass
+            except Exception:
+                pass
+
             shutil.copy(excel_file, archive_file)
             self.logger.info(f" Archive saved: {archive_file}")
 
@@ -1996,6 +2239,8 @@ def create_enhanced_export_function(analyzer_class):
             self.logger.error(f"Excel export failed: {e}")
             traceback.print_exc()
             raise
+
+        # CSV sidecar exports removed: all metadata is injected into the Excel workbook.
 
     analyzer_class.export_to_excel = enhanced_export_to_excel
 
@@ -2094,6 +2339,22 @@ def create_enhanced_beautification_method(analyzer_class):
         # PHASE 3: Hyperlinks
         if link_cfg.get('enabled', True):
             self.logger.info("  Phase 3/5: Adding hyperlinks and navigation...")
+            
+            # Skip table formatting - use plain filters instead for minimal white appearance
+            # Apply auto-filter to all data sheets for plain appearance
+            for worksheet in workbook.worksheets:
+                sheet_name = worksheet.title
+                # Skip Summary sheet (has custom layout)
+                if 'Summary' in sheet_name:
+                    continue
+                
+                # Apply auto-filter only (no table formatting for plain white look)
+                if worksheet.max_row > 1:
+                    try:
+                        worksheet.auto_filter.ref = f"A1:{get_column_letter(worksheet.max_column)}{worksheet.max_row}"
+                    except Exception:
+                        pass
+            
             if 'Summary' in workbook.sheetnames:
                 summary_ws = workbook['Summary']
                 try:
@@ -2153,6 +2414,38 @@ def create_enhanced_beautification_method(analyzer_class):
                 self.logger.warning(f"Page setup failed: {e}")
         else:
             self.logger.info("  Phase 5/5: Page setup skipped (disabled)")
+
+        # PHASE 6: Hide sheets and columns (config-based)
+        hide_cfg = ENHANCEMENT_CONFIG.get('hide_config', {})
+        if hide_cfg.get('enabled', False):
+            self.logger.info("  Phase 6: Applying hide configuration...")
+            
+            # Hide specified sheets
+            hidden_sheets = hide_cfg.get('hidden_sheets', [])
+            for sheet_name in hidden_sheets:
+                if sheet_name in workbook.sheetnames:
+                    try:
+                        workbook[sheet_name].sheet_state = 'hidden'
+                        self.logger.info(f"    Hidden sheet: {sheet_name}")
+                    except Exception as e:
+                        self.logger.warning(f"Failed to hide sheet {sheet_name}: {e}")
+            
+            # Hide specified columns per sheet
+            hidden_columns = hide_cfg.get('hidden_columns', {})
+            for sheet_name, columns_to_hide in hidden_columns.items():
+                if sheet_name in workbook.sheetnames and columns_to_hide:
+                    ws = workbook[sheet_name]
+                    try:
+                        # Get header row to find column positions
+                        headers = {cell.value: cell.column for cell in ws[1] if cell.value}
+                        for col_name in columns_to_hide:
+                            if col_name in headers:
+                                col_letter = get_column_letter(headers[col_name])
+                                ws.column_dimensions[col_letter].hidden = True
+                                ws.column_dimensions[col_letter].width = 0
+                                self.logger.info(f"    Hidden column: {sheet_name}.{col_name}")
+                    except Exception as e:
+                        self.logger.warning(f"Failed to hide columns in {sheet_name}: {e}")
 
         self.logger.info(" Enhanced beautification complete!")
 
@@ -3251,6 +3544,80 @@ def add_advanced_summary_sections(analyzer_class):
 
         return start_row + 1
 
+    def _write_dataflow_complexity_heat_map(self, ws, start_row: int) -> int:
+        """
+         DATAFLOW COMPLEXITY HEAT MAP
+
+        Visual representation of dataflow transformation complexity distribution
+        """
+
+        header_cell = ws.cell(start_row, 1)
+        header_cell.value = "🔬 DATAFLOW COMPLEXITY HEAT MAP"
+        ws.merge_cells(f'A{start_row}:D{start_row}')
+
+        header_cell.font = Font(size=12, bold=True, color='FFFFFF')
+        header_cell.fill = PatternFill(start_color='4B0082', end_color='4B0082', fill_type='solid')
+        header_cell.alignment = Alignment(horizontal='left', vertical='center')
+
+        start_row += 1
+
+        complexity_distribution = {
+            'Critical (100+)': 0,
+            'High (50-99)': 0,
+            'Medium (20-49)': 0,
+            'Low (<20)': 0
+        }
+
+        for df in self.results.get('dataflows', []):
+            score = df.get('TransformationScore', 0)
+            try:
+                score = float(score)
+            except:
+                score = 0
+
+            if score >= 100:
+                complexity_distribution['Critical (100+)'] += 1
+            elif score >= 50:
+                complexity_distribution['High (50-99)'] += 1
+            elif score >= 20:
+                complexity_distribution['Medium (20-49)'] += 1
+            else:
+                complexity_distribution['Low (<20)'] += 1
+
+        total = sum(complexity_distribution.values())
+
+        colors = {
+            'Critical (100+)': 'C00000',
+            'High (50-99)': 'FF6600',
+            'Medium (20-49)': 'FFC000',
+            'Low (<20)': '92D050'
+        }
+
+        for level, count in complexity_distribution.items():
+            pct = (count / total * 100) if total > 0 else 0
+
+            ws.cell(start_row, 1).value = level
+            ws.cell(start_row, 1).font = Font(bold=True, size=10)
+
+            ws.cell(start_row, 2).value = count
+            ws.cell(start_row, 2).font = Font(bold=True, size=11)
+            ws.cell(start_row, 2).alignment = Alignment(horizontal='center')
+
+            bar_length = int(pct / 5)
+            bar_cell = ws.cell(start_row, 3)
+            bar_cell.value = "█" * bar_length
+            bar_cell.font = Font(size=14, color=colors[level])
+
+            ws.cell(start_row, 4).value = f"{pct:.1f}%"
+            ws.cell(start_row, 4).font = Font(size=10)
+            ws.cell(start_row, 4).fill = PatternFill(start_color=colors[level], end_color=colors[level], fill_type='solid')
+            ws.cell(start_row, 4).font = Font(bold=True, color='FFFFFF')
+            ws.cell(start_row, 4).alignment = Alignment(horizontal='center')
+
+            start_row += 1
+
+        return start_row + 1
+
     def _write_performance_insights(self, ws, start_row: int) -> int:
         """
          PERFORMANCE INSIGHTS & BOTTLENECK DETECTION
@@ -3907,6 +4274,7 @@ def add_advanced_summary_sections(analyzer_class):
     analyzer_class._write_security_compliance_checklist = _write_security_compliance_checklist
     analyzer_class._write_activity_distribution_chart = _write_activity_distribution_chart
     analyzer_class._write_data_flow_network_stats = _write_data_flow_network_stats
+    analyzer_class._write_dataflow_complexity_heat_map = _write_dataflow_complexity_heat_map
     analyzer_class._write_change_risk_assessment = _write_change_risk_assessment
 
     analyzer_class._calculate_quality_score = _calculate_quality_score
@@ -3960,6 +4328,10 @@ def integrate_advanced_sections_into_summary(analyzer_class):
 
         current_row += 2
         current_row = self._write_complexity_heat_map(ws, current_row)
+
+        # Add DataFlow complexity heat map (uses TransformationScore)
+        current_row += 1
+        current_row = self._write_dataflow_complexity_heat_map(ws, current_row)
 
         current_row += 2
         current_row = self._write_performance_insights(ws, current_row)

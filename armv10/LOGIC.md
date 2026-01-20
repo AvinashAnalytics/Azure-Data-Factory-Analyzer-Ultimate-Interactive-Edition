@@ -1,19 +1,27 @@
-# ADF Analyzer v10 — LOGIC Reference
-> Last updated: 2025-11-07 (summary of recent dashboard, runner and validator changes)
+# 🧠 ADF Analyzer v10 — Logic & Scoring Reference
+> **ADF Analyzer v10.1** | Last updated: 2025-11-08 | **Production Ready Edition**
 
-This file documents the core scoring, thresholds and detection logic implemented across the analyzer and dashboard. It is intended to be an authoritative, developer-oriented reference you can link to in the UI or README.
+## 🎯 Overview
+This document provides the **authoritative technical reference** for scoring algorithms, thresholds, and detection logic implemented across the analyzer and dashboard. Perfect for developers, DevOps teams, and technical users who need to understand the "why" behind the metrics.
 
-## Files that implement logic
-- `adf_dashboard.py` — dashboard rendering, health gauge and metric tiles. Key functions:
-  - `render_enhanced_metrics()` — derives displayed metrics and health score summary tiles.
-  - `render_health_gauge()` — renders the health gauge and contains the canonical thresholds used for status labels.
-  - Impact-level visuals and counts are calculated from the `impact`/`Impact` data frame.
+> **💡 Quick Access:** View this documentation directly in the dashboard sidebar under "📚 Documentation"
 
-- `adf_analyzer_v10_excel_enhancements.py` — analysis result processing and scoring for the exported Excel report.
-  - `_calculate_quality_score()` — produces the consolidated "Quality Score" used in reports.
-  - Formatting helpers generate severity/impact color-coding and produce the `CircularDependencies`, `Orphaned*` sheets.
+---
 
-## Health score (Dashboard)
+## 📁 Implementation Files
+- **`adf_dashboard.py`** — Dashboard rendering, health gauge, metric tiles
+  - `render_enhanced_metrics()` — Derives displayed metrics and health score tiles
+  - `render_health_gauge()` — Renders health gauge with canonical thresholds
+  - Impact-level visuals calculated from the `impact`/`Impact` data frame
+
+- **`adf_analyzer_v10_excel_enhancements.py`** — Analysis result processing and Excel report scoring
+  - `_calculate_quality_score()` — Produces consolidated "Quality Score" for reports
+  - Formatting helpers for severity/impact color-coding
+  - Generates `CircularDependencies`, `Orphaned*` sheets
+
+---
+
+## 🏥 Health Score Algorithm (Dashboard)
 Purpose: provide a quick, 0–100 factory-level health indicator based on orphaned pipelines relative to total pipelines.
 
 Formula (canonical):

@@ -14,13 +14,18 @@
       "enabled": true
     },
     "advanced_dashboard": {
-      "enabled": false,
-      "health_score": true,
-      "complexity_heat_map": true,
-      "performance_insights": true,
-      "top_pipelines": true,
-      "security_checklist": true,
-      "cost_analysis": false
+      "enabled": false
+    }
+  },
+  "hide_config": {
+    "enabled": true,
+    "hidden_sheets": [
+      "TriggerDetails"
+    ],
+    "hidden_columns": {
+      "ActivityExecutionOrder": ["FromSequence", "ToSequence", "FromParent", "ToParent"],
+      "Activities": ["Sequence", "ParseSequence", "Parent", "Depth"],
+      "Pipelines": []
     }
   }
 }

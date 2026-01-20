@@ -42,7 +42,6 @@ import datetime
 import io
 from pathlib import Path
 import numpy as np
-import json
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -53,7 +52,6 @@ except Exception:
     # networkx is optional for some visualizations; allow dashboard to import
     nx = None
     HAS_NETWORKX = False
-from pathlib import Path
 from datetime import datetime, timedelta
 import re
 from collections import defaultdict, Counter
@@ -986,9 +984,10 @@ class ADF_Dashboard:
             <h1>🏭 Azure Data Factory Analyzer v10.1</h1>
             <p>Enterprise Analysis Dashboard - Fixed & Production Ready</p>
             <p style="margin-top:8px; font-size:0.9em;">
-                <a href="https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/blob/main/armv10/TILES.md" target="_blank" style="color:#fff; text-decoration:underline;">Tile reference (TILES.md)</a>
+                📋 <strong>Internal Documentation:</strong> 
+                <span style="color:#fff;">Tile Reference (TILES.md)</span>
                 &nbsp;•&nbsp;
-                <a href="https://github.com/AvinashAnalytics/Azure-Data-Factory-Analyzer-Ultimate-Interactive-Edition/blob/main/armv10/LOGIC.md" target="_blank" style="color:#fff; text-decoration:underline;">Logic documentation (LOGIC.md)</a>
+                <span style="color:#fff;">Logic Documentation (LOGIC.md)</span>
             </p>
         </div>
         """,
@@ -1077,6 +1076,45 @@ class ADF_Dashboard:
         else:
             st.info("👆 Upload file or load sample data")
 
+        # ═══════════════════════════════════════════════════════════════════
+        # DOCUMENTATION ACCESS
+        # ═══════════════════════════════════════════════════════════════════
+        st.markdown("---")
+        st.markdown("### 📚 Documentation")
+        
+        # Documentation viewer
+        doc_option = st.selectbox(
+            "View Documentation",
+            ["Select document...", "📋 Tile Reference (TILES.md)", "🧠 Logic Documentation (LOGIC.md)"],
+            key="doc_viewer"
+        )
+        
+        if doc_option == "📋 Tile Reference (TILES.md)":
+            with st.expander("📋 View TILES.md", expanded=False):
+                try:
+                    tiles_path = Path(__file__).parent / "TILES.md"
+                    if tiles_path.exists():
+                        with open(tiles_path, 'r', encoding='utf-8') as f:
+                            tiles_content = f.read()
+                        st.markdown(tiles_content)
+                    else:
+                        st.warning("TILES.md not found in current directory")
+                except Exception as e:
+                    st.error(f"Error loading TILES.md: {e}")
+                    
+        elif doc_option == "🧠 Logic Documentation (LOGIC.md)":
+            with st.expander("🧠 View LOGIC.md", expanded=False):
+                try:
+                    logic_path = Path(__file__).parent / "LOGIC.md"
+                    if logic_path.exists():
+                        with open(logic_path, 'r', encoding='utf-8') as f:
+                            logic_content = f.read()
+                        st.markdown(logic_content)
+                    else:
+                        st.warning("LOGIC.md not found in current directory")
+                except Exception as e:
+                    st.error(f"Error loading LOGIC.md: {e}")
+        
         # ═══════════════════════════════════════════════════════════════════
         # FOOTER
         # ═══════════════════════════════════════════════════════════════════
@@ -1920,13 +1958,15 @@ class ADF_Dashboard:
         mode = st.session_state.get('app_mode', 'generate')
         
         # Always show tabs in the same order but highlight the selected mode
-        main_tabs = st.tabs(["⚙️ Generate Excel", "📊 Upload & Analyze"])
+        main_tabs = st.tabs(["⚙️ Generate Excel", "📊 Upload & Analyze", "📚 Documentation"])
         
         # Show info about which mode was selected
         if mode == 'analyze':
             st.info("You selected: Upload & Analyze mode. Click the 📊 Upload & Analyze tab above.")
         elif mode == 'generate':
             st.info("You selected: Generate Excel mode. Click the ⚙️ Generate Excel tab above.")
+        elif mode == 'docs':
+            st.info("You selected: Documentation mode. Click the 📚 Documentation tab above.")
         
         # ══════════════════════════════════════════════════════════════════════
         # TAB 1: GENERATE EXCEL (Patch Runner)
@@ -1998,6 +2038,12 @@ class ADF_Dashboard:
                 - Use "Load Sample Data" to try the dashboard with demo data
                 - Perfect for testing and learning the interface
                 """)
+        
+        # ══════════════════════════════════════════════════════════════════════
+        # TAB 3: DOCUMENTATION
+        # ══════════════════════════════════════════════════════════════════════
+        with main_tabs[2]:
+            self.render_comprehensive_documentation()
 
     def render_generate_excel_tab(self):
         """Render the Generate Excel functionality"""
@@ -2051,8 +2097,10 @@ class ADF_Dashboard:
         )
 
         # ═══════════════════════════════════════════════════════════════════
-        # PATCH RUNNER CONFIGURATION
+        # ENHANCEMENT CONFIGURATION
         # ═══════════════════════════════════════════════════════════════════
+        
+        self.render_enhancement_config()
         
         # ═══════════════════════════════════════════════════════════════════
         # SCRIPT SELECTION WITH DETAILED INFORMATION
@@ -2120,71 +2168,37 @@ class ADF_Dashboard:
             st.info("🤖 **Auto Mode:** Will automatically select the best available script (patched runner preferred)")
 
         # ═══════════════════════════════════════════════════════════════════
-        # ENHANCEMENT OPTIONS (Only show if relevant)
+        # QUICK EXECUTION OPTIONS
         # ═══════════════════════════════════════════════════════════════════
         
-        st.subheader("✨ Enhancement Options")
+        st.subheader("⚡ Quick Options")
+        st.info("💡 **Enhancement details configured above** - These are quick execution toggles")
         
-        # Determine if script supports enhancements
-        supports_patches = False
-        supports_excel = False
-        script_to_use = selected_script
+        col1, col2, col3 = st.columns(3)
         
-        if script_to_use == '(auto - use best available)':
-            # Check what's available for auto mode
-            if 'adf_analyzer_v10_patched_runner.py' in runners:
-                script_to_use = 'adf_analyzer_v10_patched_runner.py'
-            elif 'adf_runner_wrapper.py' in runners:
-                script_to_use = 'adf_runner_wrapper.py'
+        with col1:
+            enable_patches = st.checkbox(
+                '🔧 Apply Patches', 
+                value=True, 
+                key='gen_patches',
+                help="Apply functional patches (see configuration above for details)"
+            )
         
-        if script_to_use in ['adf_analyzer_v10_patched_runner.py', 'adf_runner_wrapper.py']:
-            supports_patches = True
-            supports_excel = True
-        elif script_to_use == 'adf_analyzer_v10_patch.py':
-            supports_patches = True
-            supports_excel = False
+        with col2:
+            enable_excel = st.checkbox(
+                '✨ Apply Enhancements', 
+                value=True, 
+                key='gen_excel',
+                help="Apply Excel enhancements (see configuration above for details)"
+            )
         
-        if supports_patches or supports_excel:
-            st.markdown("**Configure what the script will apply:**")
-            
-            col1, col2, col3 = st.columns(3)
-            
-            with col1:
-                if supports_patches:
-                    enable_patches = st.checkbox(
-                        '🔧 Apply Functional Patches', 
-                        value=True, 
-                        key='gen_patches',
-                        help="Adds support for new activity types (Databricks, Azure Function), dataset types (BigQuery, Office365), and trigger types"
-                    )
-                else:
-                    enable_patches = False
-                    st.info("🔧 Patches: Not available for this script")
-            
-            with col2:
-                if supports_excel:
-                    enable_excel = st.checkbox(
-                        '✨ Apply Excel Enhancements', 
-                        value=True, 
-                        key='gen_excel',
-                        help="Adds beautiful formatting, charts, health dashboard, and advanced Excel features"
-                    )
-                else:
-                    enable_excel = False
-                    st.info("✨ Excel: Basic formatting only")
-            
-            with col3:
-                enable_discovery = st.checkbox(
-                    '🔍 Enable Discovery Mode', 
-                    value=True, 
-                    key='gen_discovery',
-                    help="Enhanced parsing and discovery of complex data patterns"
-                )
-        else:
-            st.info("ℹ️ Selected script runs with default settings (no enhancement options available)")
-            enable_patches = False
-            enable_excel = False
-            enable_discovery = True
+        with col3:
+            enable_discovery = st.checkbox(
+                '🔍 Discovery Mode', 
+                value=True, 
+                key='gen_discovery',
+                help="Enhanced parsing and discovery mode"
+            )
 
         # Output configuration
         st.subheader("📤 Output Configuration")
@@ -2427,6 +2441,178 @@ class ADF_Dashboard:
             st.error(f'❌ Execution failed: {e}')
             with st.expander("🔍 Error Details"):
                 st.code(traceback.format_exc())
+
+    def render_enhancement_config(self):
+        """Render enhancement configuration options"""
+        
+        st.subheader("🎨 Enhancement Configuration")
+        
+        # Load current enhancement config
+        try:
+            import json
+            config_path = Path(__file__).parent / "enhancement_config.json"
+            if config_path.exists():
+                with open(config_path, 'r') as f:
+                    config = json.load(f)
+            else:
+                # Default config if file doesn't exist
+                config = {
+                    "excel_enhancements": {
+                        "enabled": True,
+                        "core_formatting": {"enabled": True},
+                        "conditional_formatting": {"enabled": True},
+                        "hyperlinks": {"enabled": True},
+                        "enhanced_summary": {"enabled": True},
+                        "advanced_dashboard": {"enabled": True}
+                    }
+                }
+        except Exception as e:
+            st.warning(f"Could not load enhancement config: {e}")
+            return
+        
+        excel_config = config.get("excel_enhancements", {})
+        
+        st.markdown("**Configure Excel enhancement features:**")
+        
+        # Main toggle
+        enable_enhancements = st.checkbox(
+            "✨ Enable Excel Enhancements",
+            value=excel_config.get("enabled", True),
+            key="enhancement_main_toggle",
+            help="Master switch for all Excel enhancements"
+        )
+        
+        if enable_enhancements:
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("**📊 Core Features**")
+                
+                core_formatting = st.checkbox(
+                    "🎨 Core Formatting",
+                    value=excel_config.get("core_formatting", {}).get("enabled", True),
+                    key="enhancement_core_formatting",
+                    help="Column sizing, number formatting, borders, headers"
+                )
+                
+                conditional_formatting = st.checkbox(
+                    "🌈 Conditional Formatting", 
+                    value=excel_config.get("conditional_formatting", {}).get("enabled", True),
+                    key="enhancement_conditional_formatting",
+                    help="Data bars, color scales, icon sets, status highlighting"
+                )
+                
+                hyperlinks = st.checkbox(
+                    "🔗 Hyperlinks",
+                    value=excel_config.get("hyperlinks", {}).get("enabled", True), 
+                    key="enhancement_hyperlinks",
+                    help="Navigation links between sheets and auto-convert references"
+                )
+                
+            with col2:
+                st.markdown("**🚀 Advanced Features**")
+                
+                enhanced_summary = st.checkbox(
+                    "📋 Enhanced Summary",
+                    value=excel_config.get("enhanced_summary", {}).get("enabled", True),
+                    key="enhancement_enhanced_summary", 
+                    help="Project banner, executive summary, critical alerts, metrics dashboard"
+                )
+                
+                advanced_dashboard = st.checkbox(
+                    "📈 Advanced Dashboard",
+                    value=excel_config.get("advanced_dashboard", {}).get("enabled", True),
+                    key="enhancement_advanced_dashboard",
+                    help="Health score, complexity heat map, performance insights, top pipelines"
+                )
+                
+                # Advanced dashboard sub-options
+                if advanced_dashboard:
+                    with st.expander("🔧 Advanced Dashboard Options"):
+                        adv_config = excel_config.get("advanced_dashboard", {})
+                        
+                        col3, col4 = st.columns(2)
+                        with col3:
+                            health_score = st.checkbox(
+                                "🏥 Health Score",
+                                value=adv_config.get("health_score", True),
+                                key="enhancement_health_score"
+                            )
+                            
+                            complexity_heat_map = st.checkbox(
+                                "🔥 Complexity Heat Map", 
+                                value=adv_config.get("complexity_heat_map", True),
+                                key="enhancement_complexity_heat_map"
+                            )
+                            
+                            performance_insights = st.checkbox(
+                                "⚡ Performance Insights",
+                                value=adv_config.get("performance_insights", True),
+                                key="enhancement_performance_insights"
+                            )
+                            
+                        with col4:
+                            top_pipelines = st.checkbox(
+                                "🏆 Top Pipelines",
+                                value=adv_config.get("top_pipelines", True),
+                                key="enhancement_top_pipelines"
+                            )
+                            
+                            security_checklist = st.checkbox(
+                                "🔒 Security Checklist",
+                                value=adv_config.get("security_checklist", True),
+                                key="enhancement_security_checklist"
+                            )
+                            
+                            cost_analysis = st.checkbox(
+                                "💰 Cost Analysis",
+                                value=adv_config.get("cost_analysis", False),
+                                key="enhancement_cost_analysis"
+                            )
+            
+            # Save configuration button
+            col1, col2, col3 = st.columns([1, 1, 1])
+            with col2:
+                if st.button("💾 Save Enhancement Config", type="primary", use_container_width=True):
+                    try:
+                        # Update config with user selections
+                        new_config = {
+                            "excel_enhancements": {
+                                "enabled": enable_enhancements,
+                                "core_formatting": {
+                                    "enabled": core_formatting
+                                },
+                                "conditional_formatting": {
+                                    "enabled": conditional_formatting
+                                },
+                                "hyperlinks": {
+                                    "enabled": hyperlinks
+                                },
+                                "enhanced_summary": {
+                                    "enabled": enhanced_summary
+                                },
+                                "advanced_dashboard": {
+                                    "enabled": advanced_dashboard,
+                                    "health_score": st.session_state.get("enhancement_health_score", True),
+                                    "complexity_heat_map": st.session_state.get("enhancement_complexity_heat_map", True),
+                                    "performance_insights": st.session_state.get("enhancement_performance_insights", True),
+                                    "top_pipelines": st.session_state.get("enhancement_top_pipelines", True),
+                                    "security_checklist": st.session_state.get("enhancement_security_checklist", True),
+                                    "cost_analysis": st.session_state.get("enhancement_cost_analysis", False)
+                                }
+                            }
+                        }
+                        
+                        # Save to file
+                        with open(config_path, 'w') as f:
+                            json.dump(new_config, f, indent=2)
+                        
+                        st.success("✅ Enhancement configuration saved!")
+                        
+                    except Exception as e:
+                        st.error(f"❌ Failed to save config: {e}")
+        
+        st.markdown("---")
 
     def render_upload_interface(self):
         """Render the upload interface for existing Excel files"""
@@ -6155,6 +6341,329 @@ class ADF_Dashboard:
         except Exception as e:
             st.error(f"❌ Export failed: {e}")
 
+    def render_comprehensive_documentation(self):
+        """Render comprehensive documentation with all guides and references"""
+        
+        st.header("📚 Complete Documentation Suite")
+        st.markdown("Access all documentation, guides, and technical references in one place.")
+        
+        # Documentation navigation - Complete documentation suite
+        doc_tabs = st.tabs([
+            "📋 Dashboard Tiles", 
+            "🧠 Technical Logic", 
+            "🐍 Python Files", 
+            "📖 Complete Guide",
+            "⚙️ Configuration"
+        ])
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # DASHBOARD TILES REFERENCE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[0]:
+            st.subheader("📋 Dashboard Tiles Reference")
+            st.markdown("Complete reference for every metric tile shown in the dashboard.")
+            
+            try:
+                tiles_path = Path(__file__).parent / "TILES.md"
+                if tiles_path.exists():
+                    with open(tiles_path, 'r', encoding='utf-8') as f:
+                        tiles_content = f.read()
+                    st.markdown(tiles_content)
+                else:
+                    st.warning("TILES.md not found in current directory")
+                    
+                    # Fallback: Show basic tile information
+                    st.markdown("""
+                    ### 🏆 Top-Row Metric Tiles
+                    
+                    1. **Pipelines** - Total number of pipeline resources
+                    2. **DataFlows** - Number of DataFlow resources  
+                    3. **Datasets** - Number of dataset resources
+                    4. **Triggers** - Number of trigger configurations
+                    5. **Dependencies** - Total dependency relationships
+                    6. **Health** - Factory health score (0-100)
+                    7. **Orphaned** - Unused/orphaned resources
+                    
+                    ### 📊 Secondary Metrics
+                    
+                    - **Source/Target Datasets** - Lineage endpoint counts
+                    - **Static vs Dynamic** - Parameterization analysis
+                    - **Impact Levels** - CRITICAL/HIGH/MEDIUM/LOW distributions
+                    
+                    ### 🔗 Data Sources
+                    
+                    - **Primary:** Summary sheet metrics
+                    - **Fallback:** Individual sheet row counts
+                    - **Lineage:** DataLineage sheet analysis
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading TILES.md: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # TECHNICAL LOGIC REFERENCE  
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[1]:
+            st.subheader("🧠 Technical Logic & Algorithms")
+            st.markdown("Detailed technical reference for scoring algorithms and detection logic.")
+            
+            try:
+                logic_path = Path(__file__).parent / "LOGIC.md"
+                if logic_path.exists():
+                    with open(logic_path, 'r', encoding='utf-8') as f:
+                        logic_content = f.read()
+                    st.markdown(logic_content)
+                else:
+                    st.warning("LOGIC.md not found in current directory")
+                    
+                    # Fallback: Show basic algorithm information
+                    st.markdown("""
+                    ### 🏥 Health Score Algorithm
+                    
+                    ```python
+                    # Health Score Formula
+                    if pipelines > 0:
+                        health_score = int((1 - orphaned / pipelines) * 100)
+                    else:
+                        health_score = 100
+                    ```
+                    
+                    **Status Thresholds:**
+                    - **90-100:** Excellent (🟢)
+                    - **75-89:** Good (🔵)  
+                    - **60-74:** Fair (🟡)
+                    - **<60:** Needs Attention (🔴)
+                    
+                    ### 📊 Quality Score (Excel Reports)
+                    
+                    Starting from 100, deductions applied for:
+                    1. **Circular Dependencies:** -10 points per cycle (max -30)
+                    2. **Orphaned Resources:** Based on percentage (max -20)
+                    3. **Broken Triggers:** -5 points per broken trigger (max -15)
+                    
+                    ### 🔄 Circular Dependency Detection
+                    
+                    - **Algorithm:** DFS traversal with back-edge detection
+                    - **Deduplication:** Canonical cycle representation
+                    - **Severity:** Marked as CRITICAL (production blocker)
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading LOGIC.md: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # PYTHON FILES REFERENCE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[2]:
+            st.subheader("🐍 Python Files Overview")
+            st.markdown("Complete reference for all Python files and their purposes.")
+            
+            try:
+                python_files_path = Path(__file__).parent / "PYTHON_FILES_REFERENCE.md"
+                if python_files_path.exists():
+                    with open(python_files_path, 'r', encoding='utf-8') as f:
+                        python_content = f.read()
+                    st.markdown(python_content)
+                else:
+                    st.warning("PYTHON_FILES_REFERENCE.md not found")
+                    
+                    # Fallback: Show basic file structure
+                    st.markdown("""
+                    ### 🚀 Core Analysis Engine
+                    
+                    - **`adf_analyzer_v10_complete.py`** - Main analysis engine
+                    - **`adf_runner_wrapper.py`** - Production wrapper (recommended)
+                    - **`adf_analyzer_v10_patched_runner.py`** - Enhanced orchestrator
+                    
+                    ### 🎨 Enhancement Layer
+                    
+                    - **`adf_analyzer_v10_excel_enhancements.py`** - Excel beautification
+                    - **`adf_analyzer_v10_patch.py`** - Functional patches
+                    
+                    ### 📊 Dashboard & UI
+                    
+                    - **`adf_dashboard.py`** - Main Streamlit dashboard
+                    - **`streamlit_app/`** - Application structure
+                    
+                    ### 🔧 Utilities & Scripts
+                    
+                    - **`scripts/setup_environment.py`** - Environment setup
+                    - **`scripts/run_analysis.py`** - Direct execution  
+                    - **`scripts/verify_installation.py`** - System validation
+                    
+                    ### ✅ Testing & Validation
+                    
+                    - **`test_metrics.py`** - Comprehensive testing
+                    - **`verify_real_world.py`** - Production testing
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading Python files reference: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # COMPLETE PROJECT GUIDE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[3]:
+            st.subheader("📖 Complete Project Guide")
+            st.markdown("Comprehensive project documentation and user guide.")
+            
+            try:
+                readme_path = Path(__file__).parent / "README_v10_UPDATED.md"
+                if readme_path.exists():
+                    with open(readme_path, 'r', encoding='utf-8') as f:
+                        readme_content = f.read()
+                    st.markdown(readme_content)
+                else:
+                    # Try alternative README names
+                    alt_paths = [
+                        Path(__file__).parent / "README_v10.md",
+                        Path(__file__).parent / "README.md"
+                    ]
+                    
+                    content_loaded = False
+                    for alt_path in alt_paths:
+                        if alt_path.exists():
+                            with open(alt_path, 'r', encoding='utf-8') as f:
+                                readme_content = f.read()
+                            st.markdown(readme_content)
+                            content_loaded = True
+                            break
+                    
+                    if not content_loaded:
+                        st.warning("README files not found")
+                        
+                        # Fallback: Show basic project information
+                        st.markdown("""
+                        # 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
+                        
+                        ## 🎯 Overview
+                        
+                        Production-ready, enterprise-grade toolkit for Azure Data Factory ARM template analysis with interactive dashboard and comprehensive Excel reporting.
+                        
+                        ## ⚡ Quick Start
+                        
+                        ```bash
+                        # Quick analysis (recommended)
+                        python adf_runner_wrapper.py your_template.json
+                        
+                        # Dashboard mode
+                        streamlit run adf_dashboard.py
+                        ```
+                        
+                        ## 💡 Key Features
+                        
+                        - **Comprehensive Analysis** - ARM template parsing, activity detection
+                        - **Impact Analysis** - Health scoring, orphaned detection, circular dependencies
+                        - **Enhanced Reporting** - Professional Excel with charts and dashboards
+                        - **Interactive Dashboard** - Real-time analytics and visualizations
+                        
+                        ## 📊 Dashboard Features
+                        
+                        - **Dual-Mode Operation** - Generate Excel + Upload & Analyze
+                        - **Enhancement Configuration** - User-friendly feature toggles
+                        - **Interactive Analytics** - Health gauge, network graphs, metrics
+                        """)
+                        
+            except Exception as e:
+                st.error(f"Error loading project guide: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # CONFIGURATION GUIDE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[4]:
+            st.subheader("⚙️ Configuration Guide")
+            st.markdown("Complete guide to configuration files and settings.")
+            
+            # Enhancement Configuration
+            st.markdown("### 📊 Enhancement Configuration (`enhancement_config.json`)")
+            
+            try:
+                config_path = Path(__file__).parent / "enhancement_config.json"
+                if config_path.exists():
+                    with open(config_path, 'r') as f:
+                        config = json.load(f)
+                    
+                    st.code(json.dumps(config, indent=2), language='json')
+                    
+                    st.markdown("""
+                    **Configuration Options:**
+                    
+                    - **`core_formatting`** - Basic Excel styling (column sizing, borders, colors)
+                    - **`conditional_formatting`** - Data bars, color scales, icon sets
+                    - **`hyperlinks`** - Navigation links between sheets
+                    - **`enhanced_summary`** - Executive dashboard and project banner
+                    - **`advanced_dashboard`** - Health score, complexity heat maps, insights
+                    
+                    **Advanced Dashboard Sub-Options:**
+                    - **`health_score`** - Factory health indicator (0-100)
+                    - **`complexity_heat_map`** - Visual complexity analysis
+                    - **`performance_insights`** - Bottleneck and optimization recommendations
+                    - **`top_pipelines`** - Most important/complex pipelines ranking
+                    - **`security_checklist`** - Security assessment and recommendations
+                    - **`cost_analysis`** - Resource utilization and cost implications
+                    """)
+                else:
+                    st.warning("enhancement_config.json not found")
+                    
+            except Exception as e:
+                st.error(f"Error loading configuration: {e}")
+            
+            # Dashboard Configuration
+            st.markdown("### 🎨 Dashboard Configuration (`streamlit_config.json`)")
+            
+            try:
+                streamlit_config_path = Path(__file__).parent / "streamlit_config.json"
+                if streamlit_config_path.exists():
+                    with open(streamlit_config_path, 'r') as f:
+                        streamlit_config = json.load(f)
+                    
+                    st.code(json.dumps(streamlit_config, indent=2), language='json')
+                else:
+                    st.info("streamlit_config.json not found - using default settings")
+                    
+                    # Show example configuration
+                    example_config = {
+                        "ui": {
+                            "theme": "default",
+                            "sidebar_state": "expanded"
+                        },
+                        "performance": {
+                            "cache_enabled": True,
+                            "max_file_size": "200MB"
+                        },
+                        "features": {
+                            "network_graphs": True,
+                            "advanced_charts": True
+                        }
+                    }
+                    
+                    st.code(json.dumps(example_config, indent=2), language='json')
+                    
+            except Exception as e:
+                st.error(f"Error loading dashboard configuration: {e}")
+            
+            # Usage Instructions
+            st.markdown("""
+            ### 🎯 How to Configure
+            
+            **Via Dashboard UI (Recommended):**
+            1. Go to Generate Excel tab
+            2. Use the Enhancement Configuration section
+            3. Toggle features with checkboxes
+            4. Click "Save Enhancement Config"
+            
+            **Via File Editing:**
+            1. Edit `enhancement_config.json` directly
+            2. Ensure valid JSON format
+            3. Restart dashboard to apply changes
+            
+            **Best Practices:**
+            - Start with all enhancements enabled
+            - Disable specific features if Excel generation is slow
+            - Use cost analysis sparingly (resource intensive)
+            - Keep health score enabled for best insights
+            """)
+
 
 # ═══════════════════════════════════════════════════════════════════════════
 # MAIN ENTRY POINT
@@ -6204,6 +6713,329 @@ def main():
         - Verify Excel file is not corrupted
         """
         )
+
+    def render_comprehensive_documentation(self):
+        """Render comprehensive documentation with all guides and references"""
+        
+        st.header("📚 Complete Documentation Suite")
+        st.markdown("Access all documentation, guides, and technical references in one place.")
+        
+        # Documentation navigation - Complete documentation suite
+        doc_tabs = st.tabs([
+            "📋 Dashboard Tiles", 
+            "🧠 Technical Logic", 
+            "🐍 Python Files", 
+            "📖 Complete Guide",
+            "⚙️ Configuration"
+        ])
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # DASHBOARD TILES REFERENCE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[0]:
+            st.subheader("📋 Dashboard Tiles Reference")
+            st.markdown("Complete reference for every metric tile shown in the dashboard.")
+            
+            try:
+                tiles_path = Path(__file__).parent / "TILES.md"
+                if tiles_path.exists():
+                    with open(tiles_path, 'r', encoding='utf-8') as f:
+                        tiles_content = f.read()
+                    st.markdown(tiles_content)
+                else:
+                    st.warning("TILES.md not found in current directory")
+                    
+                    # Fallback: Show basic tile information
+                    st.markdown("""
+                    ### 🏆 Top-Row Metric Tiles
+                    
+                    1. **Pipelines** - Total number of pipeline resources
+                    2. **DataFlows** - Number of DataFlow resources  
+                    3. **Datasets** - Number of dataset resources
+                    4. **Triggers** - Number of trigger configurations
+                    5. **Dependencies** - Total dependency relationships
+                    6. **Health** - Factory health score (0-100)
+                    7. **Orphaned** - Unused/orphaned resources
+                    
+                    ### 📊 Secondary Metrics
+                    
+                    - **Source/Target Datasets** - Lineage endpoint counts
+                    - **Static vs Dynamic** - Parameterization analysis
+                    - **Impact Levels** - CRITICAL/HIGH/MEDIUM/LOW distributions
+                    
+                    ### 🔗 Data Sources
+                    
+                    - **Primary:** Summary sheet metrics
+                    - **Fallback:** Individual sheet row counts
+                    - **Lineage:** DataLineage sheet analysis
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading TILES.md: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # TECHNICAL LOGIC REFERENCE  
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[1]:
+            st.subheader("🧠 Technical Logic & Algorithms")
+            st.markdown("Detailed technical reference for scoring algorithms and detection logic.")
+            
+            try:
+                logic_path = Path(__file__).parent / "LOGIC.md"
+                if logic_path.exists():
+                    with open(logic_path, 'r', encoding='utf-8') as f:
+                        logic_content = f.read()
+                    st.markdown(logic_content)
+                else:
+                    st.warning("LOGIC.md not found in current directory")
+                    
+                    # Fallback: Show basic algorithm information
+                    st.markdown("""
+                    ### 🏥 Health Score Algorithm
+                    
+                    ```python
+                    # Health Score Formula
+                    if pipelines > 0:
+                        health_score = int((1 - orphaned / pipelines) * 100)
+                    else:
+                        health_score = 100
+                    ```
+                    
+                    **Status Thresholds:**
+                    - **90-100:** Excellent (🟢)
+                    - **75-89:** Good (🔵)  
+                    - **60-74:** Fair (🟡)
+                    - **<60:** Needs Attention (🔴)
+                    
+                    ### 📊 Quality Score (Excel Reports)
+                    
+                    Starting from 100, deductions applied for:
+                    1. **Circular Dependencies:** -10 points per cycle (max -30)
+                    2. **Orphaned Resources:** Based on percentage (max -20)
+                    3. **Broken Triggers:** -5 points per broken trigger (max -15)
+                    
+                    ### 🔄 Circular Dependency Detection
+                    
+                    - **Algorithm:** DFS traversal with back-edge detection
+                    - **Deduplication:** Canonical cycle representation
+                    - **Severity:** Marked as CRITICAL (production blocker)
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading LOGIC.md: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # PYTHON FILES REFERENCE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[2]:
+            st.subheader("🐍 Python Files Overview")
+            st.markdown("Complete reference for all Python files and their purposes.")
+            
+            try:
+                python_files_path = Path(__file__).parent / "PYTHON_FILES_REFERENCE.md"
+                if python_files_path.exists():
+                    with open(python_files_path, 'r', encoding='utf-8') as f:
+                        python_content = f.read()
+                    st.markdown(python_content)
+                else:
+                    st.warning("PYTHON_FILES_REFERENCE.md not found")
+                    
+                    # Fallback: Show basic file structure
+                    st.markdown("""
+                    ### 🚀 Core Analysis Engine
+                    
+                    - **`adf_analyzer_v10_complete.py`** - Main analysis engine
+                    - **`adf_runner_wrapper.py`** - Production wrapper (recommended)
+                    - **`adf_analyzer_v10_patched_runner.py`** - Enhanced orchestrator
+                    
+                    ### 🎨 Enhancement Layer
+                    
+                    - **`adf_analyzer_v10_excel_enhancements.py`** - Excel beautification
+                    - **`adf_analyzer_v10_patch.py`** - Functional patches
+                    
+                    ### 📊 Dashboard & UI
+                    
+                    - **`adf_dashboard.py`** - Main Streamlit dashboard
+                    - **`streamlit_app/`** - Application structure
+                    
+                    ### 🔧 Utilities & Scripts
+                    
+                    - **`scripts/setup_environment.py`** - Environment setup
+                    - **`scripts/run_analysis.py`** - Direct execution  
+                    - **`scripts/verify_installation.py`** - System validation
+                    
+                    ### ✅ Testing & Validation
+                    
+                    - **`test_metrics.py`** - Comprehensive testing
+                    - **`verify_real_world.py`** - Production testing
+                    """)
+                    
+            except Exception as e:
+                st.error(f"Error loading Python files reference: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # COMPLETE PROJECT GUIDE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[3]:
+            st.subheader("📖 Complete Project Guide")
+            st.markdown("Comprehensive project documentation and user guide.")
+            
+            try:
+                readme_path = Path(__file__).parent / "README_v10_UPDATED.md"
+                if readme_path.exists():
+                    with open(readme_path, 'r', encoding='utf-8') as f:
+                        readme_content = f.read()
+                    st.markdown(readme_content)
+                else:
+                    # Try alternative README names
+                    alt_paths = [
+                        Path(__file__).parent / "README_v10.md",
+                        Path(__file__).parent / "README.md"
+                    ]
+                    
+                    content_loaded = False
+                    for alt_path in alt_paths:
+                        if alt_path.exists():
+                            with open(alt_path, 'r', encoding='utf-8') as f:
+                                readme_content = f.read()
+                            st.markdown(readme_content)
+                            content_loaded = True
+                            break
+                    
+                    if not content_loaded:
+                        st.warning("README files not found")
+                        
+                        # Fallback: Show basic project information
+                        st.markdown("""
+                        # 🚀 ADF Analyzer v10.1 - Ultimate Interactive Edition
+                        
+                        ## 🎯 Overview
+                        
+                        Production-ready, enterprise-grade toolkit for Azure Data Factory ARM template analysis with interactive dashboard and comprehensive Excel reporting.
+                        
+                        ## ⚡ Quick Start
+                        
+                        ```bash
+                        # Quick analysis (recommended)
+                        python adf_runner_wrapper.py your_template.json
+                        
+                        # Dashboard mode
+                        streamlit run adf_dashboard.py
+                        ```
+                        
+                        ## 💡 Key Features
+                        
+                        - **Comprehensive Analysis** - ARM template parsing, activity detection
+                        - **Impact Analysis** - Health scoring, orphaned detection, circular dependencies
+                        - **Enhanced Reporting** - Professional Excel with charts and dashboards
+                        - **Interactive Dashboard** - Real-time analytics and visualizations
+                        
+                        ## 📊 Dashboard Features
+                        
+                        - **Dual-Mode Operation** - Generate Excel + Upload & Analyze
+                        - **Enhancement Configuration** - User-friendly feature toggles
+                        - **Interactive Analytics** - Health gauge, network graphs, metrics
+                        """)
+                        
+            except Exception as e:
+                st.error(f"Error loading project guide: {e}")
+        
+        # ═══════════════════════════════════════════════════════════════════
+        # CONFIGURATION GUIDE
+        # ═══════════════════════════════════════════════════════════════════
+        with doc_tabs[4]:
+            st.subheader("⚙️ Configuration Guide")
+            st.markdown("Complete guide to configuration files and settings.")
+            
+            # Enhancement Configuration
+            st.markdown("### 📊 Enhancement Configuration (`enhancement_config.json`)")
+            
+            try:
+                config_path = Path(__file__).parent / "enhancement_config.json"
+                if config_path.exists():
+                    with open(config_path, 'r') as f:
+                        config = json.load(f)
+                    
+                    st.code(json.dumps(config, indent=2), language='json')
+                    
+                    st.markdown("""
+                    **Configuration Options:**
+                    
+                    - **`core_formatting`** - Basic Excel styling (column sizing, borders, colors)
+                    - **`conditional_formatting`** - Data bars, color scales, icon sets
+                    - **`hyperlinks`** - Navigation links between sheets
+                    - **`enhanced_summary`** - Executive dashboard and project banner
+                    - **`advanced_dashboard`** - Health score, complexity heat maps, insights
+                    
+                    **Advanced Dashboard Sub-Options:**
+                    - **`health_score`** - Factory health indicator (0-100)
+                    - **`complexity_heat_map`** - Visual complexity analysis
+                    - **`performance_insights`** - Bottleneck and optimization recommendations
+                    - **`top_pipelines`** - Most important/complex pipelines ranking
+                    - **`security_checklist`** - Security assessment and recommendations
+                    - **`cost_analysis`** - Resource utilization and cost implications
+                    """)
+                else:
+                    st.warning("enhancement_config.json not found")
+                    
+            except Exception as e:
+                st.error(f"Error loading configuration: {e}")
+            
+            # Dashboard Configuration
+            st.markdown("### 🎨 Dashboard Configuration (`streamlit_config.json`)")
+            
+            try:
+                streamlit_config_path = Path(__file__).parent / "streamlit_config.json"
+                if streamlit_config_path.exists():
+                    with open(streamlit_config_path, 'r') as f:
+                        streamlit_config = json.load(f)
+                    
+                    st.code(json.dumps(streamlit_config, indent=2), language='json')
+                else:
+                    st.info("streamlit_config.json not found - using default settings")
+                    
+                    # Show example configuration
+                    example_config = {
+                        "ui": {
+                            "theme": "default",
+                            "sidebar_state": "expanded"
+                        },
+                        "performance": {
+                            "cache_enabled": True,
+                            "max_file_size": "200MB"
+                        },
+                        "features": {
+                            "network_graphs": True,
+                            "advanced_charts": True
+                        }
+                    }
+                    
+                    st.code(json.dumps(example_config, indent=2), language='json')
+                    
+            except Exception as e:
+                st.error(f"Error loading dashboard configuration: {e}")
+            
+            # Usage Instructions
+            st.markdown("""
+            ### 🎯 How to Configure
+            
+            **Via Dashboard UI (Recommended):**
+            1. Go to Generate Excel tab
+            2. Use the Enhancement Configuration section
+            3. Toggle features with checkboxes
+            4. Click "Save Enhancement Config"
+            
+            **Via File Editing:**
+            1. Edit `enhancement_config.json` directly
+            2. Ensure valid JSON format
+            3. Restart dashboard to apply changes
+            
+            **Best Practices:**
+            - Start with all enhancements enabled
+            - Disable specific features if Excel generation is slow
+            - Use cost analysis sparingly (resource intensive)
+            - Keep health score enabled for best insights
+            """)
 
 
 if __name__ == "__main__":

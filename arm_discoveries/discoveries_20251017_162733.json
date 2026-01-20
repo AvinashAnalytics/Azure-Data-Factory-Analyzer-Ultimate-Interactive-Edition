@@ -1,0 +1,6741 @@
+{
+  "metadata": {
+    "source_file": "test.json",
+    "analyzed_at": "2025-10-17T16:27:33.788212",
+    "total_resources": 687,
+    "total_errors": 0
+  },
+  "discoveries": {
+    "resource_types": {
+      "integrationRuntimes": 4,
+      "managedVirtualNetworks": 1,
+      "linkedServices": 44,
+      "triggers": 80,
+      "datasets": 65,
+      "dataflows": 145,
+      "pipelines": 348
+    },
+    "activity_types": {
+      "WebActivity": 102,
+      "Script": 28,
+      "Copy": 569,
+      "SetVariable": 574,
+      "Lookup": 163,
+      "Filter": 15,
+      "ForEach": 84,
+      "ExecuteDataFlow": 110,
+      "ExecutePipeline": 147,
+      "Delete": 57,
+      "IfCondition": 34,
+      "GetMetadata": 28,
+      "Wait": 62,
+      "AzureFunctionActivity": 8,
+      "Until": 6
+    },
+    "dataset_types": {
+      "AzureSqlTable": 7,
+      "AzureSqlDWTable": 4,
+      "Excel": 3,
+      "DelimitedText": 25,
+      "SapHanaTable": 1,
+      "SapBwCube": 1,
+      "Binary": 5,
+      "Parquet": 1,
+      "RestResource": 6,
+      "Json": 3,
+      "AzureSqlMITable": 1,
+      "Db2Table": 2,
+      "SalesforceV2Object": 2,
+      "SqlServerTable": 1,
+      "OracleTable": 2,
+      "SnowflakeV2Table": 1
+    },
+    "linkedservice_types": {
+      "AzureKeyVault": 1,
+      "AzureSqlDatabase": 7,
+      "AzureBlobStorage": 4,
+      "FileServer": 3,
+      "AzureSqlDW": 4,
+      "Sftp": 5,
+      "SapBw": 1,
+      "AzureBlobFS": 3,
+      "HttpServer": 1,
+      "RestService": 5,
+      "SapHana": 1,
+      "AzureSqlMI": 1,
+      "AzureFunction": 1,
+      "Db2": 1,
+      "SalesforceV2": 2,
+      "Oracle": 2,
+      "SqlServer": 1,
+      "SnowflakeV2": 1
+    },
+    "trigger_types": {
+      "ScheduleTrigger": 80
+    },
+    "dataflow_types": {
+      "MappingDataFlow": 145
+    },
+    "transformation_types": {
+      "selectCol": 1,
+      "transformation_operator": 976,
+      "selectPYColumns": 1,
+      "CreateCol": 1,
+      "selectCYColumns": 1,
+      "unionFiles": 1,
+      "derivedNewColumns": 1,
+      "joinCostElement": 1,
+      "selectClForJoin": 1,
+      "selectCl": 6,
+      "filterRows": 1,
+      "selectCostCl": 1,
+      "derivedCostNewCl": 1,
+      "derivedNewCol": 2,
+      "PYBudgetType": 1,
+      "CYBudgetType": 1,
+      "unionBudget": 1,
+      "split2": 1,
+      "selectIndexCol": 1,
+      "derivedIndexCol": 1,
+      "unionLE": 1,
+      "selectLECol": 1,
+      "derivedBudgetCol": 1,
+      "selectCostCenterRptCol": 1,
+      "filter1": 13,
+      "filterEmptyRows": 1,
+      "RemoveEmptyRows": 1,
+      "SelectCYCol": 1,
+      "SelectPYCols": 1,
+      "FilterActualSales": 1,
+      "FilterDate": 1,
+      "ChangeToDate": 1,
+      "SelectDate": 1,
+      "NewCl": 2,
+      "JoinDate": 1,
+      "SelectFinalCl": 1,
+      "SplitDate": 1,
+      "GetAsOfDate": 1,
+      "filterHeaders": 1,
+      "RemoveDupHeader": 1,
+      "AddColumns": 1,
+      "SelectHeaderCl": 1,
+      "RemoveDataDups": 1,
+      "UnionHeaders": 1,
+      "SelectCl": 2,
+      "SortRows": 1,
+      "AddColumnsDate": 1,
+      "RemoveDups": 4,
+      "gettime": 7,
+      "MaxTimeStamp": 5,
+      "ConvertToTimestamp": 7,
+      "alterRow1": 23,
+      "SplitColumns": 1,
+      "ExtractColumns": 2,
+      "FilterRows": 2,
+      "RemoveArrayforAgg": 1,
+      "ExtractDate": 1,
+      "FilterDateValue": 1,
+      "FormatAsOfDate": 1,
+      "MonthDescToNum": 1,
+      "AsOfDate": 1,
+      "JoinReportDate": 1,
+      "CalcPerc": 1,
+      "JoinCreationinfo": 1,
+      "SelectAsOfDate": 1,
+      "ReplaceName": 1,
+      "FilterExtraRows": 1,
+      "SelectDetailsCl": 1,
+      "AddRowNumber": 1,
+      "SplitDetailRows": 1,
+      "FilterTOTALGOLOnly": 1,
+      "SelectRowLimitNumber": 1,
+      "DetermineRowLimit": 1,
+      "JoinRowLimit": 1,
+      "AddBrand": 1,
+      "FilterOutExtraRows": 1,
+      "SelectFinalDetailColumns": 1,
+      "PivotTotals": 1,
+      "GetRowLimits": 1,
+      "SelectTangibleCl": 1,
+      "Brand": 1,
+      "SelectColumns": 3,
+      "CalVal": 1,
+      "FilterNoChange": 1,
+      "AllowUpsert": 1,
+      "derivedColumn1": 27,
+      "RemoveYearFromColumnName": 1,
+      "SCDType1": 1,
+      "joinPlants": 1,
+      "selectOutput": 1,
+      "selectPlants": 1,
+      "CollectPlants": 1,
+      "ConvertToString": 1,
+      "TransformCL": 2,
+      "Lvl4Only": 2,
+      "JoinHierarchy": 2,
+      "GetLvl4": 2,
+      "SelectFinalCL": 2,
+      "SelectExclude": 2,
+      "JoinCurrentBrandMapping": 1,
+      "FilterOnlyMissing": 1,
+      "CreateCl": 1,
+      "SelectMissingCl": 1,
+      "aggregateTime": 1,
+      "selectTime": 1,
+      "select1": 21,
+      "FixFISCYEAR": 1,
+      "CreationInfo": 1,
+      "FilterOutErrors": 1,
+      "GetMaxTimeStamp": 2,
+      "split1": 2,
+      "getMinTimestamp": 1,
+      "FilterNeededData": 1,
+      "selectEventMessageHeader": 3,
+      "derivedEventMessageHeader": 3,
+      "SelectSalesDocumentPartner": 2,
+      "AlterRow1": 5,
+      "SelectEnhancedChangeLogForTOR": 1,
+      "DerivedEnhancedChangeLogForTOR": 1,
+      "SelectMessageStatus": 2,
+      "derivedMessageStatus": 2,
+      "SelectFreightOrderTracking": 2,
+      "selectTransportationOrderRootNode": 2,
+      "derivedTransportationOrderRootNode": 2,
+      "flattenjson": 2,
+      "ModifyColumns": 2,
+      "selectCustomerPassThroughData": 2,
+      "derivedCustomerPassThroughData": 2,
+      "DerivedGetTransportationLoadHeader": 1,
+      "SelectTransportationLoadHeader": 1,
+      "GetRowNumber": 1,
+      "GetHeader": 1,
+      "unpivot": 1,
+      "GetDupNumber": 1,
+      "UpdateColName": 1,
+      "selectHeader": 1,
+      "pivotHeader": 1,
+      "DataOnly": 1,
+      "HeaderOrder": 1,
+      "FixColName": 1,
+      "filterRecord": 1,
+      "GetRightNames": 1,
+      "unionWithData": 1,
+      "selectData": 1,
+      "SelecStandarColumns": 1,
+      "derivedColumn2": 9,
+      "derivedColumn3": 6,
+      "derivedColumn5": 3,
+      "derivedColumn6": 3,
+      "derivedColumn7": 3,
+      "derivedColumn8": 2,
+      "join2": 4,
+      "Stage": 1,
+      "join3": 3,
+      "derivedColumn9": 2,
+      "Timebtwdeliverynadtoday": 1,
+      "Deliverredtimestamp": 1,
+      "join5": 1,
+      "unionData": 1,
+      "aggregate1": 2,
+      "selectEKES": 1,
+      "derivedEKES": 1,
+      "alterRow1EKES": 1,
+      "selectEKPO": 1,
+      "derivedEKPO": 1,
+      "alterRow1EKPO": 1,
+      "selectEKET": 1,
+      "derivedEKET": 1,
+      "alterRow1EKET": 1,
+      "selectEKKO": 1,
+      "derivedEKKO": 1,
+      "alterRow1EKKO": 1,
+      "selectBomHeader": 2,
+      "selectBomItem": 5,
+      "FQPderivedColumn1": 4,
+      "FPQselect1": 4,
+      "SAPOrders": 1,
+      "join1": 6,
+      "selectPhysicalStock": 4,
+      "derivedPhysicalStock": 4,
+      "selectVendorMaster": 2,
+      "derivedVendorMaster": 2,
+      "selectSCAC": 1,
+      "derivedSCAC": 1,
+      "FilterOnlyWeekendInfo": 1,
+      "ExtractWeekend": 1,
+      "DecodeWeekend": 1,
+      "SelectFLDs": 1,
+      "FixFields": 1,
+      "SelectSinkFLDs": 1,
+      "ReplaceNullText": 1,
+      "aggregateDates": 1,
+      "GenerateQuery": 1,
+      "selectQueryCl": 1,
+      "DPPderivedColumn1": 3,
+      "DPQselect1": 3,
+      "selectEKBE": 1,
+      "derivedEKBE": 1,
+      "selectSHPHDR": 1,
+      "derivedSHPHDR": 1,
+      "selectSHPITM": 1,
+      "derivedSHPITM": 1,
+      "alterRowSHPITM": 1,
+      "SAPJoin": 1,
+      "select2": 4,
+      "select3": 5,
+      "select4": 4,
+      "SAPInvoiceSelect": 1,
+      "SAPOrderInvoiceJoin": 1,
+      "SFSAPJoin": 1,
+      "SEOrder": 1,
+      "select6": 3,
+      "SEOrderWKey": 1,
+      "select7": 3,
+      "derivedColumn4": 2,
+      "joinData": 1,
+      "selectSynapse": 1,
+      "selectAmazon": 1,
+      "filterReloadUD": 1,
+      "FixUpdate": 1,
+      "aggregateUpdates": 1,
+      "ListDates": 1,
+      "selectListDates": 1,
+      "filterDeleteRecords": 1,
+      "FixDelete": 1,
+      "aggregateDelete": 1,
+      "ListDelete": 1,
+      "selectListDelete": 1,
+      "derivedRACADT": 1,
+      "selectRACADT": 1,
+      "derivedRACHIS": 1,
+      "selectRACHIS": 1,
+      "derivedHUHDR": 1,
+      "selectHUHDR": 1,
+      "derivedRACPRT": 1,
+      "selectRACPRT": 1,
+      "ISOAddColumns": 1,
+      "SelectTableISO": 1,
+      "ISOFilterNulls": 1,
+      "ISOMoveColumns": 1,
+      "AddColumnsSummary": 1,
+      "SelectTableSummary": 1,
+      "FilterNullsTable": 1,
+      "AddColumnsTable": 1,
+      "SelectTableData": 1,
+      "surrogateKey1": 1,
+      "window1": 3,
+      "sort1": 2,
+      "filter2": 2,
+      "surrogateKey2": 1,
+      "cast1": 1,
+      "surrogateKey3": 1,
+      "filter3": 2,
+      "select5": 3,
+      "surrogateKey4": 1,
+      "filter4": 2,
+      "select8": 1,
+      "derivedColumn10": 1,
+      "surrogateKey5": 1,
+      "select9": 1,
+      "derivedColumn11": 1,
+      "surrogateKey6": 1,
+      "select10": 1,
+      "select11": 1,
+      "filter5": 1,
+      "select12": 1,
+      "derivedColumn12": 1,
+      "select13": 1,
+      "derivedRACSCT": 1,
+      "selectRACSCT": 1,
+      "derivedRACBLP": 1,
+      "selectRACBLP": 1,
+      "selectFile": 14,
+      "derivedColumns": 16,
+      "FlattenJson": 11,
+      "flatten1": 11,
+      "flatten2": 10,
+      "flatten3": 2,
+      "filteronSent": 1,
+      "MapDrifted1": 2,
+      "MapDrifted2": 1,
+      "window2": 1,
+      "union1": 3,
+      "selectFile21": 1,
+      "derivedColumns21": 1,
+      "FlattenJson21": 1,
+      "flatten22": 1,
+      "flatten23": 1,
+      "flatten24": 1,
+      "derivedColumn22": 1,
+      "derivedColumn23": 1,
+      "derivedColumn24": 1,
+      "select22": 1,
+      "select23": 1,
+      "select24": 1,
+      "union2": 1,
+      "union3": 1,
+      "derivedColumn25": 1,
+      "Select1": 11,
+      "CreationInfo1": 11,
+      "SelectEmpty47": 1,
+      "SelectEmpty42": 1,
+      "UnPivotForecast": 1,
+      "GetDate": 1,
+      "GetKey": 1,
+      "SelectCL": 2,
+      "UpsertBudget": 1,
+      "IdentifyRowNumber": 2,
+      "HeaderOnlyStream": 1,
+      "TrimValues": 2,
+      "UnpivotRowToListOfHeader": 2,
+      "IdentifyMultipleColumnsWithSameName": 2,
+      "SortBasedOnOriginalPosition": 1,
+      "GetColumnOrderNumber": 2,
+      "AddSeqToHeader": 2,
+      "FixFileNameHeaderName": 2,
+      "PromoteValuesToHeaders": 2,
+      "RemoveDummyRow": 2,
+      "RemoveRowColumn": 2,
+      "RemoveSeqFromHeaderName": 2,
+      "UnionHeaderAndData": 2,
+      "DataOnlyStream": 1,
+      "RemovedRowNumberColumn": 2,
+      "MapNeededColumns": 2,
+      "FilterOutBadRecords": 1,
+      "DerivedFileName": 2,
+      "FilterHeaderRow": 1,
+      "selectHeaderRowNumber": 1,
+      "IdentifyRN": 1,
+      "filterHeader": 1,
+      "DataRows": 1,
+      "ChangeDataTypes": 1,
+      "FilterEmptyRows": 1,
+      "GetDataRange": 1,
+      "joinDate": 1,
+      "DateSplit": 1,
+      "ConvertToDate": 1,
+      "selectCL": 3,
+      "FixColumnName": 1,
+      "FixMKTColumnName": 1,
+      "FixPRDColumnName": 1,
+      "selectMKTCL": 1,
+      "selectPRDCL": 1,
+      "alterRow2": 1,
+      "flatten": 2,
+      "flattenJson": 1,
+      "RemoveDupsRows": 1,
+      "selectColumns": 1,
+      "FixDate": 1,
+      "CalColumns": 1,
+      "joinUPC": 1,
+      "SelFinalColumns": 1,
+      "RemoveSpaces": 1
+    },
+    "source_sink_types": {
+      "source.PCard": 1,
+      "sink.sinkData": 5,
+      "source.CYActuals": 1,
+      "source.PYActuals": 1,
+      "source.CostElementHierarchy": 1,
+      "source.CYBudget": 1,
+      "source.PYBudget": 1,
+      "source.IndexCostElementHierarchy": 1,
+      "source.LE1Upload": 1,
+      "source.LE2Upload": 1,
+      "source.LE3Upload": 1,
+      "source.CostCenterList": 1,
+      "source.FinanceSecurityContext": 1,
+      "sink.sinkCostCenterRpt": 1,
+      "sink.DimExpenseRollUp": 1,
+      "sink.sinkCYBudget": 1,
+      "sink.sinkPYBudget": 1,
+      "sink.sinkIndex": 1,
+      "sink.sinkCosCenterList": 1,
+      "sink.sinkLEData": 1,
+      "sink.sinkFinanceSecurityContext": 1,
+      "source.CurrentFile": 2,
+      "sink.SinkData": 5,
+      "sink.SinkDateInfo": 1,
+      "source.OrderOtherData": 1,
+      "sink.sinkOrderOtherData": 1,
+      "sink.TimeStamps": 5,
+      "source.EmailTable": 1,
+      "source.GetCreationInfo": 1,
+      "sink.SinkOutputCsv": 1,
+      "sink.SinkLoadDate": 1,
+      "sink.SinkDetailOutput": 1,
+      "source.OrgainG": 1,
+      "source.DeliveryData": 2,
+      "sink.sinkDeliveryData": 2,
+      "source.GIOOrders": 1,
+      "sink.sinkSCDType1": 1,
+      "source.GlobalSCPlant": 1,
+      "source.SnowflakeUS16US8XPlants": 1,
+      "sink.sinkPlants": 1,
+      "sink.sinkList": 1,
+      "source.SourceFile": 2,
+      "source.Codes": 1,
+      "source.Hierarchy": 2,
+      "sink.SinkDW": 2,
+      "sink.SinkMissingCodes": 1,
+      "sink.sinkTime": 1,
+      "source.source1": 25,
+      "sink.sink1": 28,
+      "source.MonthlyIncomeStatement": 1,
+      "source.OrderExcepData": 1,
+      "sink.sinkOrderExcepData": 1,
+      "source.OrgainDetails": 1,
+      "sink.SinkOrgainDetails": 1,
+      "source.InvoiceData": 1,
+      "sink.sinkInvoiceData": 1,
+      "source.OrderData": 3,
+      "sink.sinkOrderData": 3,
+      "sink.sinkMaxOrderTimeStamp": 2,
+      "source.CopyADLSRaw": 2,
+      "sink.CopyAzureSQLSynapse": 2,
+      "source.sourceEventMessageHeader": 3,
+      "sink.sinkEventMessageHeader": 3,
+      "source.SourceSalesDocumentPartner": 2,
+      "sink.SinkSalesDocumentPartner": 2,
+      "source.SourceEnhancedChangeLogForTOR": 1,
+      "sink.SinkEnhancedChangeLogForTOR": 1,
+      "source.GetMessageStatus": 2,
+      "sink.SinkMessageStatus": 2,
+      "source.SourceFreightOrderTracking": 2,
+      "sink.SinkFreightOrderTracking": 2,
+      "source.sourceTransportationOrderRootNode": 2,
+      "sink.sinkTransportationOrderRootNode": 2,
+      "source.sourcejson": 2,
+      "sink.sinktosynapse": 2,
+      "source.sourceCustomerPassThroughData": 2,
+      "sink.sinkCustomerPassThroughData": 2,
+      "source.GetTransportationLoadHeader": 1,
+      "sink.SinkTransportationLoadHeader": 1,
+      "source.sourceorderstatustrackingstage": 1,
+      "source.sourceorderstatusChangeLog": 1,
+      "source.sourceTransportationloadheader": 1,
+      "source.sourceEventmessageHeader": 1,
+      "source.source1otrorderdata": 1,
+      "source.sourcesalesdocumentpartner": 1,
+      "source.Part1": 1,
+      "source.Part2": 1,
+      "source.Part3": 1,
+      "source.Part4": 1,
+      "source.Part5": 1,
+      "source.Part6": 1,
+      "source.sourceEKES": 1,
+      "sink.sinkEKES": 1,
+      "source.sourceEKPO": 1,
+      "sink.sinkEKPO": 1,
+      "source.sourceEKET": 1,
+      "sink.sinkEKET": 1,
+      "source.sourceEKKO": 1,
+      "sink.sinkEKKO": 1,
+      "source.sourceBOMHeader": 2,
+      "sink.sinkBomHeader": 2,
+      "source.sourceBOMItem": 5,
+      "sink.sinkBomItem": 4,
+      "source.FQPsource1": 4,
+      "sink.FQPSink": 4,
+      "source.GSCOrders": 1,
+      "source.IOOrders": 1,
+      "source.sourcePhysicalStock": 4,
+      "sink.sinkPhysicalStock": 4,
+      "source.sourceVendorMaster": 2,
+      "sink.sinkVendorMaster": 2,
+      "source.sourceSCAC": 1,
+      "sink.sinkSCAC": 1,
+      "source.AmazonWeekend": 1,
+      "sink.SinkWeekendDataLoad": 1,
+      "source.AmazonCSV": 1,
+      "sink.SinkAmazonSFR": 1,
+      "source.AmazonMarketShareWeekend": 1,
+      "sink.sinkAmazonMarketShare": 1,
+      "sink.sinkDeleteQuery": 1,
+      "source.DPPsource1": 3,
+      "sink.DPPSink": 3,
+      "source.sourceEKBE": 1,
+      "sink.sinkEKBE": 1,
+      "source.sourceSHPHDR": 1,
+      "sink.sinkSHPHDR": 1,
+      "source.sourceSHPITM": 1,
+      "sink.sinkSHPITM": 1,
+      "source.SAPSHPHDR": 1,
+      "source.SAPOrdersDetail": 1,
+      "source.SAPOrderHeader": 1,
+      "source.SalesForceOrders": 1,
+      "source.SAPInvoiceDetail": 1,
+      "source.SAPInvoiceHeader": 1,
+      "source.SHPEDGEDetail": 1,
+      "source.SHPEDGEOrder": 1,
+      "sink.WriteToSynapse": 1,
+      "source.AmazonUD": 1,
+      "source.SynapseUDs": 1,
+      "sink.sinkReloadDates": 1,
+      "sink.sinkDeleteDates": 1,
+      "source.RACADT": 1,
+      "sink.sinkRACADT": 1,
+      "source.RACHIS": 1,
+      "sink.sinkRACHIS": 1,
+      "source.HUHDR": 1,
+      "sink.sinkHUHDR": 1,
+      "source.RACPRT": 1,
+      "sink.sinkRACPRT": 1,
+      "source.IRI": 1,
+      "sink.sinkIRI": 1,
+      "source.GetISO": 1,
+      "source.GetSummary": 1,
+      "source.GetMedTableData": 1,
+      "sink.PushISO": 1,
+      "sink.PushSummary": 1,
+      "sink.PushMedTable": 1,
+      "source.GetRXNT": 1,
+      "source.GetDRLathian": 1,
+      "source.GetVeradigm": 1,
+      "source.GetGoogleSEM": 1,
+      "source.GetDeepIntent": 1,
+      "source.GETIQVIA": 1,
+      "source.GETDoximity": 1,
+      "sink.sink2": 2,
+      "sink.sink3": 1,
+      "sink.sink4": 1,
+      "sink.sink5": 1,
+      "sink.sink6": 1,
+      "sink.sink7": 1,
+      "source.RACSCT": 1,
+      "sink.sinkRACSCT": 1,
+      "source.RACBLP": 1,
+      "sink.sinkRACBLP": 1,
+      "source.GetsourceFile": 14,
+      "sink.sinkKlaviyoCampaigns": 14,
+      "sink.sinkCampaignsTags": 1,
+      "source.source2": 2,
+      "source.GetsourceFile21": 1,
+      "source.GetsourceFile22": 1,
+      "source.GetsourceFile23": 1,
+      "source.GetsourceFile24": 1,
+      "source.GetBulkQty": 8,
+      "sink.SinkBulkQty": 6,
+      "source.GetBOL": 1,
+      "source.GetSpace47": 1,
+      "source.GetEmpty47": 1,
+      "sink.SinkSpace47": 1,
+      "source.GetSpace42": 1,
+      "source.GetEmpty42": 1,
+      "sink.SinkSpace42": 1,
+      "source.OrgainBudget": 1,
+      "sink.SinkBudget": 1,
+      "source.RushOrder": 1,
+      "source.GetHeaderInfo": 1,
+      "source.YTDActuals": 1,
+      "sink.sinkHeaderRowNumber": 1,
+      "sink.sinkDataRange": 1,
+      "source.GetXref": 1,
+      "source.GetWhs": 1,
+      "sink.WEEKLY": 2,
+      "sink.HISTORY": 2,
+      "source.Fact": 1,
+      "source.Wk": 1,
+      "source.MKT": 1,
+      "source.PROD": 1,
+      "sink.sinkPRD": 1,
+      "sink.sinkMKT": 1,
+      "sink.sinkFact": 1,
+      "source.xRef": 1,
+      "source.WhsMstP": 1,
+      "source.INVBLKP": 1,
+      "source.Sessions": 2,
+      "sink.sinkLimit": 1,
+      "sink.sinkGA4": 2,
+      "source.PageViews": 1,
+      "source.UASessions": 1,
+      "sink.sinkSessions": 1,
+      "sink.sinkBomItemSelect": 1,
+      "source.AtriumItemMaster": 1,
+      "source.AtriumUPC": 1,
+      "sink.sinkAtriumMaterial": 1
+    },
+    "authentication_types": {
+      "Unknown": 6,
+      "ConnectionString": 15,
+      "SAS": 2,
+      "Basic": 8,
+      "SshPublicKey": 2,
+      "Anonymous": 6,
+      "OAuth2ClientCredential": 2,
+      "SystemAssignedManagedIdentity": 2,
+      "AccountKey": 1
+    },
+    "expression_functions": {
+      "concat": 549,
+      "variables": 341,
+      "dataset": 118,
+      "string": 12,
+      "not": 7,
+      "split": 5,
+      "join": 4,
+      "replace": 9,
+      "trim": 2,
+      "first": 6,
+      "union": 1,
+      "sort": 1,
+      "max": 1,
+      "substring": 3,
+      "if": 9
+    },
+    "parameter_patterns": {
+      "pipeline.EmailTo": 4,
+      "pipeline.CC": 1,
+      "pipeline.MessageContent": 4,
+      "pipeline.Subject": 4,
+      "pipeline.FldPth": 1,
+      "pipeline.FileNames": 1,
+      "pipeline.p_schema": 1,
+      "pipeline.p_table": 1,
+      "pipeline.variable.Delimiter": 4,
+      "pipeline.variable.EscapeCharacter": 4,
+      "pipeline.variable.test": 5,
+      "pipeline.file_system": 4,
+      "pipeline.solution_path": 1,
+      "pipeline.file_name": 1,
+      "pipeline.query": 1,
+      "pipeline.parquet_solution_path": 1,
+      "pipeline.parquet_file_name": 1,
+      "pipeline.variable.regnaProductCount": 1,
+      "pipeline.variable.regnaStoreCount": 1,
+      "pipeline.variable.flag": 1,
+      "pipeline.variable.StoreInboundPath": 1,
+      "pipeline.variable.ProductInboundPath": 1,
+      "pipeline.variable.Time": 28,
+      "pipeline.variable.Year": 69,
+      "pipeline.variable.Month": 68,
+      "pipeline.variable.LUD": 28,
+      "pipeline.variable.OLD_LUD": 17,
+      "pipeline.variable.token": 11,
+      "pipeline.variable.InputValue": 11,
+      "pipeline.variable.SubString": 11,
+      "pipeline.variable.Old_LUD": 11,
+      "pipeline.variable.Control": 1,
+      "pipeline.variable.OrgainMapping": 1,
+      "pipeline.variable.Container": 45,
+      "pipeline.variable.Path": 46,
+      "pipeline.variable.inbound_path": 3,
+      "pipeline.DaysToLoad": 3,
+      "pipeline.RunType": 3,
+      "pipeline.variable.varFileToStagingMapping": 6,
+      "pipeline.variable.RecordCount": 5,
+      "pipeline.variable.SuccessfulDates": 1,
+      "pipeline.variable.Query": 2,
+      "pipeline.start_date": 2,
+      "pipeline.end_date": 2,
+      "pipeline.monthsInBatch": 1,
+      "pipeline.variable.timerange_list": 4,
+      "pipeline.variable.From": 1,
+      "pipeline.variable.To": 1,
+      "pipeline.variable.Day": 38,
+      "pipeline.variable.ArchiveContainer": 39,
+      "pipeline.variable.FolderPath": 2,
+      "pipeline.variable.FileName": 41,
+      "pipeline.variable.MTDVal": 1,
+      "pipeline.variable.FirstDayMonth": 1,
+      "pipeline.variable.current_timestamp": 4,
+      "pipeline.variable.OrderDataLastTimeStamp": 3,
+      "pipeline.variable.DeliveryDataLastTimeStamp": 3,
+      "pipeline.variable.OrderOtherDataLastTimeStamp": 3,
+      "pipeline.variable.InvoiceDataLastTimeStamp": 3,
+      "pipeline.variable.OrderExcepDataLastTimeStamp": 3,
+      "pipeline.variable.AnyFileUpdated": 2,
+      "pipeline.variable.DaysToLoad": 1,
+      "pipeline.variable.RunType": 1,
+      "pipeline.variable.FileCount": 6,
+      "pipeline.P_DATA_GROUP": 11,
+      "pipeline.P_MAPPING_QUERY": 1,
+      "pipeline.variable.V_LAST_UPDATE_DATE": 1,
+      "pipeline.variable.V_OLD_LAST_UPDATE_DATE": 1,
+      "pipeline.variable.Current_TimeStamp": 35,
+      "pipeline.variable.LastUpdate": 32,
+      "pipeline.variable.NewFileName": 33,
+      "pipeline.variable.GetLastTimeStamp": 34,
+      "pipeline.variable.Current_Date": 1,
+      "pipeline.variable.OverRideFrom": 1,
+      "pipeline.variable.OverRideTo": 1,
+      "pipeline.variable.ArchivePath": 1,
+      "pipeline.variable.File": 3,
+      "pipeline.variable.Archive_Container": 1,
+      "pipeline.variable.Reloaddata": 1,
+      "pipeline.FromDate": 2,
+      "pipeline.ToDate": 2,
+      "pipeline.variable.varFileToStagingMappingPart1": 2,
+      "pipeline.variable.varFileToStagingMappingPart2": 2,
+      "pipeline.variable.varFileToStagingMappingPart4": 2,
+      "pipeline.variable.varFileToStagingMappingPart3": 2,
+      "pipeline.variable.varFileToStagingMappingPart5": 2,
+      "pipeline.variable.varFileToStagingMappingPart6": 2,
+      "pipeline.variable.Error": 2,
+      "pipeline.variable.LastUpdate_PhysicalStock": 2,
+      "pipeline.variable.PhysicalStock_FileName": 2,
+      "pipeline.variable.MLA": 3,
+      "pipeline.variable.MLA2": 3,
+      "pipeline.variable.TableName": 40,
+      "pipeline.variable.ArchiveFileName": 16,
+      "pipeline.variable.ArchiveFolder": 17,
+      "pipeline.variable.SourceQuery": 16,
+      "pipeline.variable.StagingQuery": 15,
+      "pipeline.variable.WeekNum": 1,
+      "pipeline.variable.OriginContainer": 1,
+      "pipeline.variable.OriginFolder": 1,
+      "pipeline.variable.ArchiveConatiner": 1,
+      "pipeline.variable.LastUpdate_HUHDR": 1,
+      "pipeline.variable.HUHDR_FileName": 1,
+      "pipeline.variable.LastUpdate_RACHIS": 1,
+      "pipeline.variable.RACHIS_Filename": 1,
+      "pipeline.variable.RACADT_Filename": 1,
+      "pipeline.variable.RACPRT_Filename": 1,
+      "pipeline.variable.LastUpdate_RACADT": 1,
+      "pipeline.variable.LastUpdate_RACPRT": 1,
+      "pipeline.variable.RACBLP_Filename": 1,
+      "pipeline.variable.LastUpdate_RACBLP": 1,
+      "pipeline.variable.RACSCT_Filename": 1,
+      "pipeline.variable.LastUpdate_RACSCT": 1,
+      "pipeline.variable.ReloadDates": 1,
+      "pipeline.variable.DeleteDates": 1,
+      "pipeline.FileType": 1,
+      "pipeline.variable.ArrayDateList": 1,
+      "pipeline.variable.DateList": 1,
+      "pipeline.variable.RootPath": 9,
+      "pipeline.variable.FolderName": 9,
+      "pipeline.variable.nextPageToken": 3,
+      "pipeline.variable.pageSize": 3,
+      "pipeline.variable.p_Camp_Filter": 11,
+      "pipeline.variable.p_container": 11,
+      "pipeline.variable.p_directory": 11,
+      "pipeline.variable.p_file": 11,
+      "pipeline.variable.p_parm": 11,
+      "pipeline.variable.p_filecount": 6,
+      "pipeline.variable.p_process": 11,
+      "pipeline.variable.p_test": 6,
+      "pipeline.variable.p_FileCount": 5,
+      "pipeline.variable.p_Campaign_ID": 5,
+      "pipeline.variable.p_PlusOne": 5,
+      "pipeline.variable.Directory": 4,
+      "pipeline.variable.Filter": 1,
+      "pipeline.variable.CurrentDate": 2,
+      "pipeline.variable.FileSystemFrom": 1,
+      "pipeline.variable.FileSystemTo": 1,
+      "pipeline.variable.Shift": 1,
+      "pipeline.variable.Folder": 2,
+      "pipeline.variable.Timestamp": 6,
+      "pipeline.variable.EXT_Path": 1,
+      "pipeline.PBI_Workspace_SecretName": 1,
+      "pipeline.PBI_Dataset_SecretName": 1,
+      "pipeline.variable.YearLoad": 1,
+      "pipeline.PropertyID": 1,
+      "pipeline.variable.Limit": 1,
+      "pipeline.variable.OffSet": 1,
+      "pipeline.variable.IncOffSet": 1,
+      "pipeline.variable.GetLatestFile": 1,
+      "pipeline.variable.DateCompare": 1,
+      "pipeline.variable.Now": 1,
+      "pipeline.variable.FileDate": 1,
+      "pipeline.variable.EmailTo": 1,
+      "pipeline.variable.CC": 1,
+      "pipeline.variable.Subject": 1,
+      "pipeline.variable.MessageContent": 1,
+      "pipeline.variable.FldPath": 1,
+      "pipeline.variable.StorageAccount": 1,
+      "pipeline.variable.NewFileDate": 1,
+      "pipeline.variable.BCC": 1
+    },
+    "nested_structures": {
+      "managedVirtualNetworks": {
+        "resource_4": {
+          "name": "str",
+          "type": "str",
+          "apiVersion": "str",
+          "properties": {},
+          "dependsOn": []
+        }
+      }
+    },
+    "integration_runtime_types": {
+      "SelfHosted": 3,
+      "Managed": 1
+    },
+    "credential_types": {}
+  },
+  "parser_templates": {
+    "integrationRuntimes": {
+      "resource_type": "integrationRuntimes",
+      "count": 4,
+      "sample_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "common_properties": {
+        "resourceId": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "authorizationType": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "linkedInfo": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 9
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 4
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 4
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 4
+        },
+        "computeType": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "coreCount": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "timeToLive": {
+          "types": [
+            "int"
+          ],
+          "frequency": 3
+        },
+        "cleanup": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 1
+        },
+        "customProperties": {
+          "types": [
+            "array"
+          ],
+          "frequency": 1
+        },
+        "dataIntegrationUnit": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "numberOfPipelineNodes": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "numberOfExternalNodes": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "location": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "dataFlowProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "copyComputeScaleProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "pipelineExternalComputeScaleProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "computeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "managedVirtualNetwork": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[0].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[0].properties.description",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[0].properties.typeProperties.linkedInfo",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[0].properties.typeProperties.linkedInfo.authorizationType",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].properties.typeProperties.linkedInfo.resourceId",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[0].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[1].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.managedVirtualNetwork",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.managedVirtualNetwork.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties.managedVirtualNetwork.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.copyComputeScaleProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.copyComputeScaleProperties.dataIntegrationUnit",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.copyComputeScaleProperties.timeToLive",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties.cleanup",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties.computeType",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties.coreCount",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties.customProperties",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.dataFlowProperties.timeToLive",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.location",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.pipelineExternalComputeScaleProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.pipelineExternalComputeScaleProperties.numberOfExternalNodes",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.pipelineExternalComputeScaleProperties.numberOfPipelineNodes",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].properties.typeProperties.computeProperties.pipelineExternalComputeScaleProperties.timeToLive",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[1].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[2].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[2].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[2].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[2].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[2].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[2].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[2].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[3].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[3].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[3].properties.typeProperties.linkedInfo",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[3].properties.typeProperties.linkedInfo.authorizationType",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].properties.typeProperties.linkedInfo.resourceId",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[3].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        }
+      ]
+    },
+    "managedVirtualNetworks": {
+      "resource_type": "managedVirtualNetworks",
+      "count": 1,
+      "sample_indices": [
+        4
+      ],
+      "common_properties": {
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 1
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[4].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[4].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[4].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[4].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[4].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        }
+      ]
+    },
+    "linkedServices": {
+      "resource_type": "linkedServices",
+      "count": 44,
+      "sample_indices": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "common_properties": {
+        "baseUrl": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "annotations": {
+          "types": [
+            "array"
+          ],
+          "frequency": 44
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 194
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 44
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 44
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 46
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 44
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 44
+        },
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 66
+        },
+        "store": {
+          "types": [
+            "object"
+          ],
+          "frequency": 32
+        },
+        "secretName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 32
+        },
+        "connectionString": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 15
+        },
+        "connectVia": {
+          "types": [
+            "object"
+          ],
+          "frequency": 34
+        },
+        "sasUri": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "host": {
+          "types": [
+            "str"
+          ],
+          "frequency": 8
+        },
+        "userId": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "password": {
+          "types": [
+            "object"
+          ],
+          "frequency": 10
+        },
+        "defaultValue": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "P_FILE_PATH": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "value": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "port": {
+          "types": [
+            "int"
+          ],
+          "frequency": 5
+        },
+        "skipHostKeyValidation": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 5
+        },
+        "authenticationType": {
+          "types": [
+            "str"
+          ],
+          "frequency": 16
+        },
+        "userName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 6
+        },
+        "privateKeyContent": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "passPhrase": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 16
+        },
+        "parameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 7
+        },
+        "server": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "systemNumber": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "clientId": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "url": {
+          "types": [
+            "str"
+          ],
+          "frequency": 9
+        },
+        "filepath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "enableServerCertificateValidation": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 6
+        },
+        "P_RELATIVE_URL": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "serviceEndpoint": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "accountKind": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "alwaysEncryptedAkvAuthType": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "alwaysEncryptedSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Property_ID": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "functionAppUrl": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "authentication": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "functionKey": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "environmentUrl": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "clientSecret": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "P_HOST_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "database": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "encrypt": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "trustServerCertificate": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 2
+        },
+        "accountIdentifier": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "user": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "warehouse": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "role": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "accountKey": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[10].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[10].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[10].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[10].properties.connectVia",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[10].properties.connectVia.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.connectVia.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString.secretName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString.store",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString.store.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString.store.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].properties.typeProperties.connectionString.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[10].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[11].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[11].properties.connectVia",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.connectVia.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.connectVia.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.description",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.parameters.P_FILE_PATH",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.parameters.P_FILE_PATH.defaultValue",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.parameters.P_FILE_PATH.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.authenticationType",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.host",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.passPhrase",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.passPhrase.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.passPhrase.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.port",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent.secretName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent.store",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent.store.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent.store.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.privateKeyContent.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.skipHostKeyValidation",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[11].properties.typeProperties.userName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[11].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[12].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[12].properties.connectVia",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.connectVia.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.connectVia.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.description",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.parameters.P_FILE_PATH",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.parameters.P_FILE_PATH.defaultValue",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.parameters.P_FILE_PATH.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.authenticationType",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.host",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password.secretName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password.store",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password.store.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password.store.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.password.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.port",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.skipHostKeyValidation",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[12].properties.typeProperties.userName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[12].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[13].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[13].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[13].properties.connectVia",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[13].properties.connectVia.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.connectVia.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.clientId",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password.secretName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password.store",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password.store.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password.store.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.password.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.server",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.systemNumber",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].properties.typeProperties.userName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[13].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[14].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[14].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[14].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[14].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[14].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        }
+      ]
+    },
+    "triggers": {
+      "resource_type": "triggers",
+      "count": 80,
+      "sample_indices": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "common_properties": {
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 69
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 229
+        },
+        "pipelineReference": {
+          "types": [
+            "object"
+          ],
+          "frequency": 69
+        },
+        "parameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 69
+        },
+        "minutes": {
+          "types": [
+            "array"
+          ],
+          "frequency": 68
+        },
+        "hours": {
+          "types": [
+            "array"
+          ],
+          "frequency": 70
+        },
+        "frequency": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "interval": {
+          "types": [
+            "int"
+          ],
+          "frequency": 80
+        },
+        "startTime": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "timeZone": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "schedule": {
+          "types": [
+            "object"
+          ],
+          "frequency": 71
+        },
+        "recurrence": {
+          "types": [
+            "object"
+          ],
+          "frequency": 80
+        },
+        "annotations": {
+          "types": [
+            "array"
+          ],
+          "frequency": 80
+        },
+        "runtimeState": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "pipelines": {
+          "types": [
+            "array"
+          ],
+          "frequency": 80
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 80
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 80
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 80
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 80
+        },
+        "monthDays": {
+          "types": [
+            "array"
+          ],
+          "frequency": 8
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 14
+        },
+        "weekDays": {
+          "types": [
+            "array"
+          ],
+          "frequency": 5
+        },
+        "endTime": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[100].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[100].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[100].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[100].properties.description",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[100].properties.runtimeState",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties.recurrence",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties.recurrence.frequency",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties.recurrence.interval",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties.recurrence.startTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].properties.typeProperties.recurrence.timeZone",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[100].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[101].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[101].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[101].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[101].properties.runtimeState",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.frequency",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.interval",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.schedule",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.schedule.hours",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.schedule.minutes",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.startTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].properties.typeProperties.recurrence.timeZone",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[101].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[102].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[102].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[102].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[102].properties.runtimeState",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.frequency",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.interval",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.schedule",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.schedule.hours",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.schedule.minutes",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.startTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].properties.typeProperties.recurrence.timeZone",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[102].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[103].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[103].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[103].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[103].properties.runtimeState",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.frequency",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.interval",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.schedule",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.schedule.hours",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.schedule.minutes",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.startTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].properties.typeProperties.recurrence.timeZone",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[103].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[104].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[104].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[104].properties.pipelines[0].parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.pipelines[0].pipelineReference",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.pipelines[0].pipelineReference.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.pipelines[0].pipelineReference.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.runtimeState",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.frequency",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.interval",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.schedule",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.schedule.hours",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.schedule.minutes",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.startTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].properties.typeProperties.recurrence.timeZone",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[104].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[105].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[105].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[105].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[105].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[105].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[105].properties.pipelines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[105].properties.pipelines[0].parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[105].properties.pipelines[0].pipelineReference",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        }
+      ]
+    },
+    "datasets": {
+      "resource_type": "datasets",
+      "count": 65,
+      "sample_indices": [
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138
+      ],
+      "common_properties": {
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 65
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 478
+        },
+        "p_schema": {
+          "types": [
+            "object"
+          ],
+          "frequency": 7
+        },
+        "p_table": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "value": {
+          "types": [
+            "str"
+          ],
+          "frequency": 117
+        },
+        "schema": {
+          "types": [
+            "array",
+            "object",
+            "str"
+          ],
+          "frequency": 75
+        },
+        "table": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 15
+        },
+        "linkedServiceName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 65
+        },
+        "parameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 59
+        },
+        "annotations": {
+          "types": [
+            "array"
+          ],
+          "frequency": 65
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 65
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 76
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 65
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 65
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 65
+        },
+        "p_Schema": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "p_Table": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "SheetName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FilePath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "FileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 8
+        },
+        "HasHeaders": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "fileName": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 28
+        },
+        "folderPath": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 33
+        },
+        "sheetName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "location": {
+          "types": [
+            "object"
+          ],
+          "frequency": 37
+        },
+        "range": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "firstRowAsHeader": {
+          "types": [
+            "bool",
+            "object"
+          ],
+          "frequency": 25
+        },
+        "columnDelimiter": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 25
+        },
+        "rowDelimiter": {
+          "types": [
+            "str"
+          ],
+          "frequency": 7
+        },
+        "escapeChar": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 25
+        },
+        "quoteChar": {
+          "types": [
+            "str"
+          ],
+          "frequency": 25
+        },
+        "typePropertites": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "filepath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "sp_filepath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "p_container": {
+          "types": [
+            "object"
+          ],
+          "frequency": 15
+        },
+        "p_directory": {
+          "types": [
+            "object"
+          ],
+          "frequency": 15
+        },
+        "p_file": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "fileSystem": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 21
+        },
+        "p_filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FileSys": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "FolderName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "parquet_solution_path": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "container_name": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "file_name": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "compressionCodec": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 3
+        },
+        "folder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "ADLSFileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Sheet_Name": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Delimiter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "EscapeCharacter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ADLSDirectory": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ADLSFS": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "container": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 6
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 6
+        },
+        "P_RELATIVE_URL": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 2
+        },
+        "defaultValue": {
+          "types": [
+            "str"
+          ],
+          "frequency": 7
+        },
+        "p_relative_url": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "relativeUrl": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 4
+        },
+        "Schema": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Table": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "p_compresiontype": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Folder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "File": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "sheetIndex": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "Property_ID": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "p_Endpoint": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "p_Filter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RelativeURL": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Relative_URL": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FS": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "objectApiName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "p_tablename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "P_HOST_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "P_HOST_PATH": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "P_FILE_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "P_SCHEMA_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "P_TABLE_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FileSystem": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Directory": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[129].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[129].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[129].properties.linkedServiceName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.linkedServiceName.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.linkedServiceName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.parameters.p_schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.parameters.p_schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.parameters.p_table",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.parameters.p_table.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.schema",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[129].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.schema.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.table",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.table.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].properties.typeProperties.table.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[129].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[130].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[130].properties.linkedServiceName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.linkedServiceName.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.linkedServiceName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.parameters.p_Schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.parameters.p_Schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.parameters.p_Table",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.parameters.p_Table.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.schema",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[130].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.schema.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.table",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.table.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].properties.typeProperties.table.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[130].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[131].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[131].properties.linkedServiceName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.linkedServiceName.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.linkedServiceName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.FileName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.FileName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.FilePath",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.FilePath.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.HasHeaders",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.HasHeaders.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.SheetName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.parameters.SheetName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.schema",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[131].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.firstRowAsHeader",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.firstRowAsHeader.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.firstRowAsHeader.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.fileName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.fileName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.fileName.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.folderPath",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.folderPath.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.folderPath.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.location.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.range",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.sheetName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.sheetName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].properties.typeProperties.sheetName.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[131].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[132].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[132].properties.linkedServiceName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.linkedServiceName.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties.linkedServiceName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.parameters.p_Schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.parameters.p_Schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties.parameters.p_Table",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.parameters.p_Table.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties.schema",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[132].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[132].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.typeProperties.schema",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[132].properties.typeProperties.schema.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        }
+      ]
+    },
+    "dataflows": {
+      "resource_type": "dataflows",
+      "count": 145,
+      "sample_indices": [
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203
+      ],
+      "common_properties": {
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 306
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 596
+        },
+        "linkedService": {
+          "types": [
+            "object"
+          ],
+          "frequency": 118
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 673
+        },
+        "sources": {
+          "types": [
+            "array"
+          ],
+          "frequency": 145
+        },
+        "sinks": {
+          "types": [
+            "array"
+          ],
+          "frequency": 145
+        },
+        "transformations": {
+          "types": [
+            "array"
+          ],
+          "frequency": 145
+        },
+        "scriptLines": {
+          "types": [
+            "array"
+          ],
+          "frequency": 131
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 145
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 145
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 145
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 145
+        },
+        "folder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 97
+        },
+        "dataset": {
+          "types": [
+            "object"
+          ],
+          "frequency": 171
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 28
+        },
+        "rejectedDataLinkedService": {
+          "types": [
+            "object"
+          ],
+          "frequency": 17
+        },
+        "script": {
+          "types": [
+            "str"
+          ],
+          "frequency": 14
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[194].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[194].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[194].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.scriptLines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sinks",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sinks[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sinks[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sinks[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sinks[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sources",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sources[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sources[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sources[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.sources[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.transformations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[194].properties.typeProperties.transformations[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[194].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[195].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[195].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.scriptLines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sinks",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sinks[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sinks[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sinks[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sinks[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sources",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sources[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sources[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sources[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.sources[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.transformations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[195].properties.typeProperties.transformations[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[195].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[196].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[196].properties.folder",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[196].properties.folder.name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.scriptLines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sinks",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sinks[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sinks[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sinks[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sinks[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sources",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sources[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sources[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sources[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.sources[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.transformations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[196].properties.typeProperties.transformations[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[196].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[197].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[197].properties.folder",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[197].properties.folder.name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.scriptLines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sinks",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sinks[0].dataset",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sinks[0].dataset.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sinks[0].dataset.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sinks[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sources",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sources[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sources[0].linkedService.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sources[0].linkedService.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.sources[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.transformations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[197].properties.typeProperties.transformations[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[197].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[198].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[198].properties.folder",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[198].properties.folder.name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.scriptLines",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sinks",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sinks[0].dataset",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sinks[0].dataset.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sinks[0].dataset.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sinks[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sources",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[198].properties.typeProperties.sources[0].linkedService",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        }
+      ]
+    },
+    "pipelines": {
+      "resource_type": "pipelines",
+      "count": 348,
+      "sample_indices": [
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348
+      ],
+      "common_properties": {
+        "activity": {
+          "types": [
+            "str"
+          ],
+          "frequency": 157
+        },
+        "dependencyConditions": {
+          "types": [
+            "array"
+          ],
+          "frequency": 157
+        },
+        "timeout": {
+          "types": [
+            "str"
+          ],
+          "frequency": 286
+        },
+        "retry": {
+          "types": [
+            "int"
+          ],
+          "frequency": 286
+        },
+        "retryIntervalInSeconds": {
+          "types": [
+            "int"
+          ],
+          "frequency": 286
+        },
+        "secureOutput": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 300
+        },
+        "secureInput": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 332
+        },
+        "value": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 61
+        },
+        "type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2807
+        },
+        "method": {
+          "types": [
+            "str"
+          ],
+          "frequency": 39
+        },
+        "headers": {
+          "types": [
+            "object"
+          ],
+          "frequency": 39
+        },
+        "url": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 33
+        },
+        "body": {
+          "types": [
+            "object"
+          ],
+          "frequency": 21
+        },
+        "name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1030
+        },
+        "dependsOn": {
+          "types": [
+            "array"
+          ],
+          "frequency": 700
+        },
+        "policy": {
+          "types": [
+            "object"
+          ],
+          "frequency": 684
+        },
+        "userProperties": {
+          "types": [
+            "array"
+          ],
+          "frequency": 352
+        },
+        "typeProperties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 352
+        },
+        "elapsedTimeMetric": {
+          "types": [
+            "object"
+          ],
+          "frequency": 348
+        },
+        "EmailTo": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "CC": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "MessageContent": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "Subject": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "FldPth": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FileNames": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "activities": {
+          "types": [
+            "array"
+          ],
+          "frequency": 351
+        },
+        "parameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 472
+        },
+        "folder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 329
+        },
+        "annotations": {
+          "types": [
+            "array"
+          ],
+          "frequency": 348
+        },
+        "lastPublishTime": {
+          "types": [
+            "str"
+          ],
+          "frequency": 348
+        },
+        "apiVersion": {
+          "types": [
+            "str"
+          ],
+          "frequency": 348
+        },
+        "properties": {
+          "types": [
+            "object"
+          ],
+          "frequency": 348
+        },
+        "referenceName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 463
+        },
+        "text": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "scripts": {
+          "types": [
+            "array"
+          ],
+          "frequency": 3
+        },
+        "scriptBlockExecutionTimeout": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "linkedServiceName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 29
+        },
+        "duration": {
+          "types": [
+            "str"
+          ],
+          "frequency": 28
+        },
+        "description": {
+          "types": [
+            "str"
+          ],
+          "frequency": 109
+        },
+        "concurrency": {
+          "types": [
+            "int"
+          ],
+          "frequency": 59
+        },
+        "query": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 33
+        },
+        "partitionOption": {
+          "types": [
+            "str"
+          ],
+          "frequency": 153
+        },
+        "storeSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 189
+        },
+        "formatSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 185
+        },
+        "typeConversion": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 130
+        },
+        "typeConversionSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 130
+        },
+        "source": {
+          "types": [
+            "object"
+          ],
+          "frequency": 222
+        },
+        "sink": {
+          "types": [
+            "object"
+          ],
+          "frequency": 166
+        },
+        "enableStaging": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 166
+        },
+        "translator": {
+          "types": [
+            "object"
+          ],
+          "frequency": 134
+        },
+        "p_table": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 67
+        },
+        "p_schema": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 71
+        },
+        "p_container": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 107
+        },
+        "p_directory": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 107
+        },
+        "p_file": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 106
+        },
+        "inputs": {
+          "types": [
+            "array"
+          ],
+          "frequency": 168
+        },
+        "outputs": {
+          "types": [
+            "array"
+          ],
+          "frequency": 168
+        },
+        "exportSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "P_SCHEMA_NAME": {
+          "types": [
+            "str"
+          ],
+          "frequency": 11
+        },
+        "P_TABLE_NAME": {
+          "types": [
+            "str"
+          ],
+          "frequency": 11
+        },
+        "defaultValue": {
+          "types": [
+            "bool",
+            "int",
+            "str"
+          ],
+          "frequency": 74
+        },
+        "sqlReaderQuery": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 119
+        },
+        "queryTimeout": {
+          "types": [
+            "str"
+          ],
+          "frequency": 146
+        },
+        "Delimiter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 8
+        },
+        "EscapeCharacter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 8
+        },
+        "variables": {
+          "types": [
+            "object"
+          ],
+          "frequency": 173
+        },
+        "writeBatchSize": {
+          "types": [
+            "int"
+          ],
+          "frequency": 4
+        },
+        "writeBehavior": {
+          "types": [
+            "str"
+          ],
+          "frequency": 11
+        },
+        "tableOption": {
+          "types": [
+            "str"
+          ],
+          "frequency": 9
+        },
+        "disableMetricsCollection": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 18
+        },
+        "p_Schema": {
+          "types": [
+            "str"
+          ],
+          "frequency": 37
+        },
+        "p_Table": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 37
+        },
+        "sqlReaderStoredProcedureName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 19
+        },
+        "dataset": {
+          "types": [
+            "object"
+          ],
+          "frequency": 67
+        },
+        "firstRowOnly": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 52
+        },
+        "test": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "path": {
+          "types": [
+            "str"
+          ],
+          "frequency": 20
+        },
+        "stagingSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 20
+        },
+        "parquet_solution_path": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 31
+        },
+        "container_name": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 30
+        },
+        "file_name": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 31
+        },
+        "file_system": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "solution_path": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "parquet_file_name": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "regnaProductCount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "regnaStoreCount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "flag": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "StoreInboundPath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ProductInboundPath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Content-Type": {
+          "types": [
+            "str"
+          ],
+          "frequency": 17
+        },
+        "Time": {
+          "types": [
+            "object"
+          ],
+          "frequency": 28
+        },
+        "Year": {
+          "types": [
+            "object"
+          ],
+          "frequency": 69
+        },
+        "Month": {
+          "types": [
+            "object"
+          ],
+          "frequency": 68
+        },
+        "LUD": {
+          "types": [
+            "object"
+          ],
+          "frequency": 28
+        },
+        "OLD_LUD": {
+          "types": [
+            "object"
+          ],
+          "frequency": 17
+        },
+        "items": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "batchCount": {
+          "types": [
+            "int"
+          ],
+          "frequency": 2
+        },
+        "token": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "InputValue": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "SubString": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "Old_LUD": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "Control": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OrgainMapping": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "preCopyScript": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 12
+        },
+        "sqlWriterUseTableLock": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 9
+        },
+        "Container": {
+          "types": [
+            "object"
+          ],
+          "frequency": 45
+        },
+        "Path": {
+          "types": [
+            "object"
+          ],
+          "frequency": 46
+        },
+        "datasetParameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "linkedService": {
+          "types": [
+            "object"
+          ],
+          "frequency": 9
+        },
+        "folderPath": {
+          "types": [
+            "str"
+          ],
+          "frequency": 9
+        },
+        "dataflow": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "staging": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "integrationRuntime": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "traceLevel": {
+          "types": [
+            "str"
+          ],
+          "frequency": 11
+        },
+        "inbound_path": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "DaysToLoad": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "RunType": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "varFileToStagingMapping": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "RecordCount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "SuccessfulDates": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Query": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "recursive": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 11
+        },
+        "enablePartitionDiscovery": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 11
+        },
+        "fieldList": {
+          "types": [
+            "array"
+          ],
+          "frequency": 11
+        },
+        "start_date": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "end_date": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "monthsInBatch": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "timerange_list": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "From": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "To": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Day": {
+          "types": [
+            "object"
+          ],
+          "frequency": 38
+        },
+        "ArchiveContainer": {
+          "types": [
+            "object"
+          ],
+          "frequency": 39
+        },
+        "FolderPath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "FileName": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 71
+        },
+        "MTDVal": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FirstDayMonth": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "current_timestamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "OrderDataLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "DeliveryDataLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "OrderOtherDataLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "InvoiceDataLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "OrderExcepDataLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "AnyFileUpdated": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "pipeline": {
+          "types": [
+            "object"
+          ],
+          "frequency": 32
+        },
+        "waitOnCompletion": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 32
+        },
+        "FileCount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "mappings": {
+          "types": [
+            "array"
+          ],
+          "frequency": 14
+        },
+        "ADLSFileName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "Sheet_Name": {
+          "types": [
+            "str"
+          ],
+          "frequency": 3
+        },
+        "HasHeaders": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "FilePath": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "storedProcedureParameters": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "P_DATA_GROUP": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 23
+        },
+        "P_MAPPING_QUERY": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "V_LAST_UPDATE_DATE": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "V_OLD_LAST_UPDATE_DATE": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Current_TimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 35
+        },
+        "LastUpdate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 32
+        },
+        "NewFileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 33
+        },
+        "GetLastTimeStamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 34
+        },
+        "Current_Date": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OverRideFrom": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OverRideTo": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ArchivePath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "File": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "Archive_Container": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "isSequential": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 2
+        },
+        "allowPolyBase": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 4
+        },
+        "polyBaseSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "variableName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 14
+        },
+        "sourceStagingConcurrency": {
+          "types": [
+            "int"
+          ],
+          "frequency": 2
+        },
+        "Reloaddata": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "parallelCopies": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "dataIntegrationUnits": {
+          "types": [
+            "int"
+          ],
+          "frequency": 1
+        },
+        "FileSys": {
+          "types": [
+            "str"
+          ],
+          "frequency": 29
+        },
+        "FolderName": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 38
+        },
+        "FromDate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "ToDate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart1": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart2": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart4": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart3": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart5": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "varFileToStagingMappingPart6": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "Error": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "LastUpdate_PhysicalStock": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "PhysicalStock_FileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "MLA": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "MLA2": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "TableName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 40
+        },
+        "ArchiveFileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 16
+        },
+        "ArchiveFolder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 17
+        },
+        "SourceQuery": {
+          "types": [
+            "object"
+          ],
+          "frequency": 16
+        },
+        "StagingQuery": {
+          "types": [
+            "object"
+          ],
+          "frequency": 15
+        },
+        "Schema": {
+          "types": [
+            "str"
+          ],
+          "frequency": 24
+        },
+        "Table": {
+          "types": [
+            "object"
+          ],
+          "frequency": 24
+        },
+        "WeekNum": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OriginContainer": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OriginFolder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ArchiveConatiner": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_HUHDR": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "HUHDR_FileName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_RACHIS": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RACHIS_Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RACADT_Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RACPRT_Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_RACADT": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_RACPRT": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RACBLP_Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_RACBLP": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "RACSCT_Filename": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "LastUpdate_RACSCT": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "allowCopyCommand": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 4
+        },
+        "copyCommandSettings": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "ReloadDates": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "DeleteDates": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "p_compresiontype": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "modifiedDatetimeStart": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "disableChunking": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 1
+        },
+        "FileType": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ArrayDateList": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "DateList": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "resource": {
+          "types": [
+            "str"
+          ],
+          "frequency": 12
+        },
+        "authentication": {
+          "types": [
+            "object"
+          ],
+          "frequency": 12
+        },
+        "RootPath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 9
+        },
+        "functionName": {
+          "types": [
+            "str"
+          ],
+          "frequency": 6
+        },
+        "state": {
+          "types": [
+            "str"
+          ],
+          "frequency": 4
+        },
+        "onInactiveMarkAs": {
+          "types": [
+            "str"
+          ],
+          "frequency": 4
+        },
+        "nextPageToken": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "pageSize": {
+          "types": [
+            "object"
+          ],
+          "frequency": 3
+        },
+        "httpRequestTimeout": {
+          "types": [
+            "str"
+          ],
+          "frequency": 12
+        },
+        "requestInterval": {
+          "types": [
+            "str"
+          ],
+          "frequency": 12
+        },
+        "requestMethod": {
+          "types": [
+            "str"
+          ],
+          "frequency": 12
+        },
+        "additionalHeaders": {
+          "types": [
+            "object"
+          ],
+          "frequency": 12
+        },
+        "p_Endpoint": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "p_Filter": {
+          "types": [
+            "str"
+          ],
+          "frequency": 2
+        },
+        "p_Camp_Filter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "p_parm": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "p_filecount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "p_process": {
+          "types": [
+            "object"
+          ],
+          "frequency": 11
+        },
+        "p_test": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "p_FileCount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "p_Campaign_ID": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "p_PlusOne": {
+          "types": [
+            "object"
+          ],
+          "frequency": 5
+        },
+        "requestBody": {
+          "types": [
+            "object",
+            "str"
+          ],
+          "frequency": 10
+        },
+        "Relative_URL": {
+          "types": [
+            "str"
+          ],
+          "frequency": 10
+        },
+        "Directory": {
+          "types": [
+            "object"
+          ],
+          "frequency": 4
+        },
+        "Filter": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "CurrentDate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "FileSystemFrom": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FileSystemTo": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "includeDeletedObjects": {
+          "types": [
+            "bool"
+          ],
+          "frequency": 2
+        },
+        "Shift": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Folder": {
+          "types": [
+            "object"
+          ],
+          "frequency": 2
+        },
+        "Timestamp": {
+          "types": [
+            "object"
+          ],
+          "frequency": 6
+        },
+        "p_tablename": {
+          "types": [
+            "str"
+          ],
+          "frequency": 4
+        },
+        "oracleReaderQuery": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "P_HOST_PATH": {
+          "types": [
+            "str"
+          ],
+          "frequency": 1
+        },
+        "P_FILE_NAME": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "EXT_Path": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "waitTimeInSeconds": {
+          "types": [
+            "int"
+          ],
+          "frequency": 12
+        },
+        "connectVia": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "PBI_Workspace_SecretName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "PBI_Dataset_SecretName": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "YearLoad": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "PropertyID": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Limit": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "OffSet": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "IncOffSet": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "GetLatestFile": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "DateCompare": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "Now": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "expression": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "ifTrueActivities": {
+          "types": [
+            "array"
+          ],
+          "frequency": 1
+        },
+        "FileDate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "FldPath": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "StorageAccount": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "NewFileDate": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        },
+        "BCC": {
+          "types": [
+            "object"
+          ],
+          "frequency": 1
+        }
+      },
+      "parsing_paths": [
+        {
+          "path": "resources[339].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].dependsOn[0].activity",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].dependsOn[0].dependencyConditions",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy.retry",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy.retryIntervalInSeconds",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy.secureInput",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy.secureOutput",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].policy.timeout",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.body",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.body.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.body.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.headers",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.method",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.url",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.url.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].typeProperties.url.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.activities[0].userProperties",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[339].properties.folder",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.folder.name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.lastPublishTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.CC",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.CC.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.EmailTo",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.EmailTo.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.FileNames",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.FileNames.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.FldPth",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.FldPth.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.MessageContent",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.MessageContent.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.Subject",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.parameters.Subject.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[339].properties.policy",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].properties.policy.elapsedTimeMetric",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[339].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].dependsOn[0].activity",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].dependsOn[0].dependencyConditions",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy.retry",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy.retryIntervalInSeconds",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy.secureInput",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy.secureOutput",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].policy.timeout",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.body",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.body.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.body.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.headers",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.method",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.url",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.url.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].typeProperties.url.value",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.activities[0].userProperties",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].properties.annotations",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[340].properties.folder",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.folder.name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.lastPublishTime",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.EmailTo",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.EmailTo.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.MessageContent",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.MessageContent.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.Subject",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.parameters.Subject.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[340].properties.policy",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].properties.policy.elapsedTimeMetric",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[340].type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].apiVersion",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[341].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].properties",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[341].properties.activities",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].dependsOn",
+          "type": "array",
+          "extraction_method": "iterate_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].linkedServiceName",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].linkedServiceName.referenceName",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].linkedServiceName.type",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].name",
+          "type": "str",
+          "extraction_method": "string_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].policy",
+          "type": "object",
+          "extraction_method": "recursive_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].policy.retry",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].policy.retryIntervalInSeconds",
+          "type": "int",
+          "extraction_method": "numeric_extract"
+        },
+        {
+          "path": "resources[341].properties.activities[0].policy.secureInput",
+          "type": "bool",
+          "extraction_method": "boolean_extract"
+        }
+      ]
+    }
+  },
+  "reference_summary": {
+    "dataset_refs": 638,
+    "pipeline_refs": 505,
+    "linkedservice_refs": 544,
+    "dataflow_refs": 109,
+    "trigger_refs": 0,
+    "ir_refs": 34,
+    "activity_refs": 1662,
+    "parameter_refs": 0,
+    "variable_refs": 0,
+    "credential_refs": 0
+  },
+  "statistics": {
+    "unique_resource_types": 7,
+    "unique_activity_types": 15,
+    "unique_dataset_types": 16,
+    "unique_linkedservice_types": 18,
+    "total_references": 3492,
+    "expression_functions_used": 15
+  }
+}

@@ -1,6 +1,8 @@
 ```markdown
 # Azure Data Factory Analysis Toolkit
 
+> NOTE: Recent updates were made across the repository (Nov 07, 2025). See `CHANGES_SUMMARY.md` for a concise summary and `armv10/README_UPDATES.md` for v10-specific changes and new runner/dashboard/validator features.
+
 ![ADF Analyzer](https://img.shields.io/badge/ADF%20Analyzer-v8.0-blue.svg) ![ADF Dashboard](https://img.shields.io/badge/ADF%20Dashboard-v9.0-green.svg) ![Python](https://img.shields.io/badge/Python-3.8+-brightgreen.svg)
 
 This toolkit provides a suite of powerful command-line and interactive tools to perform deep analysis, dependency tracking, and visualization of Azure Data Factory (ADF) environments from their ARM template exports.

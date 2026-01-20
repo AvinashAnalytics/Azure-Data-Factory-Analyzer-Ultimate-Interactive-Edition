@@ -1,17 +1,19 @@
-# Dashboard Tiles — Meaning and Data Sources
-> Last updated: 2025-11-07 (dashboard tiles/verification/runner improvements summarized)
+# 📋 Dashboard Tiles Reference — Meaning and Data Sources
+> **ADF Analyzer v10.1 Dashboard** | Last updated: 2025-11-08 | **Production Ready Edition**
 
-This document describes every metric tile shown by the dashboard in `armv10/adf_dashboard.py`:
-- what the tile means,
-- the exact sheet(s) or dataframe(s) it comes from (including fallback logic), and
-- any calculation or formatting applied.
+## 🎯 Overview
+This document describes **every metric tile** shown by the dashboard in `armv10/adf_dashboard.py`:
+- ✅ **What the tile means** (business purpose)
+- 📊 **Data source sheets** and fallback logic
+- 🧮 **Calculations and formatting** applied
+- ⚙️ **Configuration controls** in `enhancement_config.json`
 
-Reference: the project `enhancement_config.json` (advanced_dashboard section) controls whether enhanced tiles and the health score are enabled. See `enhancement_config.json` for toggles like `advanced_dashboard.health_score`.
+> **💡 Quick Access:** View this documentation directly in the dashboard sidebar under "📚 Documentation"
 
 ---
 
-## Top-row metric tiles (Enhanced metrics row)
-These appear in `render_enhanced_metrics()`.
+## 🏆 Top-Row Metric Tiles (Enhanced Metrics)
+*Rendered by `render_enhanced_metrics()` function*
 
 1. Pipelines
    - Meaning: Number of pipeline resources discovered in the factory.

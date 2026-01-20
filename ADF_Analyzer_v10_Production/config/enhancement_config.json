@@ -58,5 +58,16 @@
       "enabled": true,
       "orientation": "landscape"
     }
+  },
+  "hide_config": {
+    "enabled": true,
+    "hidden_sheets": [
+      "TriggerDetails"
+    ],
+    "hidden_columns": {
+      "ActivityExecutionOrder": ["FromSequence", "ToSequence", "FromParent", "ToParent"],
+      "Activities": ["Sequence", "ParseSequence", "Parent", "Depth"],
+      "Pipelines": []
+    }
   }
 }

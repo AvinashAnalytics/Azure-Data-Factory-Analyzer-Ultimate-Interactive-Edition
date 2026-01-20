@@ -6,6 +6,6 @@
   "discovery_mode": true,
   "excel": {
     "output_filename": "adf_analysis_latest.xlsx",
-    "output_dir": "D:\\armtemp\\ADF_Analyzer_v10_Production\\output"
+    "output_dir": "output"
   }
 }
